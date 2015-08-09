@@ -10,6 +10,13 @@
 		3E39170A1B77F5C200F72EC5 /* FledgerCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E3917091B77F5C200F72EC5 /* FledgerCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3E3917101B77F5C200F72EC5 /* FledgerCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3917041B77F5C200F72EC5 /* FledgerCommon.framework */; };
 		3E3917171B77F5C200F72EC5 /* FledgerCommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917161B77F5C200F72EC5 /* FledgerCommonTests.swift */; };
+		3E39172A1B77F60D00F72EC5 /* FledgerCommonMac.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E3917291B77F60D00F72EC5 /* FledgerCommonMac.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E3917301B77F60D00F72EC5 /* FledgerCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3917251B77F60D00F72EC5 /* FledgerCommon.framework */; };
+		3E3917371B77F60D00F72EC5 /* FledgerCommonMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917361B77F60D00F72EC5 /* FledgerCommonMacTests.swift */; };
+		3E39176E1B77F78A00F72EC5 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39176D1B77F78A00F72EC5 /* Util.swift */; };
+		3E39176F1B77F78A00F72EC5 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39176D1B77F78A00F72EC5 /* Util.swift */; };
+		3E3917701B77F78A00F72EC5 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39176D1B77F78A00F72EC5 /* Util.swift */; };
+		3E3917711B77F78A00F72EC5 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39176D1B77F78A00F72EC5 /* Util.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -20,6 +27,13 @@
 			remoteGlobalIDString = 3E3917031B77F5C200F72EC5;
 			remoteInfo = FledgerCommon;
 		};
+		3E3917311B77F60D00F72EC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E3916FB1B77F5C200F72EC5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E3917241B77F60D00F72EC5;
+			remoteInfo = FledgerCommonMac;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +43,13 @@
 		3E39170F1B77F5C200F72EC5 /* FledgerCommonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FledgerCommonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E3917151B77F5C200F72EC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E3917161B77F5C200F72EC5 /* FledgerCommonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FledgerCommonTests.swift; sourceTree = "<group>"; };
+		3E3917251B77F60D00F72EC5 /* FledgerCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FledgerCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E3917281B77F60D00F72EC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E3917291B77F60D00F72EC5 /* FledgerCommonMac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FledgerCommonMac.h; sourceTree = "<group>"; };
+		3E39172F1B77F60D00F72EC5 /* FledgerCommonMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FledgerCommonMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E3917351B77F60D00F72EC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E3917361B77F60D00F72EC5 /* FledgerCommonMacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FledgerCommonMacTests.swift; sourceTree = "<group>"; };
+		3E39176D1B77F78A00F72EC5 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +68,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3E3917211B77F60D00F72EC5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E39172C1B77F60D00F72EC5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E3917301B77F60D00F72EC5 /* FledgerCommon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -55,6 +91,8 @@
 			children = (
 				3E3917061B77F5C200F72EC5 /* FledgerCommon */,
 				3E3917131B77F5C200F72EC5 /* FledgerCommonTests */,
+				3E3917261B77F60D00F72EC5 /* FledgerCommonMac */,
+				3E3917331B77F60D00F72EC5 /* FledgerCommonMacTests */,
 				3E3917051B77F5C200F72EC5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +102,8 @@
 			children = (
 				3E3917041B77F5C200F72EC5 /* FledgerCommon.framework */,
 				3E39170F1B77F5C200F72EC5 /* FledgerCommonTests.xctest */,
+				3E3917251B77F60D00F72EC5 /* FledgerCommon.framework */,
+				3E39172F1B77F60D00F72EC5 /* FledgerCommonMacTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				3E3917091B77F5C200F72EC5 /* FledgerCommon.h */,
+				3E39176D1B77F78A00F72EC5 /* Util.swift */,
 				3E3917071B77F5C200F72EC5 /* Supporting Files */,
 			);
 			path = FledgerCommon;
@@ -102,6 +143,40 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		3E3917261B77F60D00F72EC5 /* FledgerCommonMac */ = {
+			isa = PBXGroup;
+			children = (
+				3E3917291B77F60D00F72EC5 /* FledgerCommonMac.h */,
+				3E3917271B77F60D00F72EC5 /* Supporting Files */,
+			);
+			path = FledgerCommonMac;
+			sourceTree = "<group>";
+		};
+		3E3917271B77F60D00F72EC5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3E3917281B77F60D00F72EC5 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3E3917331B77F60D00F72EC5 /* FledgerCommonMacTests */ = {
+			isa = PBXGroup;
+			children = (
+				3E3917361B77F60D00F72EC5 /* FledgerCommonMacTests.swift */,
+				3E3917341B77F60D00F72EC5 /* Supporting Files */,
+			);
+			path = FledgerCommonMacTests;
+			sourceTree = "<group>";
+		};
+		3E3917341B77F60D00F72EC5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3E3917351B77F60D00F72EC5 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -110,6 +185,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E39170A1B77F5C200F72EC5 /* FledgerCommon.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E3917221B77F60D00F72EC5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E39172A1B77F60D00F72EC5 /* FledgerCommonMac.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +235,42 @@
 			productReference = 3E39170F1B77F5C200F72EC5 /* FledgerCommonTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		3E3917241B77F60D00F72EC5 /* FledgerCommonMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E3917381B77F60D00F72EC5 /* Build configuration list for PBXNativeTarget "FledgerCommonMac" */;
+			buildPhases = (
+				3E3917201B77F60D00F72EC5 /* Sources */,
+				3E3917211B77F60D00F72EC5 /* Frameworks */,
+				3E3917221B77F60D00F72EC5 /* Headers */,
+				3E3917231B77F60D00F72EC5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FledgerCommonMac;
+			productName = FledgerCommonMac;
+			productReference = 3E3917251B77F60D00F72EC5 /* FledgerCommon.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3E39172E1B77F60D00F72EC5 /* FledgerCommonMacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E39173B1B77F60D00F72EC5 /* Build configuration list for PBXNativeTarget "FledgerCommonMacTests" */;
+			buildPhases = (
+				3E39172B1B77F60D00F72EC5 /* Sources */,
+				3E39172C1B77F60D00F72EC5 /* Frameworks */,
+				3E39172D1B77F60D00F72EC5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3E3917321B77F60D00F72EC5 /* PBXTargetDependency */,
+			);
+			name = FledgerCommonMacTests;
+			productName = FledgerCommonMacTests;
+			productReference = 3E39172F1B77F60D00F72EC5 /* FledgerCommonMacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -165,6 +284,12 @@
 						CreatedOnToolsVersion = 6.4;
 					};
 					3E39170E1B77F5C200F72EC5 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					3E3917241B77F60D00F72EC5 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					3E39172E1B77F60D00F72EC5 = {
 						CreatedOnToolsVersion = 6.4;
 					};
 				};
@@ -183,6 +308,8 @@
 			targets = (
 				3E3917031B77F5C200F72EC5 /* FledgerCommon */,
 				3E39170E1B77F5C200F72EC5 /* FledgerCommonTests */,
+				3E3917241B77F60D00F72EC5 /* FledgerCommonMac */,
+				3E39172E1B77F60D00F72EC5 /* FledgerCommonMacTests */,
 			);
 		};
 /* End PBXProject section */
@@ -202,6 +329,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3E3917231B77F60D00F72EC5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E39172D1B77F60D00F72EC5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -209,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E39176E1B77F78A00F72EC5 /* Util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +359,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E3917171B77F5C200F72EC5 /* FledgerCommonTests.swift in Sources */,
+				3E39176F1B77F78A00F72EC5 /* Util.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E3917201B77F60D00F72EC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E3917701B77F78A00F72EC5 /* Util.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E39172B1B77F60D00F72EC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E3917371B77F60D00F72EC5 /* FledgerCommonMacTests.swift in Sources */,
+				3E3917711B77F78A00F72EC5 /* Util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +387,11 @@
 			isa = PBXTargetDependency;
 			target = 3E3917031B77F5C200F72EC5 /* FledgerCommon */;
 			targetProxy = 3E3917111B77F5C200F72EC5 /* PBXContainerItemProxy */;
+		};
+		3E3917321B77F60D00F72EC5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3E3917241B77F60D00F72EC5 /* FledgerCommonMac */;
+			targetProxy = 3E3917311B77F60D00F72EC5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -323,6 +488,7 @@
 		3E39171B1B77F5C200F72EC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -332,12 +498,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		3E39171C1B77F5C200F72EC5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -380,6 +548,89 @@
 			};
 			name = Release;
 		};
+		3E3917391B77F60D00F72EC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FledgerCommonMac/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = FledgerCommon;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3E39173A1B77F60D00F72EC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = FledgerCommonMac/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = FledgerCommon;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		3E39173C1B77F60D00F72EC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FledgerCommonMacTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		3E39173D1B77F60D00F72EC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FledgerCommonMacTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -405,6 +656,22 @@
 			buildConfigurations = (
 				3E39171E1B77F5C200F72EC5 /* Debug */,
 				3E39171F1B77F5C200F72EC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3E3917381B77F60D00F72EC5 /* Build configuration list for PBXNativeTarget "FledgerCommonMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E3917391B77F60D00F72EC5 /* Debug */,
+				3E39173A1B77F60D00F72EC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3E39173B1B77F60D00F72EC5 /* Build configuration list for PBXNativeTarget "FledgerCommonMacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E39173C1B77F60D00F72EC5 /* Debug */,
+				3E39173D1B77F60D00F72EC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Robert Conrad. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for FledgerCommon.
 FOUNDATION_EXPORT double FledgerCommonVersionNumber;
