@@ -1,0 +1,1 @@
+fledger-common is a dynamic Swift library that abstracts business logic and persistence for the fledger iOS and Mac apps. It's mostly just a mechanism for me to learn Swift / iOS / Mac / Cocoa / CocoaTouch.
