@@ -7,7 +7,11 @@
 //
 
 import FledgerCommon
+#if os(iOS)
 import Parse
+#elseif os(OSX)
+import ParseOSX
+#endif
 
 
 class AccountServiceMock: AccountService {

@@ -8,7 +8,11 @@
 
 import Foundation
 import SQLite
+#if os(iOS)
 import Parse
+#elseif os(OSX)
+import ParseOSX
+#endif
 
 
 public func ==(a: Type, b: Type) -> Bool {

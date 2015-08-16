@@ -9,7 +9,11 @@
 import Foundation
 import SQLite
 import MapKit
+#if os(iOS)
 import Parse
+#elseif os(OSX)
+import ParseOSX
+#endif
 
 
 class LocationServiceImpl<T: Location>: MemoryModelServiceImpl<Location>, LocationService {

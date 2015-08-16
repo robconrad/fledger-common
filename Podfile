@@ -1,7 +1,18 @@
 use_frameworks!
 
-pod 'Parse'
+def common_pods
+    pod 'SQLite.swift', git: 'https://github.com/stephencelis/SQLite.swift.git'
+    pod 'CryptoSwift', '0.0.12'
+end
 
-pod 'SQLite.swift', git: 'https://github.com/stephencelis/SQLite.swift.git'
+target :FledgerCommon do
+    platform :ios, '8.4'
+    pod 'Parse', '1.8.0'
+    common_pods
+end
 
-pod 'CryptoSwift'
+target :FledgerCommonMac do
+    platform :osx, '10.10'
+    pod 'Parse-OSX', '1.8.0'
+    common_pods
+end

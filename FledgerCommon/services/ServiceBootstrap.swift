@@ -3,7 +3,11 @@
 // Copyright (c) 2015 Robert Conrad. All rights reserved.
 //
 
+#if os(iOS)
 import Parse
+#elseif os(OSX)
+import ParseOSX
+#endif
 
 public class ServiceBootstrap {
 

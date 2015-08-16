@@ -6,7 +6,11 @@
 //  Copyright (c) 2015 TwoSpec Inc. All rights reserved.
 //
 
+#if os(iOS)
 import Parse
+#elseif os(OSX)
+import ParseOSX
+#endif
 
 
 protocol ModelService: Service {

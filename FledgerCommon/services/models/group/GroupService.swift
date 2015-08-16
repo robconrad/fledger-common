@@ -7,7 +7,11 @@
 //
 
 import Foundation
+#if os(iOS)
 import Parse
+#elseif os(OSX)
+import ParseOSX
+#endif
 
 
 public protocol GroupService: Service {

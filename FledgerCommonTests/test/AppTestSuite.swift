@@ -5,7 +5,11 @@
 
 import XCTest
 import FledgerCommon
+#if os(iOS)
 import Parse
+#elseif os(OSX)
+import ParseOSX
+#endif
 
 class AppTestSuite: XCTestCase {
 

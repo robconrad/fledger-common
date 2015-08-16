@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1266EA6CFCEE25C15792C72A /* Pods_FledgerCommonMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5EC5DCD7F49E23618D9D83 /* Pods_FledgerCommonMac.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		25CA2EDB868C18E7CB46F588 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9B08881C43F33CA03F5094 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		3E39170A1B77F5C200F72EC5 /* FledgerCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E3917091B77F5C200F72EC5 /* FledgerCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3E3917101B77F5C200F72EC5 /* FledgerCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3917041B77F5C200F72EC5 /* FledgerCommon.framework */; };
@@ -184,6 +185,10 @@
 		3E3918CC1B7845D200F72EC5 /* schema.sql in Resources */ = {isa = PBXBuildFile; fileRef = 3E3918C21B7845D200F72EC5 /* schema.sql */; };
 		3E3918CD1B7845D200F72EC5 /* schema.sql in Resources */ = {isa = PBXBuildFile; fileRef = 3E3918C21B7845D200F72EC5 /* schema.sql */; };
 		3E3918CE1B7845D200F72EC5 /* schema.sql in Resources */ = {isa = PBXBuildFile; fileRef = 3E3918C21B7845D200F72EC5 /* schema.sql */; };
+		3E3918E61B812E2200F72EC5 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3918631B780DDA00F72EC5 /* ArrayExtension.swift */; };
+		3E3918E71B812E2300F72EC5 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3918631B780DDA00F72EC5 /* ArrayExtension.swift */; };
+		3E3918E81B812E2400F72EC5 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3918631B780DDA00F72EC5 /* ArrayExtension.swift */; };
+		93165DA1C325CD809E9F46FB /* Pods_FledgerCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8D618CAA82545CBB9556F6 /* Pods_FledgerCommon.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -204,6 +209,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A5EC5DCD7F49E23618D9D83 /* Pods_FledgerCommonMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FledgerCommonMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		293D465A4BF7C5B4C4FA6E01 /* Pods-FledgerCommonIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FledgerCommonIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FledgerCommonIOS/Pods-FledgerCommonIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		3E3917041B77F5C200F72EC5 /* FledgerCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FledgerCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E3917081B77F5C200F72EC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E3917091B77F5C200F72EC5 /* FledgerCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FledgerCommon.h; sourceTree = "<group>"; };
@@ -263,10 +270,14 @@
 		3E3918C01B7845D200F72EC5 /* data-lite.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "data-lite.sql"; path = "sql/data-lite.sql"; sourceTree = "<group>"; };
 		3E3918C11B7845D200F72EC5 /* data.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = data.sql; path = sql/data.sql; sourceTree = "<group>"; };
 		3E3918C21B7845D200F72EC5 /* schema.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = schema.sql; path = sql/schema.sql; sourceTree = "<group>"; };
-		4097B4A6833584AA1A1DFCA8 /* Pods_FledgerCommonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FledgerCommonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		785BC570FBB4E7D5E394BF80 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		8FEB766091D70533BFD44AFE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		5341BA08938CDD9EC1B76CE5 /* Pods-FledgerCommonMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FledgerCommonMac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FledgerCommonMac/Pods-FledgerCommonMac.debug.xcconfig"; sourceTree = "<group>"; };
+		5B37E10E77DE0F02296AF4DE /* Pods-FledgerCommon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FledgerCommon.release.xcconfig"; path = "Pods/Target Support Files/Pods-FledgerCommon/Pods-FledgerCommon.release.xcconfig"; sourceTree = "<group>"; };
+		5F0D0202B828A8ED266AE36A /* Pods-FledgerCommonMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FledgerCommonMac.release.xcconfig"; path = "Pods/Target Support Files/Pods-FledgerCommonMac/Pods-FledgerCommonMac.release.xcconfig"; sourceTree = "<group>"; };
+		6B13DC2484C4FC8347049333 /* Pods-FledgerCommonIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FledgerCommonIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-FledgerCommonIOS/Pods-FledgerCommonIOS.release.xcconfig"; sourceTree = "<group>"; };
+		7A8D618CAA82545CBB9556F6 /* Pods_FledgerCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FledgerCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6F18342146945BFA18FC8E8 /* Pods_FledgerCommonIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FledgerCommonIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9B08881C43F33CA03F5094 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9F28C53705EF970EAEC2427 /* Pods-FledgerCommon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FledgerCommon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FledgerCommon/Pods-FledgerCommon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25CA2EDB868C18E7CB46F588 /* Pods.framework in Frameworks */,
+				93165DA1C325CD809E9F46FB /* Pods_FledgerCommon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +302,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1266EA6CFCEE25C15792C72A /* Pods_FledgerCommonMac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +317,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32C807CA18E07F22CD504CEC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				293D465A4BF7C5B4C4FA6E01 /* Pods-FledgerCommonIOS.debug.xcconfig */,
+				6B13DC2484C4FC8347049333 /* Pods-FledgerCommonIOS.release.xcconfig */,
+				5341BA08938CDD9EC1B76CE5 /* Pods-FledgerCommonMac.debug.xcconfig */,
+				5F0D0202B828A8ED266AE36A /* Pods-FledgerCommonMac.release.xcconfig */,
+				F9F28C53705EF970EAEC2427 /* Pods-FledgerCommon.debug.xcconfig */,
+				5B37E10E77DE0F02296AF4DE /* Pods-FledgerCommon.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		3E3916FA1B77F5C200F72EC5 = {
 			isa = PBXGroup;
 			children = (
@@ -312,8 +338,8 @@
 				3E3917261B77F60D00F72EC5 /* FledgerCommonMac */,
 				3E3917331B77F60D00F72EC5 /* FledgerCommonMacTests */,
 				3E3917051B77F5C200F72EC5 /* Products */,
-				DF32EECC0EC31095452352E8 /* Pods */,
 				548A8B44A4420E988CEE97EE /* Frameworks */,
+				32C807CA18E07F22CD504CEC /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -590,19 +616,12 @@
 		548A8B44A4420E988CEE97EE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4097B4A6833584AA1A1DFCA8 /* Pods_FledgerCommonTests.framework */,
 				EC9B08881C43F33CA03F5094 /* Pods.framework */,
+				A6F18342146945BFA18FC8E8 /* Pods_FledgerCommonIOS.framework */,
+				1A5EC5DCD7F49E23618D9D83 /* Pods_FledgerCommonMac.framework */,
+				7A8D618CAA82545CBB9556F6 /* Pods_FledgerCommon.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DF32EECC0EC31095452352E8 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				785BC570FBB4E7D5E394BF80 /* Pods.debug.xcconfig */,
-				8FEB766091D70533BFD44AFE /* Pods.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -631,13 +650,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E39171A1B77F5C200F72EC5 /* Build configuration list for PBXNativeTarget "FledgerCommon" */;
 			buildPhases = (
-				828B73DB81227B7087F8022D /* Check Pods Manifest.lock */,
+				AA5310424E7F6DF19F4D12B1 /* Check Pods Manifest.lock */,
 				3E3916FF1B77F5C200F72EC5 /* Sources */,
 				3E3917001B77F5C200F72EC5 /* Frameworks */,
 				3E3917011B77F5C200F72EC5 /* Headers */,
 				3E3917021B77F5C200F72EC5 /* Resources */,
-				3E3918781B78308E00F72EC5 /* Embed Pods Frameworks */,
-				51FD645B8E1D97CC3B531C33 /* Copy Pods Resources */,
+				AB236A202628525F39EFB45A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -652,12 +670,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E39171D1B77F5C200F72EC5 /* Build configuration list for PBXNativeTarget "FledgerCommonTests" */;
 			buildPhases = (
-				40DD98E32B50C777DD1B1AB7 /* Check Pods Manifest.lock */,
 				3E39170B1B77F5C200F72EC5 /* Sources */,
 				3E39170C1B77F5C200F72EC5 /* Frameworks */,
 				3E39170D1B77F5C200F72EC5 /* Resources */,
-				CAAB468B9B9897890FCD9A12 /* Embed Pods Frameworks */,
-				EE083A7A7613C23A6A7ED2FE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -673,10 +688,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E3917381B77F60D00F72EC5 /* Build configuration list for PBXNativeTarget "FledgerCommonMac" */;
 			buildPhases = (
+				BD1F1D3E5CF6C7E0BB7B1562 /* Check Pods Manifest.lock */,
 				3E3917201B77F60D00F72EC5 /* Sources */,
 				3E3917211B77F60D00F72EC5 /* Frameworks */,
 				3E3917221B77F60D00F72EC5 /* Headers */,
 				3E3917231B77F60D00F72EC5 /* Resources */,
+				AC062812A7CF38B517326704 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -793,22 +810,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3E3918781B78308E00F72EC5 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"";
-			showEnvVarsInLog = 0;
-		};
-		40DD98E32B50C777DD1B1AB7 /* Check Pods Manifest.lock */ = {
+		AA5310424E7F6DF19F4D12B1 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -823,7 +825,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		51FD645B8E1D97CC3B531C33 /* Copy Pods Resources */ = {
+		AB236A202628525F39EFB45A /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -835,10 +837,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FledgerCommon/Pods-FledgerCommon-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		828B73DB81227B7087F8022D /* Check Pods Manifest.lock */ = {
+		AC062812A7CF38B517326704 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FledgerCommonMac/Pods-FledgerCommonMac-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD1F1D3E5CF6C7E0BB7B1562 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -851,36 +868,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		CAAB468B9B9897890FCD9A12 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EE083A7A7613C23A6A7ED2FE /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -966,6 +953,7 @@
 				3E3917C71B77FF6B00F72EC5 /* Account.swift in Sources */,
 				3E39181F1B77FF6B00F72EC5 /* ModelService.swift in Sources */,
 				3E3918031B77FF6B00F72EC5 /* ItemServiceImpl.swift in Sources */,
+				3E3918E71B812E2300F72EC5 /* ArrayExtension.swift in Sources */,
 				3E39184B1B77FF6B00F72EC5 /* Service.swift in Sources */,
 				3E39184F1B77FF6B00F72EC5 /* ServiceBootstrap.swift in Sources */,
 				3E3918331B77FF6B00F72EC5 /* ParseServiceImpl.swift in Sources */,
@@ -999,6 +987,7 @@
 				3E3918041B77FF6B00F72EC5 /* ItemServiceImpl.swift in Sources */,
 				3E3917F41B77FF6B00F72EC5 /* GroupServiceImpl.swift in Sources */,
 				3E3917E41B77FF6B00F72EC5 /* Fields.swift in Sources */,
+				3E3918E61B812E2200F72EC5 /* ArrayExtension.swift in Sources */,
 				3E39183C1B77FF6B00F72EC5 /* StandardModelServiceImpl.swift in Sources */,
 				3E3917D41B77FF6B00F72EC5 /* Aggregate.swift in Sources */,
 				3E3918381B77FF6B00F72EC5 /* PFObjectConvertible.swift in Sources */,
@@ -1067,6 +1056,7 @@
 				3E3917E11B77FF6B00F72EC5 /* DeletedModel.swift in Sources */,
 				3E3918111B77FF6B00F72EC5 /* LocationService.swift in Sources */,
 				3E3918411B77FF6B00F72EC5 /* Type.swift in Sources */,
+				3E3918E81B812E2400F72EC5 /* ArrayExtension.swift in Sources */,
 				3E3918251B77FF6B00F72EC5 /* ModelType.swift in Sources */,
 				3E39183D1B77FF6B00F72EC5 /* StandardModelServiceImpl.swift in Sources */,
 				3E39181D1B77FF6B00F72EC5 /* Model.swift in Sources */,
@@ -1092,7 +1082,6 @@
 /* Begin XCBuildConfiguration section */
 		3E3917181B77F5C200F72EC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 785BC570FBB4E7D5E394BF80 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
@@ -1151,7 +1140,6 @@
 		};
 		3E3917191B77F5C200F72EC5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8FEB766091D70533BFD44AFE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
@@ -1203,7 +1191,7 @@
 		};
 		3E39171B1B77F5C200F72EC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 785BC570FBB4E7D5E394BF80 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = F9F28C53705EF970EAEC2427 /* Pods-FledgerCommon.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
@@ -1233,7 +1221,7 @@
 		};
 		3E39171C1B77F5C200F72EC5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8FEB766091D70533BFD44AFE /* Pods.release.xcconfig */;
+			baseConfigurationReference = 5B37E10E77DE0F02296AF4DE /* Pods-FledgerCommon.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
@@ -1262,7 +1250,6 @@
 		};
 		3E39171E1B77F5C200F72EC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 785BC570FBB4E7D5E394BF80 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1280,7 +1267,6 @@
 		};
 		3E39171F1B77F5C200F72EC5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8FEB766091D70533BFD44AFE /* Pods.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1294,7 +1280,7 @@
 		};
 		3E3917391B77F60D00F72EC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 785BC570FBB4E7D5E394BF80 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 5341BA08938CDD9EC1B76CE5 /* Pods-FledgerCommonMac.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1321,7 +1307,7 @@
 		};
 		3E39173A1B77F60D00F72EC5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8FEB766091D70533BFD44AFE /* Pods.release.xcconfig */;
+			baseConfigurationReference = 5F0D0202B828A8ED266AE36A /* Pods-FledgerCommonMac.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1342,7 +1328,6 @@
 		};
 		3E39173C1B77F60D00F72EC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 785BC570FBB4E7D5E394BF80 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1364,7 +1349,6 @@
 		};
 		3E39173D1B77F60D00F72EC5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8FEB766091D70533BFD44AFE /* Pods.release.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
