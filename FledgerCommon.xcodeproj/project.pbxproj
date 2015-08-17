@@ -188,6 +188,10 @@
 		3E3918E61B812E2200F72EC5 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3918631B780DDA00F72EC5 /* ArrayExtension.swift */; };
 		3E3918E71B812E2300F72EC5 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3918631B780DDA00F72EC5 /* ArrayExtension.swift */; };
 		3E3918E81B812E2400F72EC5 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3918631B780DDA00F72EC5 /* ArrayExtension.swift */; };
+		3E3919601B81466500F72EC5 /* LoginViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39195F1B81466500F72EC5 /* LoginViewHelper.swift */; };
+		3E3919611B81466500F72EC5 /* LoginViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39195F1B81466500F72EC5 /* LoginViewHelper.swift */; };
+		3E3919621B81466500F72EC5 /* LoginViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39195F1B81466500F72EC5 /* LoginViewHelper.swift */; };
+		3E3919631B81466500F72EC5 /* LoginViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39195F1B81466500F72EC5 /* LoginViewHelper.swift */; };
 		93165DA1C325CD809E9F46FB /* Pods_FledgerCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8D618CAA82545CBB9556F6 /* Pods_FledgerCommon.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -270,6 +274,7 @@
 		3E3918C01B7845D200F72EC5 /* data-lite.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "data-lite.sql"; path = "sql/data-lite.sql"; sourceTree = "<group>"; };
 		3E3918C11B7845D200F72EC5 /* data.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = data.sql; path = sql/data.sql; sourceTree = "<group>"; };
 		3E3918C21B7845D200F72EC5 /* schema.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = schema.sql; path = sql/schema.sql; sourceTree = "<group>"; };
+		3E39195F1B81466500F72EC5 /* LoginViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewHelper.swift; sourceTree = "<group>"; };
 		5341BA08938CDD9EC1B76CE5 /* Pods-FledgerCommonMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FledgerCommonMac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FledgerCommonMac/Pods-FledgerCommonMac.debug.xcconfig"; sourceTree = "<group>"; };
 		5B37E10E77DE0F02296AF4DE /* Pods-FledgerCommon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FledgerCommon.release.xcconfig"; path = "Pods/Target Support Files/Pods-FledgerCommon/Pods-FledgerCommon.release.xcconfig"; sourceTree = "<group>"; };
 		5F0D0202B828A8ED266AE36A /* Pods-FledgerCommonMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FledgerCommonMac.release.xcconfig"; path = "Pods/Target Support Files/Pods-FledgerCommonMac/Pods-FledgerCommonMac.release.xcconfig"; sourceTree = "<group>"; };
@@ -357,6 +362,7 @@
 		3E3917061B77F5C200F72EC5 /* FledgerCommon */ = {
 			isa = PBXGroup;
 			children = (
+				3E39195E1B81464E00F72EC5 /* controllers */,
 				3E39178F1B77FF6B00F72EC5 /* services */,
 				3E3918621B780DDA00F72EC5 /* extensions */,
 				3E3918CF1B7846D800F72EC5 /* sql */,
@@ -611,6 +617,14 @@
 				3E3918C21B7845D200F72EC5 /* schema.sql */,
 			);
 			name = sql;
+			sourceTree = "<group>";
+		};
+		3E39195E1B81464E00F72EC5 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3E39195F1B81466500F72EC5 /* LoginViewHelper.swift */,
+			);
+			name = controllers;
 			sourceTree = "<group>";
 		};
 		548A8B44A4420E988CEE97EE /* Frameworks */ = {
@@ -911,6 +925,7 @@
 				3E39184E1B77FF6B00F72EC5 /* ServiceBootstrap.swift in Sources */,
 				3E3917CA1B77FF6B00F72EC5 /* AccountService.swift in Sources */,
 				3E3917F61B77FF6B00F72EC5 /* Item.swift in Sources */,
+				3E3919601B81466500F72EC5 /* LoginViewHelper.swift in Sources */,
 				3E3918461B77FF6B00F72EC5 /* TypeServiceImpl.swift in Sources */,
 				3E3917EE1B77FF6B00F72EC5 /* GroupService.swift in Sources */,
 				3E3917C61B77FF6B00F72EC5 /* Account.swift in Sources */,
@@ -967,6 +982,7 @@
 				3E3918231B77FF6B00F72EC5 /* ModelType.swift in Sources */,
 				3E39183B1B77FF6B00F72EC5 /* StandardModelServiceImpl.swift in Sources */,
 				3E39181B1B77FF6B00F72EC5 /* Model.swift in Sources */,
+				3E3919611B81466500F72EC5 /* LoginViewHelper.swift in Sources */,
 				3E3917FB1B77FF6B00F72EC5 /* ItemFilters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1009,6 +1025,7 @@
 				3E3918501B77FF6B00F72EC5 /* ServiceBootstrap.swift in Sources */,
 				3E3917CC1B77FF6B00F72EC5 /* AccountService.swift in Sources */,
 				3E3917F81B77FF6B00F72EC5 /* Item.swift in Sources */,
+				3E3919621B81466500F72EC5 /* LoginViewHelper.swift in Sources */,
 				3E3918481B77FF6B00F72EC5 /* TypeServiceImpl.swift in Sources */,
 				3E3917F01B77FF6B00F72EC5 /* GroupService.swift in Sources */,
 				3E3917C81B77FF6B00F72EC5 /* Account.swift in Sources */,
@@ -1053,6 +1070,7 @@
 				3E39180D1B77FF6B00F72EC5 /* LocationAnnotation.swift in Sources */,
 				3E3918151B77FF6B00F72EC5 /* LocationServiceImpl.swift in Sources */,
 				3E3917D51B77FF6B00F72EC5 /* Aggregate.swift in Sources */,
+				3E3919631B81466500F72EC5 /* LoginViewHelper.swift in Sources */,
 				3E3917E11B77FF6B00F72EC5 /* DeletedModel.swift in Sources */,
 				3E3918111B77FF6B00F72EC5 /* LocationService.swift in Sources */,
 				3E3918411B77FF6B00F72EC5 /* Type.swift in Sources */,

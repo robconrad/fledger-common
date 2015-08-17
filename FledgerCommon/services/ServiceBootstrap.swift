@@ -10,7 +10,8 @@ import ParseOSX
 #endif
 
 public class ServiceBootstrap {
-
+    
+    private static var _preRegistered = false
     private static var _registered = false
 
     // safe from multi-initialization
@@ -22,12 +23,14 @@ public class ServiceBootstrap {
     }
     
     public static func preRegister() {
-        
-        // Initialize Parse.
-        Parse.setApplicationId("fjcMqJqBTJsHRsrDkuKk7wGuAMMTu1d4820IdBQg", clientKey: "hyiXQhwKd2aQvusxJuRliyxrKEhRx6Xx9gTndNaV")
-        
-        Services.register(ParseService.self, ParseServiceImpl())
-        
+        if !_preRegistered {
+            // Initialize Parse.
+            Parse.setApplicationId("fjcMqJqBTJsHRsrDkuKk7wGuAMMTu1d4820IdBQg", clientKey: "hyiXQhwKd2aQvusxJuRliyxrKEhRx6Xx9gTndNaV")
+            
+            Services.register(ParseService.self, ParseServiceImpl())
+            
+            _preRegistered = true
+        }
     }
 
     // allows forced reinitialization
