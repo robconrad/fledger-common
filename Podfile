@@ -7,7 +7,7 @@ end
 
 target :FledgerCommon do
     platform :ios, '8.4'
-    pod 'Parse', '1.8.0'
+    #pod 'Parse', '1.8.0'
     common_pods
 end
 
