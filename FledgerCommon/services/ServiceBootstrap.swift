@@ -13,6 +13,10 @@ public class ServiceBootstrap {
     
     private static var _preRegistered = false
     private static var _registered = false
+    
+    public static func isRegistered() -> Bool {
+        return _registered
+    }
 
     // safe from multi-initialization
     public static func registered() -> Bool {
