@@ -38,4 +38,8 @@ class AccountServiceImpl<T: Account>: MemoryModelServiceImpl<Account>, AccountSe
         return elements
     }
     
+    func withName(name: String) -> Account? {
+        return all().filter { $0.name == name }.first
+    }
+    
 }

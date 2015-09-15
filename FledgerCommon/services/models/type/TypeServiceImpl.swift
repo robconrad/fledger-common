@@ -44,4 +44,8 @@ class TypeServiceImpl<T: Type>: MemoryModelServiceImpl<Type>, TypeService {
         return withId(transferId)!
     }
     
+    func withName(name: String) -> Type? {
+        return all().filter { $0.name == name }.first
+    }
+    
 }

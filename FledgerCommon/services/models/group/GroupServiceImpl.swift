@@ -45,4 +45,8 @@ class GroupServiceImpl<T: Group>: MemoryModelServiceImpl<Group>, GroupService {
         return nil
     }
     
+    func withName(name: String) -> Group? {
+        return all().filter { $0.name == name }.first
+    }
+    
 }

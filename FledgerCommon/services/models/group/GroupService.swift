@@ -47,4 +47,6 @@ public protocol GroupService: Service {
 
     func withTypeId(id: Int64) -> Group?
     
+    func withName(name: String) -> Group?
+    
 }

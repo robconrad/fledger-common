@@ -45,4 +45,6 @@ public protocol AccountService: Service {
      END COPY PASTA FROM BASE ModelService
     **************************************/
     
+    func withName(name: String) -> Account?
+    
 }

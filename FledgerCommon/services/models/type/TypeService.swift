@@ -49,4 +49,6 @@ public protocol TypeService: Service {
     
     func transferType() -> Type
     
+    func withName(name: String) -> Type?
+    
 }
