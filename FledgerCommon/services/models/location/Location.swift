@@ -25,7 +25,7 @@ public func ==(a: Location, b: Location) -> Bool {
         && a.distance == b.distance
 }
 
-public class Location: Model, Printable {
+public class Location: Model, PFModel, Printable {
     
     public let modelType = ModelType.Location
     
@@ -36,7 +36,7 @@ public class Location: Model, Printable {
     public let address: String
     public let distance: Double?
     
-    public let pf: PFObject?
+    let pf: PFObject?
     
     public var description: String {
         return "Location(id: \(id), name: \(name), coordinate: \(coordinate), address: \(address), distance: \(distance), pf: \(pf))"
@@ -89,7 +89,7 @@ public class Location: Model, Printable {
         ]
     }
     
-    public func toPFObject() -> PFObject? {
+    func toPFObject() -> PFObject? {
         if id != nil {
             let npf = PFObject(withoutDataWithClassName: modelType.rawValue, objectId: pf?.objectId ?? parse()?.parseId)
             npf["name"] = name ?? NSNull()
@@ -101,7 +101,7 @@ public class Location: Model, Printable {
         return nil
     }
     
-    public func parse() -> ParseModel? {
+    func parse() -> ParseModel? {
         return id.flatMap { ParseSvc().withModelId($0, modelType) }
     }
     

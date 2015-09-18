@@ -9,13 +9,13 @@
 import Foundation
 import SQLite
 
-public class ParseFilters: Filters {
+class ParseFilters: Filters {
 
-    public var modelType: ModelType?
-    public var synced: Bool?
-    public var deleted: Bool?
+    var modelType: ModelType?
+    var synced: Bool?
+    var deleted: Bool?
     
-    public override func toQuery(var query: Query, limit: Bool = true, table: Query? = nil) -> Query {
+    override func toQuery(var query: Query, limit: Bool = true, table: Query? = nil) -> Query {
         
         query = super.toQuery(query, limit: limit)
         

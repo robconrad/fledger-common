@@ -17,22 +17,6 @@ import ParseOSX
 
 class ParseServiceImpl: ParseService {
     
-    private var syncListeners = Set<ParseSyncListener>()
-    
-    private let syncToRemoteQueue: NSOperationQueue = {
-        var q = NSOperationQueue()
-        q.name = "ParseService SyncTo Background Queue"
-        q.maxConcurrentOperationCount = 1
-        return q
-        }()
-    
-    private let syncFromRemoteQueue: NSOperationQueue = {
-        var q = NSOperationQueue()
-        q.name = "ParseService SyncFrom Background Queue"
-        q.maxConcurrentOperationCount = 1
-        return q
-    }()
-    
     func select(filters: ParseFilters?) -> [ParseModel] {
         var query = DatabaseSvc().parse
         if let f = filters {
@@ -112,49 +96,7 @@ class ParseServiceImpl: ParseService {
         
         return result
     }
-    
-    func syncAllToRemote() {
-        // order matters because of FK resolution
-        LocationSvc().syncToRemote()
-        GroupSvc().syncToRemote()
-        TypeSvc().syncToRemote()
-        AccountSvc().syncToRemote()
-        ItemSvc().syncToRemote()
-    }
-    
-    func syncAllToRemoteInBackground() {
-        syncToRemoteQueue.cancelAllOperations()
-        syncToRemoteQueue.addOperation(SyncAllToRemoteOperation())
-    }
-    
-    func syncAllFromRemote() {
-        // order matters because of FK resolution
-        LocationSvc().syncFromRemote()
-        GroupSvc().syncFromRemote()
-        TypeSvc().syncFromRemote()
-        AccountSvc().syncFromRemote()
-        ItemSvc().syncFromRemote()
-    }
-    
-    func syncAllFromRemoteInBackground() {
-        syncFromRemoteQueue.cancelAllOperations()
-        syncFromRemoteQueue.addOperation(SyncAllFromRemoteOperation())
-    }
-    
-    func notifySyncListeners(syncType: ParseSyncType) {
-        for listener in syncListeners {
-            listener.notify(syncType)
-        }
-    }
-    
-    func registerSyncListener(listener: ParseSyncListener) {
-        syncListeners.insert(listener)
-    }
-    
-    func ungregisterSyncListener(listener: ParseSyncListener) {
-        syncListeners.remove(listener)
-    }
-    
+        
     func isLoggedIn() -> Bool {
         return PFUser.currentUser() != nil
     }
@@ -176,24 +118,4 @@ class ParseServiceImpl: ParseService {
         return user.signUp()
     }
     
-}
-
-class SyncAllToRemoteOperation: NSOperation {
-    override func main() {
-        if self.cancelled {
-            return
-        }
-        ParseSvc().syncAllToRemote()
-        ParseSvc().notifySyncListeners(.To)
-    }
-}
-
-class SyncAllFromRemoteOperation: NSOperation {
-    override func main() {
-        if self.cancelled {
-            return
-        }
-        ParseSvc().syncAllFromRemote()
-        ParseSvc().notifySyncListeners(.From)
-    }
 }

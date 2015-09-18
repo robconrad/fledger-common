@@ -15,7 +15,7 @@ import ParseOSX
 #endif
 
 
-class StandardModelServiceImpl<M: Model>: ModelService {
+class StandardModelServiceImpl<M: PFModel>: ModelService {
     
     func modelType() -> ModelType {
         fatalError(__FUNCTION__ + " must be implemented")
@@ -119,7 +119,7 @@ class StandardModelServiceImpl<M: Model>: ModelService {
         }
         
         if !fromRemote {
-            ParseSvc().syncAllToRemoteInBackground()
+            UserSvc().syncAllToRemoteInBackground()
         }
         
         return id
@@ -165,7 +165,7 @@ class StandardModelServiceImpl<M: Model>: ModelService {
         }
         
         if !fromRemote {
-            ParseSvc().syncAllToRemoteInBackground()
+            UserSvc().syncAllToRemoteInBackground()
         }
         
         return success
@@ -217,7 +217,7 @@ class StandardModelServiceImpl<M: Model>: ModelService {
         }
         
         if !fromRemote {
-            ParseSvc().syncAllToRemoteInBackground()
+            UserSvc().syncAllToRemoteInBackground()
         }
         
         return success

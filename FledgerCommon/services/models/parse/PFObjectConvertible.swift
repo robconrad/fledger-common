@@ -14,7 +14,7 @@ import ParseOSX
 #endif
 
 
-public protocol PFObjectConvertible {
+protocol PFObjectConvertible {
     
     func toPFObject() -> PFObject?
     

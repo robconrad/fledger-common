@@ -31,6 +31,7 @@ public class ServiceBootstrap {
             // Initialize Parse.
             Parse.setApplicationId("fjcMqJqBTJsHRsrDkuKk7wGuAMMTu1d4820IdBQg", clientKey: "hyiXQhwKd2aQvusxJuRliyxrKEhRx6Xx9gTndNaV")
             
+            Services.register(UserService.self, UserServiceImpl())
             Services.register(ParseService.self, ParseServiceImpl())
             
             _preRegistered = true
@@ -60,8 +61,13 @@ public class ServiceBootstrap {
 }
 
 // sugared service locators
-public func DatabaseSvc()      -> DatabaseService      { return Services.get(DatabaseService.self)     }
-public func ParseSvc()         -> ParseService         { return Services.get(ParseService.self)        }
+
+// private services (commons only)
+func ParseSvc()                -> ParseService         { return Services.get(ParseService.self)        }
+func DatabaseSvc()             -> DatabaseService      { return Services.get(DatabaseService.self)     }
+
+// public services (available to clients)
+public func UserSvc()          -> UserService          { return Services.get(UserService.self)         }
 public func ItemSvc()          -> ItemService          { return Services.get(ItemService.self)         }
 public func AccountSvc()       -> AccountService       { return Services.get(AccountService.self)      }
 public func TypeSvc()          -> TypeService          { return Services.get(TypeService.self)         }

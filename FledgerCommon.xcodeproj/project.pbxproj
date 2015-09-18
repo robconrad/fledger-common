@@ -192,6 +192,22 @@
 		3E3919611B81466500F72EC5 /* LoginViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39195F1B81466500F72EC5 /* LoginViewHelper.swift */; };
 		3E3919621B81466500F72EC5 /* LoginViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39195F1B81466500F72EC5 /* LoginViewHelper.swift */; };
 		3E3919631B81466500F72EC5 /* LoginViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39195F1B81466500F72EC5 /* LoginViewHelper.swift */; };
+		3EBA5BB31BACB66500BB5C5A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA5BB21BACB66500BB5C5A /* UserService.swift */; };
+		3EBA5BB51BACB6AC00BB5C5A /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA5BB41BACB6AC00BB5C5A /* UserType.swift */; };
+		3EBA5BB71BACB8D900BB5C5A /* UserServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA5BB61BACB8D900BB5C5A /* UserServiceImpl.swift */; };
+		3EBA5BB81BACB8D900BB5C5A /* UserServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA5BB61BACB8D900BB5C5A /* UserServiceImpl.swift */; };
+		3EBA5BB91BACB8DE00BB5C5A /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA5BB41BACB6AC00BB5C5A /* UserType.swift */; };
+		3EBA5BBA1BACB8E100BB5C5A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA5BB21BACB66500BB5C5A /* UserService.swift */; };
+		3EBA5BBB1BACBCC500BB5C5A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA5BB21BACB66500BB5C5A /* UserService.swift */; };
+		3EBA5BBC1BACBCC500BB5C5A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA5BB21BACB66500BB5C5A /* UserService.swift */; };
+		3EBA5BBD1BACBCCA00BB5C5A /* UserServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA5BB61BACB8D900BB5C5A /* UserServiceImpl.swift */; };
+		3EBA5BBE1BACBCCB00BB5C5A /* UserServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA5BB61BACB8D900BB5C5A /* UserServiceImpl.swift */; };
+		3EBA5BBF1BACBCCD00BB5C5A /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA5BB41BACB6AC00BB5C5A /* UserType.swift */; };
+		3EBA5BC01BACBCCE00BB5C5A /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA5BB41BACB6AC00BB5C5A /* UserType.swift */; };
+		3EBA5BC21BACC1B100BB5C5A /* PFModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA5BC11BACC1B100BB5C5A /* PFModel.swift */; };
+		3EBA5BC31BACC1B100BB5C5A /* PFModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA5BC11BACC1B100BB5C5A /* PFModel.swift */; };
+		3EBA5BC41BACC23C00BB5C5A /* PFModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA5BC11BACC1B100BB5C5A /* PFModel.swift */; };
+		3EBA5BC51BACC23D00BB5C5A /* PFModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA5BC11BACC1B100BB5C5A /* PFModel.swift */; };
 		93165DA1C325CD809E9F46FB /* Pods_FledgerCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8D618CAA82545CBB9556F6 /* Pods_FledgerCommon.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -275,6 +291,10 @@
 		3E3918C11B7845D200F72EC5 /* data.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = data.sql; path = sql/data.sql; sourceTree = "<group>"; };
 		3E3918C21B7845D200F72EC5 /* schema.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = schema.sql; path = sql/schema.sql; sourceTree = "<group>"; };
 		3E39195F1B81466500F72EC5 /* LoginViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewHelper.swift; sourceTree = "<group>"; };
+		3EBA5BB21BACB66500BB5C5A /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		3EBA5BB41BACB6AC00BB5C5A /* UserType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
+		3EBA5BB61BACB8D900BB5C5A /* UserServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserServiceImpl.swift; sourceTree = "<group>"; };
+		3EBA5BC11BACC1B100BB5C5A /* PFModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PFModel.swift; sourceTree = "<group>"; };
 		5341BA08938CDD9EC1B76CE5 /* Pods-FledgerCommonMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FledgerCommonMac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FledgerCommonMac/Pods-FledgerCommonMac.debug.xcconfig"; sourceTree = "<group>"; };
 		5B37E10E77DE0F02296AF4DE /* Pods-FledgerCommon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FledgerCommon.release.xcconfig"; path = "Pods/Target Support Files/Pods-FledgerCommon/Pods-FledgerCommon.release.xcconfig"; sourceTree = "<group>"; };
 		5F0D0202B828A8ED266AE36A /* Pods-FledgerCommonMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FledgerCommonMac.release.xcconfig"; path = "Pods/Target Support Files/Pods-FledgerCommonMac/Pods-FledgerCommonMac.release.xcconfig"; sourceTree = "<group>"; };
@@ -448,6 +468,7 @@
 		3E3917921B77FF6B00F72EC5 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				3EBA5BB11BACB65400BB5C5A /* user */,
 				3E3917931B77FF6B00F72EC5 /* account */,
 				3E3917971B77FF6B00F72EC5 /* aggregate */,
 				3E39179E1B77FF6B00F72EC5 /* group */,
@@ -458,11 +479,11 @@
 				3E39179B1B77FF6B00F72EC5 /* DeletedModel.swift */,
 				3E39179C1B77FF6B00F72EC5 /* Fields.swift */,
 				3E39179D1B77FF6B00F72EC5 /* Filters.swift */,
-				3E3917AC1B77FF6B00F72EC5 /* MemoryModelServiceImpl.swift */,
 				3E3917AD1B77FF6B00F72EC5 /* Model.swift */,
-				3E3917AE1B77FF6B00F72EC5 /* ModelService.swift */,
 				3E3917AF1B77FF6B00F72EC5 /* ModelType.swift */,
+				3E3917AE1B77FF6B00F72EC5 /* ModelService.swift */,
 				3E3917B61B77FF6B00F72EC5 /* StandardModelServiceImpl.swift */,
+				3E3917AC1B77FF6B00F72EC5 /* MemoryModelServiceImpl.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -524,6 +545,7 @@
 			children = (
 				3E3917B11B77FF6B00F72EC5 /* ParseFilters.swift */,
 				3E3917B21B77FF6B00F72EC5 /* ParseModel.swift */,
+				3EBA5BC11BACC1B100BB5C5A /* PFModel.swift */,
 				3E3917B31B77FF6B00F72EC5 /* ParseService.swift */,
 				3E3917B41B77FF6B00F72EC5 /* ParseServiceImpl.swift */,
 				3E3917B51B77FF6B00F72EC5 /* PFObjectConvertible.swift */,
@@ -625,6 +647,16 @@
 				3E39195F1B81466500F72EC5 /* LoginViewHelper.swift */,
 			);
 			name = controllers;
+			sourceTree = "<group>";
+		};
+		3EBA5BB11BACB65400BB5C5A /* user */ = {
+			isa = PBXGroup;
+			children = (
+				3EBA5BB21BACB66500BB5C5A /* UserService.swift */,
+				3EBA5BB61BACB8D900BB5C5A /* UserServiceImpl.swift */,
+				3EBA5BB41BACB6AC00BB5C5A /* UserType.swift */,
+			);
+			name = user;
 			sourceTree = "<group>";
 		};
 		548A8B44A4420E988CEE97EE /* Frameworks */ = {
@@ -893,6 +925,7 @@
 			files = (
 				3E3917FE1B77FF6B00F72EC5 /* ItemService.swift in Sources */,
 				3E3918221B77FF6B00F72EC5 /* ModelType.swift in Sources */,
+				3EBA5BB51BACB6AC00BB5C5A /* UserType.swift in Sources */,
 				3E3917FA1B77FF6B00F72EC5 /* ItemFilters.swift in Sources */,
 				3E3918121B77FF6B00F72EC5 /* LocationServiceImpl.swift in Sources */,
 				3E3918261B77FF6B00F72EC5 /* ParseFilters.swift in Sources */,
@@ -921,6 +954,7 @@
 				3E39183E1B77FF6B00F72EC5 /* Type.swift in Sources */,
 				3E39180E1B77FF6B00F72EC5 /* LocationService.swift in Sources */,
 				3E3918521B77FF6B00F72EC5 /* Services.swift in Sources */,
+				3EBA5BC21BACC1B100BB5C5A /* PFModel.swift in Sources */,
 				3E39182E1B77FF6B00F72EC5 /* ParseService.swift in Sources */,
 				3E39184E1B77FF6B00F72EC5 /* ServiceBootstrap.swift in Sources */,
 				3E3917CA1B77FF6B00F72EC5 /* AccountService.swift in Sources */,
@@ -928,8 +962,10 @@
 				3E3919601B81466500F72EC5 /* LoginViewHelper.swift in Sources */,
 				3E3918461B77FF6B00F72EC5 /* TypeServiceImpl.swift in Sources */,
 				3E3917EE1B77FF6B00F72EC5 /* GroupService.swift in Sources */,
+				3EBA5BB71BACB8D900BB5C5A /* UserServiceImpl.swift in Sources */,
 				3E3917C61B77FF6B00F72EC5 /* Account.swift in Sources */,
 				3E3917DA1B77FF6B00F72EC5 /* AggregateServiceImpl.swift in Sources */,
+				3EBA5BB31BACB66500BB5C5A /* UserService.swift in Sources */,
 				3E39180A1B77FF6B00F72EC5 /* LocationAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -940,6 +976,7 @@
 			files = (
 				3E3917F71B77FF6B00F72EC5 /* Item.swift in Sources */,
 				3E39189A1B783B8600F72EC5 /* ParseServiceMock.swift in Sources */,
+				3EBA5BBD1BACBCCA00BB5C5A /* UserServiceImpl.swift in Sources */,
 				3E3918271B77FF6B00F72EC5 /* ParseFilters.swift in Sources */,
 				3E3918371B77FF6B00F72EC5 /* PFObjectConvertible.swift in Sources */,
 				3E3917E31B77FF6B00F72EC5 /* Fields.swift in Sources */,
@@ -960,12 +997,15 @@
 				3E3917BF1B77FF6B00F72EC5 /* DatabaseService.swift in Sources */,
 				3E3918981B783B8600F72EC5 /* ItemServiceMock.swift in Sources */,
 				3E3918071B77FF6B00F72EC5 /* Location.swift in Sources */,
+				3EBA5BC41BACC23C00BB5C5A /* PFModel.swift in Sources */,
 				3E3917D71B77FF6B00F72EC5 /* AggregateService.swift in Sources */,
+				3EBA5BBC1BACBCC500BB5C5A /* UserService.swift in Sources */,
 				3E3918471B77FF6B00F72EC5 /* TypeServiceImpl.swift in Sources */,
 				3E3917DB1B77FF6B00F72EC5 /* AggregateServiceImpl.swift in Sources */,
 				3E3917F31B77FF6B00F72EC5 /* GroupServiceImpl.swift in Sources */,
 				3E3918961B783B8600F72EC5 /* DatabaseServiceMock.swift in Sources */,
 				3E3917C71B77FF6B00F72EC5 /* Account.swift in Sources */,
+				3EBA5BBF1BACBCCD00BB5C5A /* UserType.swift in Sources */,
 				3E39181F1B77FF6B00F72EC5 /* ModelService.swift in Sources */,
 				3E3918031B77FF6B00F72EC5 /* ItemServiceImpl.swift in Sources */,
 				3E3918E71B812E2300F72EC5 /* ArrayExtension.swift in Sources */,
@@ -993,6 +1033,7 @@
 			files = (
 				3E3918001B77FF6B00F72EC5 /* ItemService.swift in Sources */,
 				3E3918241B77FF6B00F72EC5 /* ModelType.swift in Sources */,
+				3EBA5BB91BACB8DE00BB5C5A /* UserType.swift in Sources */,
 				3E3917FC1B77FF6B00F72EC5 /* ItemFilters.swift in Sources */,
 				3E3918141B77FF6B00F72EC5 /* LocationServiceImpl.swift in Sources */,
 				3E3918281B77FF6B00F72EC5 /* ParseFilters.swift in Sources */,
@@ -1008,7 +1049,9 @@
 				3E3917D41B77FF6B00F72EC5 /* Aggregate.swift in Sources */,
 				3E3918381B77FF6B00F72EC5 /* PFObjectConvertible.swift in Sources */,
 				3E39184C1B77FF6B00F72EC5 /* Service.swift in Sources */,
+				3EBA5BBA1BACB8E100BB5C5A /* UserService.swift in Sources */,
 				3E3917E81B77FF6B00F72EC5 /* Filters.swift in Sources */,
+				3EBA5BB81BACB8D900BB5C5A /* UserServiceImpl.swift in Sources */,
 				3E3918201B77FF6B00F72EC5 /* ModelService.swift in Sources */,
 				3E3918341B77FF6B00F72EC5 /* ParseServiceImpl.swift in Sources */,
 				3E3918181B77FF6B00F72EC5 /* MemoryModelServiceImpl.swift in Sources */,
@@ -1019,6 +1062,7 @@
 				3E3917E01B77FF6B00F72EC5 /* DeletedModel.swift in Sources */,
 				3E39182C1B77FF6B00F72EC5 /* ParseModel.swift in Sources */,
 				3E3918401B77FF6B00F72EC5 /* Type.swift in Sources */,
+				3EBA5BC31BACC1B100BB5C5A /* PFModel.swift in Sources */,
 				3E3918101B77FF6B00F72EC5 /* LocationService.swift in Sources */,
 				3E3918541B77FF6B00F72EC5 /* Services.swift in Sources */,
 				3E3918301B77FF6B00F72EC5 /* ParseService.swift in Sources */,
@@ -1052,6 +1096,7 @@
 				3E3918011B77FF6B00F72EC5 /* ItemService.swift in Sources */,
 				3E3917D11B77FF6B00F72EC5 /* AccountServiceImpl.swift in Sources */,
 				3E3918191B77FF6B00F72EC5 /* MemoryModelServiceImpl.swift in Sources */,
+				3EBA5BBB1BACBCC500BB5C5A /* UserService.swift in Sources */,
 				3E39182D1B77FF6B00F72EC5 /* ParseModel.swift in Sources */,
 				3E3917C51B77FF6B00F72EC5 /* DatabaseServiceImpl.swift in Sources */,
 				3E3917C11B77FF6B00F72EC5 /* DatabaseService.swift in Sources */,
@@ -1071,13 +1116,16 @@
 				3E3918151B77FF6B00F72EC5 /* LocationServiceImpl.swift in Sources */,
 				3E3917D51B77FF6B00F72EC5 /* Aggregate.swift in Sources */,
 				3E3919631B81466500F72EC5 /* LoginViewHelper.swift in Sources */,
+				3EBA5BC01BACBCCE00BB5C5A /* UserType.swift in Sources */,
 				3E3917E11B77FF6B00F72EC5 /* DeletedModel.swift in Sources */,
 				3E3918111B77FF6B00F72EC5 /* LocationService.swift in Sources */,
 				3E3918411B77FF6B00F72EC5 /* Type.swift in Sources */,
 				3E3918E81B812E2400F72EC5 /* ArrayExtension.swift in Sources */,
+				3EBA5BBE1BACBCCB00BB5C5A /* UserServiceImpl.swift in Sources */,
 				3E3918251B77FF6B00F72EC5 /* ModelType.swift in Sources */,
 				3E39183D1B77FF6B00F72EC5 /* StandardModelServiceImpl.swift in Sources */,
 				3E39181D1B77FF6B00F72EC5 /* Model.swift in Sources */,
+				3EBA5BC51BACC23D00BB5C5A /* PFModel.swift in Sources */,
 				3E3917FD1B77FF6B00F72EC5 /* ItemFilters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

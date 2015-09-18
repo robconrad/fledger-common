@@ -28,6 +28,10 @@ class AccountServiceMock: AccountService {
         return nil
     }
     
+    func withName(name: String) -> Account? {
+        return nil
+    }
+    
     func all() -> [Account] {
         return []
     }

@@ -85,7 +85,7 @@ public class LoginViewHelper {
     }
     
     private func handleSuccess() {
-        // services can't be registered until a PFUser is logged in
+        // services can't be registered until a User is logged in
         ServiceBootstrap.register()
         delegate.notifyLoginResult(true)
     }

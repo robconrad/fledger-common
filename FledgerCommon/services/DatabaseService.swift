@@ -9,7 +9,7 @@
 import Foundation
 import SQLite
 
-public protocol DatabaseService: Service {
+protocol DatabaseService: Service {
     
     var db: Database { get }
     

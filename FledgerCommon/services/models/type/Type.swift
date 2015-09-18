@@ -21,7 +21,7 @@ public func ==(a: Type, b: Type) -> Bool {
         && a.name == b.name
 }
 
-public class Type: Model, Printable {
+public class Type: Model, PFModel, Printable {
     
     public let modelType = ModelType.Typ
     
@@ -30,7 +30,7 @@ public class Type: Model, Printable {
     
     public let name: String
     
-    public let pf: PFObject?
+    let pf: PFObject?
     
     public var description: String {
         return "Type(id: \(id), groupId: \(groupId), name: \(name), pf: \(pf))"
@@ -65,7 +65,7 @@ public class Type: Model, Printable {
         ]
     }
     
-    public func toPFObject() -> PFObject? {
+    func toPFObject() -> PFObject? {
         if let myId = id, myGroupId = GroupSvc().withId(groupId)?.parse()!.parseId {
             let npf = PFObject(withoutDataWithClassName: modelType.rawValue, objectId: pf?.objectId ?? parse()?.parseId)
             npf["name"] = name
@@ -75,7 +75,7 @@ public class Type: Model, Printable {
         return nil
     }
     
-    public func parse() -> ParseModel? {
+    func parse() -> ParseModel? {
         return id.flatMap { ParseSvc().withModelId($0, modelType) }
     }
     

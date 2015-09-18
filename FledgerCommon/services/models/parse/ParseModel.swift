@@ -10,23 +10,23 @@ import Foundation
 import SQLite
 
 
-// called ParseModel rather than Parse because Parse is taken by the Parse library
-public class ParseModel: Printable {
+// called ParseModel rather than 'Parse' because 'Parse' is taken by the Parse library
+class ParseModel: Printable {
     
-    public let id: Int64
-    public let model: ModelType
-    public let modelId: Int64
+    let id: Int64
+    let model: ModelType
+    let modelId: Int64
     
-    public let parseId: String? // can only come from parse
-    public let synced: Bool
-    public let deleted: Bool
-    public let updatedAt: NSDate? // can only come from parse
+    let parseId: String? // can only come from parse
+    let synced: Bool
+    let deleted: Bool
+    let updatedAt: NSDate? // can only come from parse
     
-    public var description: String {
+    var description: String {
         return "ParseModel(id: \(id), model: \(model), modelId: \(modelId), parseId: \(parseId), synced: \(synced), deleted: \(deleted), updatedAt: \(updatedAt))"
     }
     
-    public required init(model: ModelType, id: Int64, modelId: Int64, parseId: String?, synced: Bool, deleted: Bool, updatedAt: NSDate?) {
+    required init(model: ModelType, id: Int64, modelId: Int64, parseId: String?, synced: Bool, deleted: Bool, updatedAt: NSDate?) {
         self.id = id
         self.model = model
         self.modelId = modelId
@@ -36,7 +36,7 @@ public class ParseModel: Printable {
         self.updatedAt = updatedAt
     }
     
-    public convenience init(row: Row) {
+    convenience init(row: Row) {
         self.init(
             model: ModelType(rawValue: row.get(Fields.model))!,
             id: row.get(Fields.id),

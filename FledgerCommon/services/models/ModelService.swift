@@ -15,7 +15,7 @@ import ParseOSX
 
 protocol ModelService: Service {
     
-    typealias T: Model
+    typealias T: PFModel
     
     /*************************************
      Note that all methods in ModelService are copy/pasted into all 

@@ -20,7 +20,7 @@ public func ==(a: Group, b: Group) -> Bool {
         && a.name == b.name
 }
 
-public class Group: Model, Printable {
+public class Group: Model, PFModel, Printable {
     
     public let modelType = ModelType.Group
     
@@ -28,7 +28,7 @@ public class Group: Model, Printable {
     
     public let name: String
     
-    public let pf: PFObject?
+    let pf: PFObject?
     
     public var description: String {
         return "Group(id: \(id), name: \(name), pf: \(pf))"
@@ -59,7 +59,7 @@ public class Group: Model, Printable {
         ]
     }
     
-    public func toPFObject() -> PFObject? {
+    func toPFObject() -> PFObject? {
         if id != nil {
             let npf = PFObject(withoutDataWithClassName: modelType.rawValue, objectId: pf?.objectId ?? parse()?.parseId)
             npf["name"] = name
@@ -68,7 +68,7 @@ public class Group: Model, Printable {
         return nil
     }
     
-    public func parse() -> ParseModel? {
+    func parse() -> ParseModel? {
         return id.flatMap { ParseSvc().withModelId($0, modelType) }
     }
     

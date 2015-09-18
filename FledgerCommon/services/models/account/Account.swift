@@ -22,7 +22,7 @@ public func ==(a: Account, b: Account) -> Bool {
         && a.inactive == b.inactive
 }
 
-public class Account: Model, Printable {
+public class Account: Model, PFModel, Printable {
     
     public let modelType = ModelType.Account
     
@@ -32,7 +32,7 @@ public class Account: Model, Printable {
     public let priority: Int
     public let inactive: Bool
     
-    public let pf: PFObject?
+    let pf: PFObject?
     
     public var description: String {
         return "Account(id: \(id), name: \(name), priority: \(priority), inactive: \(inactive), pf: \(pf))"
@@ -71,7 +71,7 @@ public class Account: Model, Printable {
         ]
     }
     
-    public func toPFObject() -> PFObject? {
+    func toPFObject() -> PFObject? {
         if id != nil {
             let npf = PFObject(withoutDataWithClassName: modelType.rawValue, objectId: pf?.objectId ?? parse()?.parseId)
             npf["name"] = name
@@ -82,7 +82,7 @@ public class Account: Model, Printable {
         return nil
     }
     
-    public func parse() -> ParseModel? {
+    func parse() -> ParseModel? {
         return id.flatMap { ParseSvc().withModelId($0, modelType) }
     }
     

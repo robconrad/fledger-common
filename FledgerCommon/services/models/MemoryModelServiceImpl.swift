@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 TwoSpec Inc. All rights reserved.
 //
 
-class MemoryModelServiceImpl<M: Model>: StandardModelServiceImpl<M> {
+class MemoryModelServiceImpl<M: PFModel>: StandardModelServiceImpl<M> {
     
     // return all managed models of the type
     internal var _allArray: [M]?

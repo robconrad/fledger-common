@@ -26,7 +26,7 @@ public func ==(a: Item, b: Item) -> Bool {
         && a.comments == b.comments
 }
 
-public class Item: Model, Printable {
+public class Item: Model, PFModel, Printable {
     
     public let modelType = ModelType.Item
     
@@ -38,7 +38,7 @@ public class Item: Model, Printable {
     public let date: NSDate
     public let comments: String
     
-    public let pf: PFObject?
+    let pf: PFObject?
     
     public var description: String {
         return "Item(id: \(id), accountId: \(accountId), typeId: \(typeId), locationId: \(locationId), amount: \(amount), date: \(date), comments: \(comments), pf: \(pf))"
@@ -89,7 +89,7 @@ public class Item: Model, Printable {
         ]
     }
     
-    public func toPFObject() -> PFObject? {
+    func toPFObject() -> PFObject? {
         if let myId = id,
             parseAccountId = account().parse()!.parseId,
             parseTypeId = type().parse()!.parseId {
@@ -110,7 +110,7 @@ public class Item: Model, Printable {
         return nil
     }
     
-    public func parse() -> ParseModel? {
+    func parse() -> ParseModel? {
         return id.flatMap { ParseSvc().withModelId($0, modelType) }
     }
     

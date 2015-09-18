@@ -39,16 +39,6 @@ class ParseServiceMock: ParseService {
         return nil
     }
     
-    func syncAllToRemote() {}
-    func syncAllToRemoteInBackground() {}
-    
-    func syncAllFromRemote() {}
-    func syncAllFromRemoteInBackground() {}
-    
-    func notifySyncListeners(syncType: ParseSyncType) {}
-    func registerSyncListener(listener: ParseSyncListener) {}
-    func ungregisterSyncListener(listener: ParseSyncListener) {}
-    
     func isLoggedIn() -> Bool {
         return true
     }
