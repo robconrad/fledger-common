@@ -26,7 +26,7 @@ public func ==(a: Item, b: Item) -> Bool {
         && a.comments == b.comments
 }
 
-public class Item: Model, PFModel, Printable {
+public class Item: Model, PFModel, SqlModel, Printable {
     
     public let modelType = ModelType.Item
     
@@ -55,7 +55,7 @@ public class Item: Model, PFModel, Printable {
         self.pf = pf
     }
     
-    public convenience init(row: Row) {
+    convenience init(row: Row) {
         self.init(
             id: row.get(DatabaseSvc().items[Fields.id]),
             accountId: row.get(Fields.accountId),
@@ -66,7 +66,7 @@ public class Item: Model, PFModel, Printable {
             comments: row.get(Fields.comments))
     }
     
-    public convenience init(pf: PFObject) {
+    convenience init(pf: PFObject) {
         self.init(
             id: pf.objectId.flatMap { ParseSvc().withParseId($0, ModelType.Item) }?.modelId,
             accountId: ParseSvc().withParseId(pf["accountId"] as! String, ModelType.Account)!.modelId,
@@ -78,7 +78,7 @@ public class Item: Model, PFModel, Printable {
             pf: pf)
     }
     
-    public func toSetters() -> [Setter] {
+    func toSetters() -> [Setter] {
         return [
             Fields.accountId <- accountId,
             Fields.typeId <- typeId,

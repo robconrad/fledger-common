@@ -20,7 +20,7 @@ public func ==(a: Group, b: Group) -> Bool {
         && a.name == b.name
 }
 
-public class Group: Model, PFModel, Printable {
+public class Group: Model, PFModel, SqlModel, Printable {
     
     public let modelType = ModelType.Group
     
@@ -40,20 +40,20 @@ public class Group: Model, PFModel, Printable {
         self.pf = pf
     }
     
-    public convenience init(row: Row) {
+    convenience init(row: Row) {
         self.init(
             id: row.get(Fields.id),
             name: row.get(Fields.name))
     }
     
-    public convenience init(pf: PFObject) {
+    convenience init(pf: PFObject) {
         self.init(
             id: pf.objectId.flatMap { ParseSvc().withParseId($0, ModelType.Group) }?.modelId,
             name: pf["name"] as! String,
             pf: pf)
     }
     
-    public func toSetters() -> [Setter] {
+    func toSetters() -> [Setter] {
         return [
             Fields.name <- name
         ]

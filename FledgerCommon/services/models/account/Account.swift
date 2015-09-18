@@ -22,7 +22,7 @@ public func ==(a: Account, b: Account) -> Bool {
         && a.inactive == b.inactive
 }
 
-public class Account: Model, PFModel, Printable {
+public class Account: Model, PFModel, SqlModel, Printable {
     
     public let modelType = ModelType.Account
     
@@ -46,7 +46,7 @@ public class Account: Model, PFModel, Printable {
         self.pf = pf
     }
     
-    public convenience init(row: Row) {
+    convenience init(row: Row) {
         self.init(
             id: row.get(Fields.id),
             name: row.get(Fields.name),
@@ -54,7 +54,7 @@ public class Account: Model, PFModel, Printable {
             inactive: row.get(Fields.inactive))
     }
     
-    public convenience init(pf: PFObject) {
+    convenience init(pf: PFObject) {
         self.init(
             id: pf.objectId.flatMap { ParseSvc().withParseId($0, ModelType.Account) }?.modelId,
             name: pf["name"] as! String,
@@ -63,7 +63,7 @@ public class Account: Model, PFModel, Printable {
             pf: pf)
     }
     
-    public func toSetters() -> [Setter] {
+    func toSetters() -> [Setter] {
         return [
             Fields.name <- name,
             Fields.priority <- priority,

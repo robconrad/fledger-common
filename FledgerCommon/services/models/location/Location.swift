@@ -25,7 +25,7 @@ public func ==(a: Location, b: Location) -> Bool {
         && a.distance == b.distance
 }
 
-public class Location: Model, PFModel, Printable {
+public class Location: Model, PFModel, SqlModel, Printable {
     
     public let modelType = ModelType.Location
     
@@ -61,7 +61,7 @@ public class Location: Model, PFModel, Printable {
             pf: pf)
     }
     
-    public convenience init(row: Row) {
+    convenience init(row: Row) {
         self.init(
             id: row.get(Fields.id),
             name: row.get(Fields.nameOpt),
@@ -70,7 +70,7 @@ public class Location: Model, PFModel, Printable {
             address: row.get(Fields.address))
     }
     
-    public convenience init(pf: PFObject) {
+    convenience init(pf: PFObject) {
         self.init(
             id: pf.objectId.flatMap { ParseSvc().withParseId($0, ModelType.Location) }?.modelId,
             name: pf["name"] as? String,
@@ -80,7 +80,7 @@ public class Location: Model, PFModel, Printable {
             pf: pf)
     }
     
-    public func toSetters() -> [Setter] {
+    func toSetters() -> [Setter] {
         return [
             Fields.nameOpt <- name,
             Fields.latitude <- coordinate.latitude,

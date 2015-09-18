@@ -21,7 +21,7 @@ public func ==(a: Type, b: Type) -> Bool {
         && a.name == b.name
 }
 
-public class Type: Model, PFModel, Printable {
+public class Type: Model, PFModel, SqlModel, Printable {
     
     public let modelType = ModelType.Typ
     
@@ -43,14 +43,14 @@ public class Type: Model, PFModel, Printable {
         self.pf = pf
     }
     
-    public convenience init(row: Row) {
+    convenience init(row: Row) {
         self.init(
             id: row.get(Fields.id),
             groupId: row.get(Fields.groupId),
             name: row.get(Fields.name))
     }
     
-    public convenience init(pf: PFObject) {
+    convenience init(pf: PFObject) {
         self.init(
             id: pf.objectId.flatMap { ParseSvc().withParseId($0, ModelType.Typ) }?.modelId,
             groupId: ParseSvc().withParseId(pf["groupId"] as! String, ModelType.Group)!.modelId,
@@ -58,7 +58,7 @@ public class Type: Model, PFModel, Printable {
             pf: pf)
     }
     
-    public func toSetters() -> [Setter] {
+    func toSetters() -> [Setter] {
         return [
             Fields.name <- name,
             Fields.groupId <- groupId

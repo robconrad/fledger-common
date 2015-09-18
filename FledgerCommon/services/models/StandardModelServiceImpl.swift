@@ -15,7 +15,7 @@ import ParseOSX
 #endif
 
 
-class StandardModelServiceImpl<M: PFModel>: ModelService {
+class StandardModelServiceImpl<M where M: PFModel, M: SqlModel>: ModelService {
     
     func modelType() -> ModelType {
         fatalError(__FUNCTION__ + " must be implemented")

@@ -6,14 +6,12 @@
 //  Copyright (c) 2015 TwoSpec Inc. All rights reserved.
 //
 
-import SQLite
+import Foundation
 
 
 public protocol Model: Equatable {
     
     var id: Int64? { get }
     var modelType: ModelType { get }
-    
-    func toSetters() -> [Setter]
     
 }
