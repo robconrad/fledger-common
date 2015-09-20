@@ -28,7 +28,7 @@ public class ItemFilters: Filters {
     public var typeId: Int64?
     public var groupId: Int64?
     
-    public override func toQuery(var query: Query, limit: Bool = true, table: Query? = nil) -> Query {
+    override func toQuery(var query: Query, limit: Bool = true, table: Query? = nil) -> Query {
         
         query = super.toQuery(query, limit: limit)
         

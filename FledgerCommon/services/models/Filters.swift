@@ -20,7 +20,7 @@ public class Filters {
         
     }
     
-    public func toQuery(var query: Query, limit: Bool = true, table: Query? = nil) -> Query {
+    func toQuery(var query: Query, limit: Bool = true, table: Query? = nil) -> Query {
         
         if let myIds = ids {
             var field = Fields.id
