@@ -24,7 +24,7 @@ class DatabaseServiceImpl: DatabaseService {
     
     required init(_ username: String) {
         
-        if count(username) < 3 {
+        if username.characters.count < 3 {
             fatalError("must supply valid username")
         }
         

@@ -104,17 +104,17 @@ class StandardModelServiceImpl<M where M: PFModel, M: SqlModel>: ModelService {
                 }
             }
             else {
-                println(modelStmt.reason)
+                print(modelStmt.reason)
             }
             
-            println(modelStmt)
+            print(modelStmt)
             
             id = nil
             return .Rollback
         }
         
         if result.failed {
-            println("insert failed with \(result.reason)")
+            print("insert failed with \(result.reason)")
             return nil
         }
         
@@ -149,18 +149,18 @@ class StandardModelServiceImpl<M where M: PFModel, M: SqlModel>: ModelService {
                     return .Commit
                 }
                 else {
-                    println(parseStmt.reason)
+                    print(parseStmt.reason)
                 }
             }
             else {
-                println(modelStmt.reason)
+                print(modelStmt.reason)
             }
             
             return .Rollback
         }
         
         if result.failed {
-            println("update failed with \(result.reason)")
+            print("update failed with \(result.reason)")
             return false
         }
         
@@ -201,18 +201,18 @@ class StandardModelServiceImpl<M where M: PFModel, M: SqlModel>: ModelService {
                     return .Commit
                 }
                 else {
-                    println(parseStmt.reason)
+                    print(parseStmt.reason)
                 }
             }
             else {
-                println(modelStmt.reason)
+                print(modelStmt.reason)
             }
             
             return .Rollback
         }
         
         if result.failed {
-            println("delete failed with \(result.reason)")
+            print("delete failed with \(result.reason)")
             return false
         }
         

@@ -1,8 +1,8 @@
 use_frameworks!
 
 def common_pods
-    pod 'SQLite.swift', git: 'https://github.com/stephencelis/SQLite.swift.git'
-    pod 'CryptoSwift', '0.0.12'
+    pod 'SQLite.swift', git: 'https://github.com/stephencelis/SQLite.swift.git', :branch => 'swift-2'
+    pod 'CryptoSwift', '0.0.14'
 end
 
 target :FledgerCommon do

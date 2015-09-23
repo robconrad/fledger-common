@@ -25,7 +25,7 @@ public func ==(a: Location, b: Location) -> Bool {
         && a.distance == b.distance
 }
 
-public class Location: Model, PFModel, SqlModel, Printable {
+public class Location: Model, PFModel, SqlModel, CustomStringConvertible {
     
     public let modelType = ModelType.Location
     

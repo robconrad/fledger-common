@@ -39,7 +39,7 @@ class LocationServiceImplSuite: AppTestSuite {
         let result = service.withId(id!)
         XCTAssertEqual(location.withId(id), result!)
         
-        let location2 = location.copy(name: "name2", address: "address2")
+        let location2 = location.copy("name2", address: "address2")
         let id2 = service.insert(location2)
         let result2 = service.withId(id2!)
         XCTAssertEqual(location2.withId(id2), result2!)
@@ -54,7 +54,7 @@ class LocationServiceImplSuite: AppTestSuite {
         let result = service.all()
         XCTAssertEqual([location.withId(id)], result)
         
-        let location2 = location.copy(name: "name2", address: "address2")
+        let location2 = location.copy("name2", address: "address2")
         let id2 = service.insert(location2)
         let result2 = service.all()
         // default order specified in LocationServiceImpl is Fields.name.ASC, name2 follows name

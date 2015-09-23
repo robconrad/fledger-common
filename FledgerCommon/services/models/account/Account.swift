@@ -22,7 +22,7 @@ public func ==(a: Account, b: Account) -> Bool {
         && a.inactive == b.inactive
 }
 
-public class Account: Model, PFModel, SqlModel, Printable {
+public class Account: Model, PFModel, SqlModel, CustomStringConvertible {
     
     public let modelType = ModelType.Account
     

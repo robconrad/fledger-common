@@ -9,7 +9,7 @@
 import Foundation
 
 
-public enum ModelType: String, Printable {
+public enum ModelType: String, CustomStringConvertible {
     
     case Group = "group"
     case Typ = "type"

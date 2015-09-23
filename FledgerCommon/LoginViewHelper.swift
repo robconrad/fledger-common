@@ -70,13 +70,13 @@ public class LoginViewHelper {
         var valid = true
         
         delegate.notifyEmailValidity(true)
-        if count(dataSource.getEmail()) < 5 {
+        if dataSource.getEmail().characters.count < 5 {
             delegate.notifyEmailValidity(false)
             valid = false
         }
         
         delegate.notifyPasswordValidity(true)
-        if count(dataSource.getPassword()) < 3 {
+        if dataSource.getPassword().characters.count < 3 {
             delegate.notifyPasswordValidity(false)
             valid = false
         }

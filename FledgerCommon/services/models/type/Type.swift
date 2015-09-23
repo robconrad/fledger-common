@@ -21,7 +21,7 @@ public func ==(a: Type, b: Type) -> Bool {
         && a.name == b.name
 }
 
-public class Type: Model, PFModel, SqlModel, Printable {
+public class Type: Model, PFModel, SqlModel, CustomStringConvertible {
     
     public let modelType = ModelType.Typ
     

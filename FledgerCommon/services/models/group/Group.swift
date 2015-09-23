@@ -20,7 +20,7 @@ public func ==(a: Group, b: Group) -> Bool {
         && a.name == b.name
 }
 
-public class Group: Model, PFModel, SqlModel, Printable {
+public class Group: Model, PFModel, SqlModel, CustomStringConvertible {
     
     public let modelType = ModelType.Group
     

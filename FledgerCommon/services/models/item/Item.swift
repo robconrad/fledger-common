@@ -26,7 +26,7 @@ public func ==(a: Item, b: Item) -> Bool {
         && a.comments == b.comments
 }
 
-public class Item: Model, PFModel, SqlModel, Printable {
+public class Item: Model, PFModel, SqlModel, CustomStringConvertible {
     
     public let modelType = ModelType.Item
     

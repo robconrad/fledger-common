@@ -11,7 +11,7 @@ import SQLite
 
 
 // called ParseModel rather than 'Parse' because 'Parse' is taken by the Parse library
-class ParseModel: Printable {
+class ParseModel: CustomStringConvertible {
     
     let id: Int64
     let model: ModelType
