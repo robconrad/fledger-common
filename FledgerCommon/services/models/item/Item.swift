@@ -16,14 +16,15 @@ import ParseOSX
 
 
 public func ==(a: Item, b: Item) -> Bool {
-    return a.id == b.id
+    let x = a.id == b.id
         && a.accountId == b.accountId
         && a.typeId == b.typeId
         && a.locationId == b.locationId
-        && a.locationId == b.locationId
+    let y = a.locationId == b.locationId
         && a.amount == b.amount
         && a.date == b.date
         && a.comments == b.comments
+    return x && y
 }
 
 public class Item: Model, PFModel, SqlModel, CustomStringConvertible {
@@ -90,9 +91,7 @@ public class Item: Model, PFModel, SqlModel, CustomStringConvertible {
     }
     
     func toPFObject() -> PFObject? {
-        if let myId = id,
-            parseAccountId = account().parse()!.parseId,
-            parseTypeId = type().parse()!.parseId {
+        if let parseAccountId = account().parse()!.parseId, parseTypeId = type().parse()!.parseId {
             let myLocation = location()
             let parseLocationId = myLocation.flatMap { $0.parse()!.parseId }
             if myLocation != nil && parseLocationId == nil {

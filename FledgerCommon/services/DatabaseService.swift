@@ -11,14 +11,14 @@ import SQLite
 
 protocol DatabaseService: Service {
     
-    var db: Database { get }
+    var db: Connection { get }
     
-    var locations: Query { get }
-    var accounts: Query { get }
-    var groups: Query { get }
-    var types: Query { get }
-    var items: Query { get }
-    var parse: Query { get }
+    var locations: SchemaType { get }
+    var accounts: SchemaType { get }
+    var groups: SchemaType { get }
+    var types: SchemaType { get }
+    var items: SchemaType { get }
+    var parse: SchemaType { get }
     
     func createDatabaseDestructive()
     func loadDefaultData()

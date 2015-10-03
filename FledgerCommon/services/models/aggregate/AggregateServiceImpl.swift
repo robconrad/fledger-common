@@ -12,10 +12,10 @@ import SQLite
 
 class AggregateServiceImpl: AggregateService {
     
-    private let items: Query
-    private let groups: Query
-    private let types: Query
-    private let accounts: Query
+    private let items: SchemaType
+    private let groups: SchemaType
+    private let types: SchemaType
+    private let accounts: SchemaType
     
     private let accountId: Expression<Int64>
     private let groupId: Expression<Int64>
@@ -30,10 +30,10 @@ class AggregateServiceImpl: AggregateService {
     
     private let sumAmount = Expressions.sumAmount
     
-    private let allQuery: Query
-    private let accountsQuery: Query
-    private let groupsQuery: Query
-    private let typesQuery: Query
+    private let allQuery: ScalarQuery<Double?>
+    private let accountsQuery: SchemaType
+    private let groupsQuery: SchemaType
+    private let typesQuery: SchemaType
     
     required init() {
         items = DatabaseSvc().items
@@ -59,26 +59,26 @@ class AggregateServiceImpl: AggregateService {
             .select(accountId, accountName, sumAmount, inactive)
             .join(.LeftOuter, items, on: Fields.accountId == accountId)
             .group(accountId)
-            .order(inactive, priority, collate(.Nocase, accountName))
+            .order(inactive, priority, accountName.collate(.Nocase))
         
         groupsQuery = groups
             .select(groupId, groupName, sumAmount)
             .join(.LeftOuter, types, on: Fields.groupId == groupId)
             .join(.LeftOuter, items, on: Fields.typeId == typeId)
             .group(groupId)
-            .order(collate(.Nocase, groupName))
+            .order(groupName.collate(.Nocase))
         
         typesQuery = types
             .select(typeId, typeName, groupName, sumAmount)
             .join(.LeftOuter, items, on: Fields.typeId == typeId)
             .join(.LeftOuter, groups, on: Fields.groupId == groupId)
             .group(typeId)
-            .order(collate(.Nocase, groupName), collate(.Nocase, typeName))
+            .order(groupName.collate(.Nocase), typeName.collate(.Nocase))
     }
     
-    private func aggregate(model: ModelType, query: Query, id: Expression<Int64>, name: Expression<String>, checkActive: Bool = false) -> [Aggregate] {
+    private func aggregate(model: ModelType, query: SchemaType, id: Expression<Int64>, name: Expression<String>, checkActive: Bool = false) -> [Aggregate] {
         var result: [Aggregate] = []
-        for row in query {
+        for row in DatabaseSvc().db.prepare(query) {
             var active = true
             if checkActive {
                 active = !row.get(inactive)
@@ -93,7 +93,7 @@ class AggregateServiceImpl: AggregateService {
     }
     
     func getAll() -> [Aggregate] {
-        return [Aggregate(model: nil, id: nil, name: "all", value: allQuery.first?.get(sumAmount) ?? 0)]
+        return [Aggregate(model: nil, id: nil, name: "all", value: DatabaseSvc().db.scalar(allQuery) ?? 0)]
     }
     
     func getAccounts() -> [Aggregate] {

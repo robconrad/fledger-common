@@ -20,14 +20,14 @@ public class Filters {
         
     }
     
-    func toQuery(var query: Query, limit: Bool = true, table: Query? = nil) -> Query {
+    func toQuery(var query: SchemaType, limit: Bool = true, table: SchemaType? = nil) -> SchemaType {
         
         if let myIds = ids {
             var field = Fields.id
             if let t = table {
                 field = t[field]
             }
-            query = query.filter(contains(myIds, field))
+            query = query.filter(myIds.contains(field))
         }
         
         if limit && (offset != nil || count != nil) {

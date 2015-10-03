@@ -11,13 +11,14 @@ import SQLite
 
 
 public func ==(a: ItemFilters, b: ItemFilters) -> Bool {
-    return a.accountId == b.accountId
+    let x = a.accountId == b.accountId
         && a.startDate == b.startDate
         && a.endDate == b.endDate
-        && a.typeId == b.typeId
+    let y = a.typeId == b.typeId
         && a.groupId == b.groupId
         && a.count == b.count
         && a.offset == b.offset
+    return x && y
 }
 
 public class ItemFilters: Filters {
@@ -28,7 +29,7 @@ public class ItemFilters: Filters {
     public var typeId: Int64?
     public var groupId: Int64?
     
-    override func toQuery(var query: Query, limit: Bool = true, table: Query? = nil) -> Query {
+    override func toQuery(var query: SchemaType, limit: Bool = true, table: SchemaType? = nil) -> SchemaType {
         
         query = super.toQuery(query, limit: limit)
         

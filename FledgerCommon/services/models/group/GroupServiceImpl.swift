@@ -20,18 +20,18 @@ class GroupServiceImpl<T: Group>: MemoryModelServiceImpl<Group>, GroupService {
         return ModelType.Group
     }
     
-    override internal func table() -> Query {
+    override internal func table() -> SchemaType {
         return DatabaseSvc().groups
     }
     
-    override func defaultOrder(query: Query) -> Query {
+    override func defaultOrder(query: SchemaType) -> SchemaType {
         return query.order(Fields.name)
     }
     
     override func select(filters: Filters?) -> [Group] {
         var elements: [Group] = []
         
-        for row in baseQuery(filters: filters) {
+        for row in DatabaseSvc().db.prepare(baseQuery(filters)) {
             elements.append(Group(row: row))
         }
         

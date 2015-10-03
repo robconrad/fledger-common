@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		25CA2EDB868C18E7CB46F588 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9B08881C43F33CA03F5094 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		0D8C8DE0980D82B16F67BE4E /* Pods_FledgerCommonMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7384CD6024C33D5B30818ADE /* Pods_FledgerCommonMac.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		3E39170A1B77F5C200F72EC5 /* FledgerCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E3917091B77F5C200F72EC5 /* FledgerCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3E3917101B77F5C200F72EC5 /* FledgerCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3917041B77F5C200F72EC5 /* FledgerCommon.framework */; };
 		3E39172A1B77F60D00F72EC5 /* FledgerCommonMac.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E3917291B77F60D00F72EC5 /* FledgerCommonMac.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -211,8 +211,7 @@
 		3EBA5BC91BACC40B00BB5C5A /* SqlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA5BC71BACC40B00BB5C5A /* SqlModel.swift */; };
 		3EBA5BCA1BACC40E00BB5C5A /* SqlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA5BC71BACC40B00BB5C5A /* SqlModel.swift */; };
 		3EBA5BCB1BACC40E00BB5C5A /* SqlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA5BC71BACC40B00BB5C5A /* SqlModel.swift */; };
-		53759AF7465B6BB71D44458D /* Pods_FledgerCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DE1F325C2F81C651ED532C /* Pods_FledgerCommon.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		92A4BD6FC7C324B2F4FF8E65 /* Pods_FledgerCommonMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 354A6D859E1BF870345B37A7 /* Pods_FledgerCommonMac.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C74ED29B58A955AB5A81F6A7 /* Pods_FledgerCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 202B0DBA3E8C876B2BF52924 /* Pods_FledgerCommon.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -233,7 +232,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		354A6D859E1BF870345B37A7 /* Pods_FledgerCommonMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FledgerCommonMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		202B0DBA3E8C876B2BF52924 /* Pods_FledgerCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FledgerCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E3917041B77F5C200F72EC5 /* FledgerCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FledgerCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E3917081B77F5C200F72EC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E3917091B77F5C200F72EC5 /* FledgerCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FledgerCommon.h; sourceTree = "<group>"; };
@@ -299,12 +298,11 @@
 		3EBA5BB61BACB8D900BB5C5A /* UserServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserServiceImpl.swift; sourceTree = "<group>"; };
 		3EBA5BC11BACC1B100BB5C5A /* PFModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PFModel.swift; sourceTree = "<group>"; };
 		3EBA5BC71BACC40B00BB5C5A /* SqlModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SqlModel.swift; sourceTree = "<group>"; };
-		52DE1F325C2F81C651ED532C /* Pods_FledgerCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FledgerCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		895E1DB7317C3CE657F2FF86 /* Pods-FledgerCommonMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FledgerCommonMac.release.xcconfig"; path = "Pods/Target Support Files/Pods-FledgerCommonMac/Pods-FledgerCommonMac.release.xcconfig"; sourceTree = "<group>"; };
-		94AE5A3051B7053AD9351B1F /* Pods-FledgerCommon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FledgerCommon.release.xcconfig"; path = "Pods/Target Support Files/Pods-FledgerCommon/Pods-FledgerCommon.release.xcconfig"; sourceTree = "<group>"; };
-		B50C8C7E2C6F10F2CE2D719B /* Pods-FledgerCommon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FledgerCommon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FledgerCommon/Pods-FledgerCommon.debug.xcconfig"; sourceTree = "<group>"; };
-		C70D37737BCC46F4BB97FEC4 /* Pods-FledgerCommonMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FledgerCommonMac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FledgerCommonMac/Pods-FledgerCommonMac.debug.xcconfig"; sourceTree = "<group>"; };
-		EC9B08881C43F33CA03F5094 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42132C2469852B9B0C48755B /* Pods-FledgerCommon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FledgerCommon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FledgerCommon/Pods-FledgerCommon.debug.xcconfig"; sourceTree = "<group>"; };
+		6316667B56CFE93257E82FAD /* Pods-FledgerCommonMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FledgerCommonMac.release.xcconfig"; path = "Pods/Target Support Files/Pods-FledgerCommonMac/Pods-FledgerCommonMac.release.xcconfig"; sourceTree = "<group>"; };
+		7384CD6024C33D5B30818ADE /* Pods_FledgerCommonMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FledgerCommonMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E090A15EFAA1714B0A744BC9 /* Pods-FledgerCommonMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FledgerCommonMac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FledgerCommonMac/Pods-FledgerCommonMac.debug.xcconfig"; sourceTree = "<group>"; };
+		E8DF7C06BBFFCBB7718A096E /* Pods-FledgerCommon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FledgerCommon.release.xcconfig"; path = "Pods/Target Support Files/Pods-FledgerCommon/Pods-FledgerCommon.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,8 +310,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25CA2EDB868C18E7CB46F588 /* Pods.framework in Frameworks */,
-				53759AF7465B6BB71D44458D /* Pods_FledgerCommon.framework in Frameworks */,
+				C74ED29B58A955AB5A81F6A7 /* Pods_FledgerCommon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +326,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92A4BD6FC7C324B2F4FF8E65 /* Pods_FledgerCommonMac.framework in Frameworks */,
+				0D8C8DE0980D82B16F67BE4E /* Pods_FledgerCommonMac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,8 +349,8 @@
 				3E3917261B77F60D00F72EC5 /* FledgerCommonMac */,
 				3E3917331B77F60D00F72EC5 /* FledgerCommonMacTests */,
 				3E3917051B77F5C200F72EC5 /* Products */,
-				548A8B44A4420E988CEE97EE /* Frameworks */,
-				CDA84DBDB457E96E862071D4 /* Pods */,
+				F2DA40D380978F957A252452 /* Pods */,
+				DEF3538158C455D41588F01E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -657,23 +654,22 @@
 			name = sqlite;
 			sourceTree = "<group>";
 		};
-		548A8B44A4420E988CEE97EE /* Frameworks */ = {
+		DEF3538158C455D41588F01E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EC9B08881C43F33CA03F5094 /* Pods.framework */,
-				52DE1F325C2F81C651ED532C /* Pods_FledgerCommon.framework */,
-				354A6D859E1BF870345B37A7 /* Pods_FledgerCommonMac.framework */,
+				202B0DBA3E8C876B2BF52924 /* Pods_FledgerCommon.framework */,
+				7384CD6024C33D5B30818ADE /* Pods_FledgerCommonMac.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CDA84DBDB457E96E862071D4 /* Pods */ = {
+		F2DA40D380978F957A252452 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B50C8C7E2C6F10F2CE2D719B /* Pods-FledgerCommon.debug.xcconfig */,
-				94AE5A3051B7053AD9351B1F /* Pods-FledgerCommon.release.xcconfig */,
-				C70D37737BCC46F4BB97FEC4 /* Pods-FledgerCommonMac.debug.xcconfig */,
-				895E1DB7317C3CE657F2FF86 /* Pods-FledgerCommonMac.release.xcconfig */,
+				42132C2469852B9B0C48755B /* Pods-FledgerCommon.debug.xcconfig */,
+				E8DF7C06BBFFCBB7718A096E /* Pods-FledgerCommon.release.xcconfig */,
+				E090A15EFAA1714B0A744BC9 /* Pods-FledgerCommonMac.debug.xcconfig */,
+				6316667B56CFE93257E82FAD /* Pods-FledgerCommonMac.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -704,12 +700,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E39171A1B77F5C200F72EC5 /* Build configuration list for PBXNativeTarget "FledgerCommon" */;
 			buildPhases = (
-				743FDD52AACB917A5E187AD1 /* Check Pods Manifest.lock */,
+				32E4763E0A52D63E5DB7CEEF /* Check Pods Manifest.lock */,
 				3E3916FF1B77F5C200F72EC5 /* Sources */,
 				3E3917001B77F5C200F72EC5 /* Frameworks */,
 				3E3917011B77F5C200F72EC5 /* Headers */,
 				3E3917021B77F5C200F72EC5 /* Resources */,
-				7DA5143CA43ACD660474FE71 /* Copy Pods Resources */,
+				70C5464EC0AB0CBC04034D38 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -742,12 +738,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E3917381B77F60D00F72EC5 /* Build configuration list for PBXNativeTarget "FledgerCommonMac" */;
 			buildPhases = (
-				CE7B0A4A9A48BEAA3E403D53 /* Check Pods Manifest.lock */,
+				D9E24DA370F3120A4B3E06EA /* Check Pods Manifest.lock */,
 				3E3917201B77F60D00F72EC5 /* Sources */,
 				3E3917211B77F60D00F72EC5 /* Frameworks */,
 				3E3917221B77F60D00F72EC5 /* Headers */,
 				3E3917231B77F60D00F72EC5 /* Resources */,
-				D3394B28B2FCD068377EFDBE /* Copy Pods Resources */,
+				AF789B60D135FAF254E9BAC4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -784,7 +780,7 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Robert Conrad";
 				TargetAttributes = {
 					3E3917031B77F5C200F72EC5 = {
@@ -866,7 +862,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		743FDD52AACB917A5E187AD1 /* Check Pods Manifest.lock */ = {
+		32E4763E0A52D63E5DB7CEEF /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -881,7 +877,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		7DA5143CA43ACD660474FE71 /* Copy Pods Resources */ = {
+		70C5464EC0AB0CBC04034D38 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -896,22 +892,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FledgerCommon/Pods-FledgerCommon-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CE7B0A4A9A48BEAA3E403D53 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		D3394B28B2FCD068377EFDBE /* Copy Pods Resources */ = {
+		AF789B60D135FAF254E9BAC4 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -924,6 +905,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FledgerCommonMac/Pods-FledgerCommonMac-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9E24DA370F3120A4B3E06EA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1183,6 +1179,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited $(PODS_ROOT)/Parse";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1271,7 +1268,7 @@
 		};
 		3E39171B1B77F5C200F72EC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B50C8C7E2C6F10F2CE2D719B /* Pods-FledgerCommon.debug.xcconfig */;
+			baseConfigurationReference = 42132C2469852B9B0C48755B /* Pods-FledgerCommon.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
@@ -1293,6 +1290,7 @@
 					"\"$(PODS_ROOT)/Parse\"",
 				);
 				OTHER_LIBTOOLFLAGS = "$(inherited) $(OTHER_LDFLAGS)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rob-conrad.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1301,7 +1299,7 @@
 		};
 		3E39171C1B77F5C200F72EC5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94AE5A3051B7053AD9351B1F /* Pods-FledgerCommon.release.xcconfig */;
+			baseConfigurationReference = E8DF7C06BBFFCBB7718A096E /* Pods-FledgerCommon.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
@@ -1323,6 +1321,7 @@
 					"\"$(PODS_ROOT)/Parse\"",
 				);
 				OTHER_LIBTOOLFLAGS = "$(inherited) $(OTHER_LDFLAGS)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rob-conrad.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -1330,6 +1329,7 @@
 		};
 		3E39171E1B77F5C200F72EC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42132C2469852B9B0C48755B /* Pods-FledgerCommon.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1341,12 +1341,14 @@
 				);
 				INFOPLIST_FILE = FledgerCommonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rob-conrad.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		3E39171F1B77F5C200F72EC5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8DF7C06BBFFCBB7718A096E /* Pods-FledgerCommon.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1354,13 +1356,14 @@
 				);
 				INFOPLIST_FILE = FledgerCommonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rob-conrad.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
 		3E3917391B77F60D00F72EC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C70D37737BCC46F4BB97FEC4 /* Pods-FledgerCommonMac.debug.xcconfig */;
+			baseConfigurationReference = E090A15EFAA1714B0A744BC9 /* Pods-FledgerCommonMac.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1377,7 +1380,9 @@
 				INFOPLIST_FILE = FledgerCommonMac/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "us.robertconrad.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = FledgerCommon;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -1387,7 +1392,7 @@
 		};
 		3E39173A1B77F60D00F72EC5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 895E1DB7317C3CE657F2FF86 /* Pods-FledgerCommonMac.release.xcconfig */;
+			baseConfigurationReference = 6316667B56CFE93257E82FAD /* Pods-FledgerCommonMac.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1399,7 +1404,9 @@
 				INFOPLIST_FILE = FledgerCommonMac/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "us.robertconrad.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = FledgerCommon;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -1408,6 +1415,7 @@
 		};
 		3E39173C1B77F60D00F72EC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E090A15EFAA1714B0A744BC9 /* Pods-FledgerCommonMac.debug.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1422,6 +1430,7 @@
 				INFOPLIST_FILE = FledgerCommonMacTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rob-conrad.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
@@ -1429,6 +1438,7 @@
 		};
 		3E39173D1B77F60D00F72EC5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6316667B56CFE93257E82FAD /* Pods-FledgerCommonMac.release.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1438,6 +1448,7 @@
 				INFOPLIST_FILE = FledgerCommonMacTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rob-conrad.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};

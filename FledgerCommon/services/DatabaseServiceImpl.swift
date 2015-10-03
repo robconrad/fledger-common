@@ -13,14 +13,14 @@ import CryptoSwift
 
 class DatabaseServiceImpl: DatabaseService {
     
-    let db: Database
+    let db: Connection
     
-    let locations: Query
-    let accounts: Query
-    let groups: Query
-    let types: Query
-    let items: Query
-    let parse: Query
+    let locations: SchemaType
+    let accounts: SchemaType
+    let groups: SchemaType
+    let types: SchemaType
+    let items: SchemaType
+    let parse: SchemaType
     
     required init(_ username: String) {
         
@@ -30,22 +30,29 @@ class DatabaseServiceImpl: DatabaseService {
         
         let usernameHash = username.md5()
         
-        let path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first as! String
+        let path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
         let dbPath = "\(path)/db-\(usernameHash).sqlite3"
         let createdKey = "created-\(usernameHash)"
         
-        db = Database(dbPath)
+        do {
+            db = try Connection(dbPath)
+        }
+        catch {
+            fatalError("failed to create db connection")
+        }
         
-        db.trace(println)
+        #if DEBUG
+            db.trace(print)
+        #endif
+    
+        locations = Table("locations")
+        accounts = Table("accounts")
+        groups = Table("groups")
+        types = Table("types")
+        items = Table("items")
+        parse = Table("parse")
         
-        locations = db["locations"]
-        accounts = db["accounts"]
-        groups = db["groups"]
-        types = db["types"]
-        items = db["items"]
-        parse = db["parse"]
-        
-        db.create(function: "distance", deterministic: true) { args in
+        db.createFunction("distance", deterministic: true) { args in
             if let lat1 = args[0] as? Double, long1 = args[1] as? Double, lat2 = args[2] as? Double, long2 = args[3] as? Double {
                 let piOver180 = 0.01745327
                 let lat1rad = lat1 * piOver180
@@ -69,7 +76,12 @@ class DatabaseServiceImpl: DatabaseService {
         let url = bundle.URLForResource("schema", withExtension: "sql")
         let schema = NSData(contentsOfURL: url!)
         let sql = NSString(data: schema!, encoding: NSASCIIStringEncoding) as! String
-        db.execute(sql)
+        do {
+            try db.execute(sql)
+        }
+        catch {
+            fatalError("failed to createDatabaseDestructive")
+        }
     }
     
     func loadDefaultData() {
@@ -80,7 +92,12 @@ class DatabaseServiceImpl: DatabaseService {
         let url = bundle.URLForResource(file, withExtension: "sql")
         let data = NSData(contentsOfURL: url!)
         let sql = NSString(data: data!, encoding: NSASCIIStringEncoding) as! String
-        db.execute(sql)
+        do {
+            try db.execute(sql)
+        }
+        catch {
+            fatalError("failed to loadDefaultData(\(file))")
+        }
     }
     
 }
@@ -109,7 +126,7 @@ private let UIDateFormatter: NSDateFormatter = {
     return formatter
     }()
 
-extension NSDate: Value {
+extension NSDate {
     public class var declaredDatatype: String {
         return String.declaredDatatype
     }

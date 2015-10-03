@@ -66,7 +66,7 @@ public class Type: Model, PFModel, SqlModel, CustomStringConvertible {
     }
     
     func toPFObject() -> PFObject? {
-        if let myId = id, myGroupId = GroupSvc().withId(groupId)?.parse()!.parseId {
+        if let myGroupId = GroupSvc().withId(groupId)?.parse()!.parseId {
             let npf = PFObject(withoutDataWithClassName: modelType.rawValue, objectId: pf?.objectId ?? parse()?.parseId)
             npf["name"] = name
             npf["groupId"] = myGroupId

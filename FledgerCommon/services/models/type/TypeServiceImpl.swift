@@ -22,18 +22,18 @@ class TypeServiceImpl<T: Type>: MemoryModelServiceImpl<Type>, TypeService {
         return ModelType.Typ
     }
     
-    override internal func table() -> Query {
+    override internal func table() -> SchemaType {
         return DatabaseSvc().types
     }
     
-    override func defaultOrder(query: Query) -> Query {
+    override func defaultOrder(query: SchemaType) -> SchemaType {
         return query.order(Fields.name)
     }
     
     override func select(filters: Filters?) -> [Type] {
         var elements: [Type] = []
         
-        for row in baseQuery(filters: filters) {
+        for row in DatabaseSvc().db.prepare(baseQuery(filters)) {
             elements.append(Type(row: row))
         }
         

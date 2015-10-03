@@ -15,7 +15,7 @@ class ParseFilters: Filters {
     var synced: Bool?
     var deleted: Bool?
     
-    override func toQuery(var query: Query, limit: Bool = true, table: Query? = nil) -> Query {
+    override func toQuery(var query: SchemaType, limit: Bool = true, table: SchemaType? = nil) -> SchemaType {
         
         query = super.toQuery(query, limit: limit)
         

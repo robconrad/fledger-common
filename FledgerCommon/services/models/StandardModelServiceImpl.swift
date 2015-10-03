@@ -33,7 +33,7 @@ class StandardModelServiceImpl<M where M: PFModel, M: SqlModel>: ModelService {
         }
     }
     
-    internal func table() -> Query {
+    internal func table() -> SchemaType {
         fatalError(__FUNCTION__ + " must be implemented")
     }
     
@@ -45,15 +45,15 @@ class StandardModelServiceImpl<M where M: PFModel, M: SqlModel>: ModelService {
         return select(nil)
     }
     
-    func defaultOrder(query: Query) -> Query {
+    func defaultOrder(query: SchemaType) -> SchemaType {
         return query.order(Fields.id.desc)
     }
     
-    func baseFilter(query: Query) -> Query {
+    func baseFilter(query: SchemaType) -> SchemaType {
         return query
     }
     
-    func baseQuery(filters: Filters? = nil, limit: Bool = true) -> Query {
+    func baseQuery(filters: Filters? = nil, limit: Bool = true) -> SchemaType {
         var query = defaultOrder(baseFilter(table()))
         
         if let f = filters {
@@ -68,7 +68,7 @@ class StandardModelServiceImpl<M where M: PFModel, M: SqlModel>: ModelService {
     }
     
     func count(filters: Filters?) -> Int {
-        return baseQuery(filters: filters, limit: false).count
+        return DatabaseSvc().db.scalar(baseQuery(filters, limit: false).count)
     }
     
     func insert(e: M) -> Int64? {
@@ -82,39 +82,24 @@ class StandardModelServiceImpl<M where M: PFModel, M: SqlModel>: ModelService {
             assert(e.pf != nil, "pf may not be empty if insert is fromRemote")
         }
         
-        let result = DatabaseSvc().db.transaction { _ in
-            
-            let (modelId, modelStmt) = table().insert(e.toSetters())
-            id = modelId
-            
-            if let unwrappedId = modelId {
-                let (parseId, parseStmt) = DatabaseSvc().parse.insert([
-                    Fields.model <- modelType().rawValue,
-                    Fields.modelId <- unwrappedId,
+        do {
+            try DatabaseSvc().db.transaction { _ in
+                
+                let modelId = try DatabaseSvc().db.run(self.table().insert(e.toSetters()))
+                id = modelId
+                
+                try DatabaseSvc().db.run(DatabaseSvc().parse.insert([
+                    Fields.model <- self.modelType().rawValue,
+                    Fields.modelId <- modelId,
                     Fields.parseId <- e.pf?.objectId,
                     Fields.synced <- fromRemote,
                     Fields.deleted <- false,
                     Fields.updatedAt <- e.pf?.updatedAt.map { NSDateTime($0) }
-                ])
-                if parseId != nil {
-                    return .Commit
-                }
-                else {
-                    println(parseStmt.reason)
-                }
+                ]))
             }
-            else {
-                print(modelStmt.reason)
-            }
-            
-            print(modelStmt)
-            
-            id = nil
-            return .Rollback
         }
-        
-        if result.failed {
-            print("insert failed with \(result.reason)")
+        catch {
+            print("caught error")
             return nil
         }
         
@@ -130,37 +115,28 @@ class StandardModelServiceImpl<M where M: PFModel, M: SqlModel>: ModelService {
     }
     
     internal func update(e: M, fromRemote: Bool) -> Bool {
-        var success = false
-        
-        let result = DatabaseSvc().db.transaction { _ in
-            let (modelRows, modelStmt) = table().filter(Fields.id == e.id!).update(e.toSetters())
-            
-            if modelRows == 1 {
-                let query: Query = DatabaseSvc().parse.filter(Fields.model == modelType().rawValue && Fields.modelId == e.id!)
-                var setters = [Fields.synced <- fromRemote]
-                if let parseId = e.pf?.objectId, updatedAt = e.pf?.updatedAt {
-                    setters.append(Fields.parseId <- parseId)
-                    setters.append(Fields.updatedAt <- NSDateTime(updatedAt))
-                }
-                let (parseRows, parseStmt) = query.update(setters)
+        do {
+            try DatabaseSvc().db.transaction { _ in
+                let modelRows = try DatabaseSvc().db.run(self.table().filter(Fields.id == e.id!).update(e.toSetters()))
                 
-                if parseRows == 1 {
-                    success = true
-                    return .Commit
+                if modelRows == 1 {
+                    let query: QueryType = DatabaseSvc().parse.filter(Fields.model == self.modelType().rawValue && Fields.modelId == e.id!)
+                    var setters = [Fields.synced <- fromRemote]
+                    if let parseId = e.pf?.objectId, updatedAt = e.pf?.updatedAt {
+                        setters.append(Fields.parseId <- parseId)
+                        setters.append(Fields.updatedAt <- NSDateTime(updatedAt))
+                    }
+                    if try DatabaseSvc().db.run(query.update(setters)) != 1 {
+                        throw NSError(domain: "", code: 1, userInfo: nil)
+                    }
                 }
                 else {
-                    print(parseStmt.reason)
+                    throw NSError(domain: "", code: 1, userInfo: nil)
                 }
             }
-            else {
-                print(modelStmt.reason)
-            }
-            
-            return .Rollback
         }
-        
-        if result.failed {
-            print("update failed with \(result.reason)")
+        catch {
+            print("caught error")
             return false
         }
         
@@ -168,7 +144,7 @@ class StandardModelServiceImpl<M where M: PFModel, M: SqlModel>: ModelService {
             UserSvc().syncAllToRemoteInBackground()
         }
         
-        return success
+        return true
     }
     
     func delete(e: M) -> Bool {
@@ -180,39 +156,30 @@ class StandardModelServiceImpl<M where M: PFModel, M: SqlModel>: ModelService {
     }
     
     internal func delete(id: Int64, fromRemote: Bool, updatedAt: NSDate? = nil) -> Bool {
-        var success = false
-        
-        let result = DatabaseSvc().db.transaction { _ in
-            let (modelRows, modelStmt) = table().filter(Fields.id == id).delete()
-            
-            if modelRows == 1 {
-                let query: Query = DatabaseSvc().parse.filter(Fields.model == modelType().rawValue && Fields.modelId == id)
-                var setters = [
-                    Fields.synced <- fromRemote,
-                    Fields.deleted <- true
-                ]
-                if let date = updatedAt {
-                    setters.append(Fields.updatedAt <- NSDateTime(date))
-                }
-                let (parseRows, parseStmt) = query.update(setters)
+        do {
+            try DatabaseSvc().db.transaction { _ in
+                let modelRows = try DatabaseSvc().db.run(self.table().filter(Fields.id == id).delete())
                 
-                if parseRows == 1 {
-                    success = true
-                    return .Commit
+                if modelRows == 1 {
+                    let query: QueryType = DatabaseSvc().parse.filter(Fields.model == self.modelType().rawValue && Fields.modelId == id)
+                    var setters = [
+                        Fields.synced <- fromRemote,
+                        Fields.deleted <- true
+                    ]
+                    if let date = updatedAt {
+                        setters.append(Fields.updatedAt <- NSDateTime(date))
+                    }
+                    if try DatabaseSvc().db.run(query.update(setters)) != 1 {
+                        throw NSError(domain: "", code: 1, userInfo: nil)
+                    }
                 }
                 else {
-                    print(parseStmt.reason)
+                    throw NSError(domain: "", code: 1, userInfo: nil)
                 }
             }
-            else {
-                print(modelStmt.reason)
-            }
-            
-            return .Rollback
         }
-        
-        if result.failed {
-            print("delete failed with \(result.reason)")
+        catch {
+            print("caught error")
             return false
         }
         
@@ -220,7 +187,7 @@ class StandardModelServiceImpl<M where M: PFModel, M: SqlModel>: ModelService {
             UserSvc().syncAllToRemoteInBackground()
         }
         
-        return success
+        return true
     }
     
     func invalidate() {
@@ -252,7 +219,7 @@ class StandardModelServiceImpl<M where M: PFModel, M: SqlModel>: ModelService {
     func syncFromRemote() {
         var pfObjects: [PFObject] = ParseSvc().remote(modelType(), updatedOnly: true) ?? []
         // sort by date ascending so that we don't miss any if this gets interrupted and we try syncIncoming again
-        pfObjects.sort { ($0.updatedAt ?? NSDate()).compare($1.updatedAt!) == .OrderedAscending }
+        pfObjects.sortInPlace { ($0.updatedAt ?? NSDate()).compare($1.updatedAt!) == .OrderedAscending }
         let models = pfObjects.map { self.fromPFObject($0) }
         for i in 0..<pfObjects.count {
             let model = models[i]

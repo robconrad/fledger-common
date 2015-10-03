@@ -23,22 +23,22 @@ class ItemServiceImpl<M: Group>: StandardModelServiceImpl<Item>, ItemService {
         return ModelType.Item
     }
     
-    override internal func table() -> Query {
+    override internal func table() -> SchemaType {
         return DatabaseSvc().items.join(DatabaseSvc().types, on: Fields.typeId == DatabaseSvc().types[Fields.id])
     }
     
-    override func defaultOrder(query: Query) -> Query {
+    override func defaultOrder(query: SchemaType) -> SchemaType {
         return query.order(Fields.date.desc, table()[Fields.id].desc)
     }
     
-    override func baseFilter(query: Query) -> Query {
+    override func baseFilter(query: SchemaType) -> SchemaType {
         return query.filter(Fields.amount != 0)
     }
     
     override func select(filters: Filters?) -> [Item] {
         var elements: [Item] = []
         
-        for row in baseQuery(filters: filters) {
+        for row in DatabaseSvc().db.prepare(baseQuery(filters)) {
             elements.append(Item(row: row))
         }
         
@@ -46,20 +46,20 @@ class ItemServiceImpl<M: Group>: StandardModelServiceImpl<Item>, ItemService {
     }
     
     func getTransferPair(first: Item) -> Item? {
-        return table().filter(
+        return DatabaseSvc().db.pluck(table().filter(
             Fields.date == first.date &&
             Fields.comments == first.comments &&
             Fields.accountId != first.accountId &&
             Fields.typeId == TypeSvc().transferId
-        ).first.map { Item(row: $0) }
+        )).map { Item(row: $0) }
     }
     
     func getSum(item: Item, filters: Filters) -> Double {
-        return baseQuery(filters: filters, limit: false)
+        return DatabaseSvc().db.scalar(baseQuery(filters, limit: false)
             .filter(
                 Fields.date < item.date ||
                 (Fields.date == item.date && id <= item.id!))
-            .sum(Fields.amount) ?? 0
+            .select(Fields.amount.sum)) ?? 0
     }
     
     func getFiltersFromDefaults() -> ItemFilters {

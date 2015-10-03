@@ -26,18 +26,18 @@ class LocationServiceImpl<T: Location>: MemoryModelServiceImpl<Location>, Locati
         return ModelType.Location
     }
     
-    override internal func table() -> Query {
+    override internal func table() -> SchemaType {
         return DatabaseSvc().locations
     }
     
-    override func defaultOrder(query: Query) -> Query {
+    override func defaultOrder(query: SchemaType) -> SchemaType {
         return query.order(Fields.name)
     }
     
     override func select(filters: Filters?) -> [Location] {
         var elements: [Location] = []
         
-        for row in baseQuery(filters: filters) {
+        for row in DatabaseSvc().db.prepare(baseQuery(filters)) {
             elements.append(Location(row: row))
         }
         
@@ -45,7 +45,7 @@ class LocationServiceImpl<T: Location>: MemoryModelServiceImpl<Location>, Locati
     }
     
     func itemCount(id: Int64) -> Int {
-        return DatabaseSvc().items.filter(Fields.locationId == id).count
+        return DatabaseSvc().db.scalar(DatabaseSvc().items.filter(Fields.locationId == id).count)
     }
     
     func nearest(coordinate: CLLocationCoordinate2D, sortBy: LocationSortBy) -> [Location] {
@@ -59,15 +59,19 @@ class LocationServiceImpl<T: Location>: MemoryModelServiceImpl<Location>, Locati
         var elements: [Location] = []
         let stmt = DatabaseSvc().db.prepare("SELECT id, name, latitude, longitude, address, distance(latitude, longitude, ?, ?) AS computedDistance FROM locations ORDER BY \(orderBy)")
         
-        for row in stmt.run(coordinate.latitude, coordinate.longitude) {
-            elements.append(Location(
-                id: (row[0] as! Int64),
-                name: row[1] as? String,
-                latitude: row[2] as! Double,
-                longitude: row[3] as! Double,
-                address: row[4] as! String,
-                distance: row[5] as? Double)
-            )
+        do {
+            for row in try stmt.run(coordinate.latitude, coordinate.longitude) {
+                elements.append(Location(
+                    id: (row[0] as! Int64),
+                    name: row[1] as? String,
+                    latitude: row[2] as! Double,
+                    longitude: row[3] as! Double,
+                    address: row[4] as! String,
+                    distance: row[5] as? Double)
+                )
+            }
+        } catch {
+            
         }
         
         return elements

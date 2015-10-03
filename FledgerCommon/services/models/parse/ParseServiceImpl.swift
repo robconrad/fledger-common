@@ -25,7 +25,7 @@ class ParseServiceImpl: ParseService {
         
         var elements: [ParseModel] = []
         
-        for row in query {
+        for row in DatabaseSvc().db.prepare(query) {
             elements.append(ParseModel(row: row))
         }
         
@@ -33,36 +33,38 @@ class ParseServiceImpl: ParseService {
     }
     
     func withModelId(id: Int64, _ modelType: ModelType) -> ParseModel? {
-        return DatabaseSvc().parse.filter(Fields.model == modelType.rawValue && Fields.modelId == id).first.map { ParseModel(row: $0) }
+        return DatabaseSvc().db.pluck(DatabaseSvc().parse.filter(Fields.model == modelType.rawValue && Fields.modelId == id)).map { ParseModel(row: $0) }
     }
     
     func withParseId(id: String, _ modelType: ModelType) -> ParseModel? {
-        return DatabaseSvc().parse.filter(Fields.model == modelType.rawValue && Fields.parseId == id).first.map { ParseModel(row: $0) }
+        return DatabaseSvc().db.pluck(DatabaseSvc().parse.filter(Fields.model == modelType.rawValue && Fields.parseId == id)).map { ParseModel(row: $0) }
     }
     
     func markSynced(id: Int64, _ modelType: ModelType, _ pf: PFObject) -> Bool {
-        if let parseId = pf.objectId {
-            let query = DatabaseSvc().parse.filter(Fields.model == modelType.rawValue && Fields.modelId == id)
-            let (rows, stmt) = query.update([
-                Fields.synced <- true,
-                Fields.parseId <- parseId,
-                Fields.updatedAt <- NSDateTime(pf.updatedAt!)
-            ])
-            if rows == 1 {
-                return true
-            }
-            else {
-                fatalError("markSynced failed with rows \(rows) and \(stmt)")
+        do {
+            if let parseId = pf.objectId {
+                let query = DatabaseSvc().parse.filter(Fields.model == modelType.rawValue && Fields.modelId == id)
+                let rows = try DatabaseSvc().db.run(query.update([
+                    Fields.synced <- true,
+                    Fields.parseId <- parseId,
+                    Fields.updatedAt <- NSDateTime(pf.updatedAt!)
+                ]))
+                if rows != 1 {
+                    throw NSError(domain: "", code: 1, userInfo: nil)
+                }
             }
         }
-        return false
+        catch {
+            return false
+        }
+        return true
     }
     
     func save(convertible: PFObjectConvertible) -> PFObject? {
-        if var pf = convertible.toPFObject() {
+        if let pf = convertible.toPFObject() {
             pf.ACL = PFACL(user: PFUser.currentUser()!)
-            let result = pf.save()
-            println("Save of PFObject for \(convertible) returned \(pf.objectId)")
+            pf.save()
+            print("Save of PFObject for \(convertible) returned \(pf.objectId)")
             return pf
         }
         return nil
@@ -70,14 +72,14 @@ class ParseServiceImpl: ParseService {
     
     // TODO: ***REMOVED***
     func remote(modelType: ModelType, updatedOnly: Bool) -> [PFObject]? {
-        let lastSyncedRow = DatabaseSvc().parse.filter(Fields.model == modelType.rawValue).order(Fields.updatedAt.desc).first
+        let lastSyncedRow = DatabaseSvc().db.pluck(DatabaseSvc().parse.filter(Fields.model == modelType.rawValue).order(Fields.updatedAt.desc))
         var bufferRows = [String]()
-        var query = PFQuery(className: modelType.rawValue)
+        let query = PFQuery(className: modelType.rawValue)
         if let lastRow = lastSyncedRow {
             let lastDateFactory = NSDate.dateByAddingTimeInterval(lastRow.get(Fields.updatedAt)?.date ?? NSDate(timeIntervalSince1970: 0))
             let updatedAtLeast = lastDateFactory(-60)
             
-            for row in DatabaseSvc().parse.filter(Fields.model == modelType.rawValue && Fields.updatedAt >= NSDateTime(updatedAtLeast)) {
+            for row in DatabaseSvc().db.prepare(DatabaseSvc().parse.filter(Fields.model == modelType.rawValue && Fields.updatedAt >= NSDateTime(updatedAtLeast))) {
                 if let id = row.get(Fields.parseId) {
                     bufferRows.append(id)
                 }
@@ -87,12 +89,12 @@ class ParseServiceImpl: ParseService {
             query.whereKey("updatedAt", greaterThanOrEqualTo: updatedAtLeast)
             query.whereKey("objectId", notContainedIn: [lastRow.get(Fields.parseId) ?? ""])
         }
-        var result = query.findObjects() as? [PFObject]
-        println("Remote query for PFObjects of \(modelType) lastSyncedRow (\(lastSyncedRow.flatMap { $0.get(Fields.updatedAt)?.date }), \(lastSyncedRow?.get(Fields.parseId))) returned \(result?.count ?? 0) rows")
+        let result = query.findObjects() as? [PFObject]
+        print("Remote query for PFObjects of \(modelType) lastSyncedRow (\(lastSyncedRow.flatMap { $0.get(Fields.updatedAt)?.date }), \(lastSyncedRow?.get(Fields.parseId))) returned \(result?.count ?? 0) rows")
         
-        for parseId in bufferRows {
+        //for parseId in bufferRows {
             //result!.find { $0.parseId == parseId }
-        }
+        //}
         
         return result
     }
