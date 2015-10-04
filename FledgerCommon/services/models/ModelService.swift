@@ -6,43 +6,29 @@
 //  Copyright (c) 2015 TwoSpec Inc. All rights reserved.
 //
 
-#if os(iOS)
-import Parse
-#elseif os(OSX)
-import ParseOSX
-#endif
 
-
-protocol ModelService: Service {
+public protocol ModelService: Service {
     
-    typealias T: PFModel
-    
-    /*************************************
-     Note that all methods in ModelService are copy/pasted into all 
-     ChildModelService protocols to get around Swift's bullshit shortcoming
-     that associated types can not be specified in inherited protocols
-    **************************************/
+    typealias M: Model
     
     func modelType() -> ModelType
     
-    func fromPFObject(pf: PFObject) -> T
+    func withId(id: Int64) -> M?
     
-    func withId(id: Int64) -> T?
-    
-    func all() -> [T]
-    func select(filters: Filters?) -> [T]
+    func all() -> [M]
+    func select(filters: Filters?) -> [M]
     
     func count(filters: Filters?) -> Int
     
-    func insert(e: T) -> Int64?
+    func insert(e: M) -> Int64?
     
-    func update(e: T) -> Bool
+    func update(e: M) -> Bool
     
-    func delete(e: T) -> Bool
+    func delete(e: M) -> Bool
     func delete(id: Int64) -> Bool
     
     func invalidate()
-
+    
     func syncToRemote()
     func syncFromRemote()
     

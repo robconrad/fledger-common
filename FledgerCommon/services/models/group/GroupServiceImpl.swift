@@ -10,42 +10,38 @@ import Foundation
 import SQLite
 
 
-class GroupServiceImpl<T: Group>: MemoryModelServiceImpl<Group>, GroupService {
+class GroupServiceImpl: GroupService {
     
-    required init() {
-        super.init()
-    }
-    
-    override func modelType() -> ModelType {
+    func modelType() -> ModelType {
         return ModelType.Group
     }
     
-    override internal func table() -> SchemaType {
+    internal func table() -> SchemaType {
         return DatabaseSvc().groups
     }
     
-    override func defaultOrder(query: SchemaType) -> SchemaType {
+    func defaultOrder(query: SchemaType) -> SchemaType {
         return query.order(Fields.name)
     }
     
-    override func select(filters: Filters?) -> [Group] {
+    func select(filters: Filters?) -> [Group] {
         var elements: [Group] = []
         
-        for row in DatabaseSvc().db.prepare(baseQuery(filters)) {
+        for row in DatabaseSvc().db.prepare(svc.baseQuery(filters)) {
             elements.append(Group(row: row))
         }
         
         return elements
     }
     
-    func withTypeId(id: Int64) -> Group? {
+    override func withTypeId(id: Int64) -> Group? {
         if let type = TypeSvc().withId(id) {
             return withId(type.groupId)
         }
         return nil
     }
     
-    func withName(name: String) -> Group? {
+    override func withName(name: String) -> Group? {
         return all().filter { $0.name == name }.first
     }
     

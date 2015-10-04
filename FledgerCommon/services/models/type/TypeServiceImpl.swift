@@ -10,41 +10,39 @@ import Foundation
 import SQLite
 
 
-class TypeServiceImpl<T: Type>: MemoryModelServiceImpl<Type>, TypeService {
+class TypeServiceImpl: PFTypeService {
     
-    let transferId: Int64 = 28
-    
-    required init() {
-        super.init()
+    override var transferId: Int64 {
+        get { return 28 }
     }
     
-    override func modelType() -> ModelType {
+    func modelType() -> ModelType {
         return ModelType.Typ
     }
     
-    override internal func table() -> SchemaType {
+    internal func table() -> SchemaType {
         return DatabaseSvc().types
     }
     
-    override func defaultOrder(query: SchemaType) -> SchemaType {
+    func defaultOrder(query: SchemaType) -> SchemaType {
         return query.order(Fields.name)
     }
     
-    override func select(filters: Filters?) -> [Type] {
+    func select(filters: Filters?) -> [Type] {
         var elements: [Type] = []
         
-        for row in DatabaseSvc().db.prepare(baseQuery(filters)) {
+        for row in DatabaseSvc().db.prepare(svc.baseQuery(filters)) {
             elements.append(Type(row: row))
         }
         
         return elements
     }
     
-    func transferType() -> Type {
+    override func transferType() -> Type {
         return withId(transferId)!
     }
     
-    func withName(name: String) -> Type? {
+    override func withName(name: String) -> Type? {
         return all().filter { $0.name == name }.first
     }
     

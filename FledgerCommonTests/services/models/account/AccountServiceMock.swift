@@ -28,7 +28,7 @@ class AccountServiceMock: AccountService {
         return nil
     }
     
-    func withName(name: String) -> Account? {
+    override func withName(name: String) -> Account? {
         return nil
     }
     

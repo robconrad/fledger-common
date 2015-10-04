@@ -13,7 +13,7 @@ import MapKit
 
 class LocationServiceImplSuite: AppTestSuite {
 
-    lazy var service: LocationServiceImpl<Location> = {
+    lazy var service: LocationService = {
         Services.register(DatabaseService.self, DatabaseServiceMock("LocationServiceImplSuite"))
         //DatabaseSvc().createDatabaseDestructive()
         

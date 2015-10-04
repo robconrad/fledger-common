@@ -82,19 +82,19 @@ class ItemServiceMock: ItemService {
         
     }
     
-    func getTransferPair(first: Item) -> Item? {
+    override func getTransferPair(first: Item) -> Item? {
         return getTransferPairResult
     }
-    
-    func getSum(item: Item, filters: Filters) -> Double {
+
+    override func getSum(item: Item, filters: Filters) -> Double {
         return getSumResult
     }
     
-    func getFiltersFromDefaults() -> ItemFilters {
+    override func getFiltersFromDefaults() -> ItemFilters {
         return getFiltersFromDefaultsResult
     }
     
-    func defaultCount() -> Int {
+    override func defaultCount() -> Int {
         return defaultCountResult
     }
     

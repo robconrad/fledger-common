@@ -14,41 +14,32 @@ import ParseOSX
 #endif
 
 
-public protocol TypeService: Service {
+public class TypeService: ModelService {
     
-    /***************************************
-     BEGIN COPY PASTA FROM BASE ModelService
-     ***************************************/
-    func modelType() -> ModelType
+    public typealias M = Type
     
-    func fromPFObject(pf: PFObject) -> Type
+    public var transferId: Int64 {
+        get { return 0 }
+    }
     
-    func withId(id: Int64) -> Type?
+    public func transferType() -> Type {
+        fatalError()
+    }
     
-    func all() -> [Type]
-    func select(filters: Filters?) -> [Type]
+    public func withName(name: String) -> Type? {
+        fatalError()
+    }
     
-    func count(filters: Filters?) -> Int
+}
+
+class PFTypeService: TypeService, PFModelService {
     
-    func insert(e: Type) -> Int64?
+    let _svc = MemoryModelServiceImpl<Type>()
     
-    func update(e: Type) -> Bool
-    
-    func delete(e: Type) -> Bool
-    func delete(id: Int64) -> Bool
-    
-    func invalidate()
-    
-    func syncToRemote()
-    func syncFromRemote()
-    /*************************************
-     END COPY PASTA FROM BASE ModelService
-    **************************************/
-    
-    var transferId: Int64 { get }
-    
-    func transferType() -> Type
-    
-    func withName(name: String) -> Type?
+    var svc: StandardModelServiceImpl<Type> {
+        get {
+            return _svc
+        }
+    }
     
 }

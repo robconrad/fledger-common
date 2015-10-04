@@ -14,43 +14,36 @@ import ParseOSX
 #endif
 
 
-public protocol ItemService: Service {
+public class ItemService: ModelService {
     
-    /***************************************
-     BEGIN COPY PASTA FROM BASE ModelService
-     ***************************************/
-    func modelType() -> ModelType
+    public typealias M = Item
     
-    func fromPFObject(pf: PFObject) -> Item
+    public func getTransferPair(first: Item) -> Item? {
+        fatalError()
+    }
     
-    func withId(id: Int64) -> Item?
+    public func getSum(item: Item, filters: Filters) -> Double {
+        fatalError()
+    }
     
-    func all() -> [Item]
-    func select(filters: Filters?) -> [Item]
+    public func getFiltersFromDefaults() -> ItemFilters {
+        fatalError()
+    }
     
-    func count(filters: Filters?) -> Int
+    public func defaultCount() -> Int {
+        fatalError()
+    }
     
-    func insert(e: Item) -> Int64?
+}
+
+class PFItemService: ItemService, PFModelService {
     
-    func update(e: Item) -> Bool
+    let _svc = StandardModelServiceImpl<Item>()
     
-    func delete(e: Item) -> Bool
-    func delete(id: Int64) -> Bool
-    
-    func invalidate()
-    
-    func syncToRemote()
-    func syncFromRemote()
-    /*************************************
-     END COPY PASTA FROM BASE ModelService
-    **************************************/
-    
-    func getTransferPair(first: Item) -> Item?
-    
-    func getSum(item: Item, filters: Filters) -> Double
-    
-    func getFiltersFromDefaults() -> ItemFilters
-    
-    func defaultCount() -> Int
+    var svc: StandardModelServiceImpl<Item> {
+        get {
+            return _svc
+        }
+    }
     
 }

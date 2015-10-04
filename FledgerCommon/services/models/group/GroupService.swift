@@ -14,39 +14,24 @@ import ParseOSX
 #endif
 
 
-public protocol GroupService: Service {
+public class GroupService: PFModelService {
     
-    /***************************************
-     BEGIN COPY PASTA FROM BASE ModelService
-     ***************************************/
-    func modelType() -> ModelType
+    public typealias M = Group
     
-    func fromPFObject(pf: PFObject) -> Group
+    let _svc = MemoryModelServiceImpl<Group>()
     
-    func withId(id: Int64) -> Group?
-    
-    func all() -> [Group]
-    func select(filters: Filters?) -> [Group]
-    
-    func count(filters: Filters?) -> Int
-    
-    func insert(e: Group) -> Int64?
-    
-    func update(e: Group) -> Bool
-    
-    func delete(e: Group) -> Bool
-    func delete(id: Int64) -> Bool
-    
-    func invalidate()
-    
-    func syncToRemote()
-    func syncFromRemote()
-    /*************************************
-     END COPY PASTA FROM BASE ModelService
-    **************************************/
+    var svc: StandardModelServiceImpl<Group> {
+        get {
+            return _svc
+        }
+    }
 
-    func withTypeId(id: Int64) -> Group?
+    public func withTypeId(id: Int64) -> Group? {
+        fatalError()
+    }
     
-    func withName(name: String) -> Group?
+    public func withName(name: String) -> Group? {
+        fatalError()
+    }
     
 }

@@ -14,37 +14,24 @@ import ParseOSX
 #endif
 
 
-public protocol AccountService: Service {
+public class AccountService: ModelService {
     
-    /***************************************
-     BEGIN COPY PASTA FROM BASE ModelService
-     ***************************************/
-    func modelType() -> ModelType
+    public typealias M = Account
     
-    func fromPFObject(pf: PFObject) -> Account
+    public func withName(name: String) -> Account? {
+        fatalError()
+    }
     
-    func withId(id: Int64) -> Account?
+}
+
+class PFAccountService: AccountService, PFModelService {
     
-    func all() -> [Account]
-    func select(filters: Filters?) -> [Account]
+    let _svc = MemoryModelServiceImpl<Account>()
     
-    func count(filters: Filters?) -> Int
-    
-    func insert(e: Account) -> Int64?
-    
-    func update(e: Account) -> Bool
-    
-    func delete(e: Account) -> Bool
-    func delete(id: Int64) -> Bool
-    
-    func invalidate()
-    
-    func syncToRemote()
-    func syncFromRemote()
-    /*************************************
-     END COPY PASTA FROM BASE ModelService
-    **************************************/
-    
-    func withName(name: String) -> Account?
+    var svc: StandardModelServiceImpl<Account> {
+        get {
+            return _svc
+        }
+    }
     
 }

@@ -16,39 +16,35 @@ import ParseOSX
 #endif
 
 
-class LocationServiceImpl<T: Location>: MemoryModelServiceImpl<Location>, LocationService {
+class LocationServiceImpl: PFLocationService {
     
-    required init() {
-        super.init()
-    }
-    
-    override func modelType() -> ModelType {
+    func modelType() -> ModelType {
         return ModelType.Location
     }
     
-    override internal func table() -> SchemaType {
+    internal func table() -> SchemaType {
         return DatabaseSvc().locations
     }
     
-    override func defaultOrder(query: SchemaType) -> SchemaType {
+    func defaultOrder(query: SchemaType) -> SchemaType {
         return query.order(Fields.name)
     }
     
-    override func select(filters: Filters?) -> [Location] {
+    func select(filters: Filters?) -> [Location] {
         var elements: [Location] = []
         
-        for row in DatabaseSvc().db.prepare(baseQuery(filters)) {
+        for row in DatabaseSvc().db.prepare(svc.baseQuery(filters)) {
             elements.append(Location(row: row))
         }
         
         return elements
     }
     
-    func itemCount(id: Int64) -> Int {
+    override func itemCount(id: Int64) -> Int {
         return DatabaseSvc().db.scalar(DatabaseSvc().items.filter(Fields.locationId == id).count)
     }
     
-    func nearest(coordinate: CLLocationCoordinate2D, sortBy: LocationSortBy) -> [Location] {
+    override func nearest(coordinate: CLLocationCoordinate2D, sortBy: LocationSortBy) -> [Location] {
         
         let orderBy: String
         switch sortBy {
@@ -76,8 +72,8 @@ class LocationServiceImpl<T: Location>: MemoryModelServiceImpl<Location>, Locati
         
         return elements
     }
-    
-    func cleanup() {
+
+    override func cleanup() {
         // TODO delete locations that have 0 items attached
     }
     

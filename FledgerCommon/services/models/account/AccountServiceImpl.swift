@@ -10,35 +10,31 @@ import Foundation
 import SQLite
 
 
-class AccountServiceImpl<T: Account>: MemoryModelServiceImpl<Account>, AccountService {
+class AccountServiceImpl: PFAccountService {
     
-    required init() {
-        super.init()
-    }
-    
-    override func modelType() -> ModelType {
+    func modelType() -> ModelType {
         return ModelType.Account
     }
     
-    override internal func table() -> SchemaType {
+    internal func table() -> SchemaType {
         return DatabaseSvc().accounts
     }
     
-    override func defaultOrder(query: SchemaType) -> SchemaType {
+    func defaultOrder(query: SchemaType) -> SchemaType {
         return query.order(Fields.priority, Fields.name)
     }
     
-    override func select(filters: Filters?) -> [Account] {
+    func select(filters: Filters?) -> [Account] {
         var elements: [Account] = []
         
-        for row in DatabaseSvc().db.prepare(baseQuery(filters)) {
+        for row in DatabaseSvc().db.prepare(svc.baseQuery(filters)) {
             elements.append(Account(row: row))
         }
         
         return elements
     }
     
-    func withName(name: String) -> Account? {
+    override func withName(name: String) -> Account? {
         return all().filter { $0.name == name }.first
     }
     

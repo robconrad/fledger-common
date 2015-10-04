@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0D8C8DE0980D82B16F67BE4E /* Pods_FledgerCommonMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7384CD6024C33D5B30818ADE /* Pods_FledgerCommonMac.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		3E1B63201BC0AB9600405316 /* PFModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B631F1BC0AB9600405316 /* PFModelService.swift */; settings = {ASSET_TAGS = (); }; };
+		3E1B63211BC0AB9600405316 /* PFModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B631F1BC0AB9600405316 /* PFModelService.swift */; settings = {ASSET_TAGS = (); }; };
+		3E1B63221BC0AB9600405316 /* PFModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B631F1BC0AB9600405316 /* PFModelService.swift */; settings = {ASSET_TAGS = (); }; };
+		3E1B63231BC0AB9600405316 /* PFModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B631F1BC0AB9600405316 /* PFModelService.swift */; settings = {ASSET_TAGS = (); }; };
 		3E39170A1B77F5C200F72EC5 /* FledgerCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E3917091B77F5C200F72EC5 /* FledgerCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3E3917101B77F5C200F72EC5 /* FledgerCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3917041B77F5C200F72EC5 /* FledgerCommon.framework */; };
 		3E39172A1B77F60D00F72EC5 /* FledgerCommonMac.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E3917291B77F60D00F72EC5 /* FledgerCommonMac.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -233,6 +237,7 @@
 
 /* Begin PBXFileReference section */
 		202B0DBA3E8C876B2BF52924 /* Pods_FledgerCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FledgerCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E1B631F1BC0AB9600405316 /* PFModelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PFModelService.swift; sourceTree = "<group>"; };
 		3E3917041B77F5C200F72EC5 /* FledgerCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FledgerCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E3917081B77F5C200F72EC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E3917091B77F5C200F72EC5 /* FledgerCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FledgerCommon.h; sourceTree = "<group>"; };
@@ -469,6 +474,7 @@
 				3E3917AD1B77FF6B00F72EC5 /* Model.swift */,
 				3E3917AF1B77FF6B00F72EC5 /* ModelType.swift */,
 				3E3917AE1B77FF6B00F72EC5 /* ModelService.swift */,
+				3E1B631F1BC0AB9600405316 /* PFModelService.swift */,
 				3E3917B61B77FF6B00F72EC5 /* StandardModelServiceImpl.swift */,
 				3E3917AC1B77FF6B00F72EC5 /* MemoryModelServiceImpl.swift */,
 			);
@@ -960,6 +966,7 @@
 				3E39182A1B77FF6B00F72EC5 /* ParseModel.swift in Sources */,
 				3E39183E1B77FF6B00F72EC5 /* Type.swift in Sources */,
 				3E39180E1B77FF6B00F72EC5 /* LocationService.swift in Sources */,
+				3E1B63201BC0AB9600405316 /* PFModelService.swift in Sources */,
 				3E3918521B77FF6B00F72EC5 /* Services.swift in Sources */,
 				3EBA5BC21BACC1B100BB5C5A /* PFModel.swift in Sources */,
 				3E39182E1B77FF6B00F72EC5 /* ParseService.swift in Sources */,
@@ -1000,6 +1007,7 @@
 				3E39182B1B77FF6B00F72EC5 /* ParseModel.swift in Sources */,
 				3E39189E1B783C3100F72EC5 /* AppTestSuite.swift in Sources */,
 				3E3918971B783B8600F72EC5 /* AccountServiceMock.swift in Sources */,
+				3E1B63211BC0AB9600405316 /* PFModelService.swift in Sources */,
 				3E3917C31B77FF6B00F72EC5 /* DatabaseServiceImpl.swift in Sources */,
 				3E3917BF1B77FF6B00F72EC5 /* DatabaseService.swift in Sources */,
 				3E3918981B783B8600F72EC5 /* ItemServiceMock.swift in Sources */,
@@ -1070,6 +1078,7 @@
 				3E3918441B77FF6B00F72EC5 /* TypeService.swift in Sources */,
 				3E3917E01B77FF6B00F72EC5 /* DeletedModel.swift in Sources */,
 				3E39182C1B77FF6B00F72EC5 /* ParseModel.swift in Sources */,
+				3E1B63221BC0AB9600405316 /* PFModelService.swift in Sources */,
 				3E3918401B77FF6B00F72EC5 /* Type.swift in Sources */,
 				3EBA5BC31BACC1B100BB5C5A /* PFModel.swift in Sources */,
 				3E3918101B77FF6B00F72EC5 /* LocationService.swift in Sources */,
@@ -1132,6 +1141,7 @@
 				3E3918411B77FF6B00F72EC5 /* Type.swift in Sources */,
 				3E3918E81B812E2400F72EC5 /* ArrayExtension.swift in Sources */,
 				3EBA5BBE1BACBCCB00BB5C5A /* UserServiceImpl.swift in Sources */,
+				3E1B63231BC0AB9600405316 /* PFModelService.swift in Sources */,
 				3E3918251B77FF6B00F72EC5 /* ModelType.swift in Sources */,
 				3E39183D1B77FF6B00F72EC5 /* StandardModelServiceImpl.swift in Sources */,
 				3E39181D1B77FF6B00F72EC5 /* Model.swift in Sources */,

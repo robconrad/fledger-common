@@ -14,42 +14,33 @@ import ParseOSX
 #endif
 
 
-public protocol LocationService: Service {
+public class LocationService: ModelService {
     
-    /***************************************
-     BEGIN COPY PASTA FROM BASE ModelService
-     ***************************************/
-    func modelType() -> ModelType
+    public typealias M = Location
     
-    func fromPFObject(pf: PFObject) -> Location
+    public func itemCount(id: Int64) -> Int {
+        fatalError()
+    }
     
-    func withId(id: Int64) -> Location?
+    public func nearest(coordinate: CLLocationCoordinate2D, sortBy: LocationSortBy) -> [Location] {
+        fatalError()
+    }
     
-    func all() -> [Location]
-    func select(filters: Filters?) -> [Location]
+    public func cleanup() {
+        fatalError()
+    }
     
-    func count(filters: Filters?) -> Int
+}
+
+class PFLocationService: LocationService, PFModelService {
     
-    func insert(e: Location) -> Int64?
+    let _svc = StandardModelServiceImpl<Location>()
     
-    func update(e: Location) -> Bool
-    
-    func delete(e: Location) -> Bool
-    func delete(id: Int64) -> Bool
-    
-    func invalidate()
-    
-    func syncToRemote()
-    func syncFromRemote()
-    /*************************************
-     END COPY PASTA FROM BASE ModelService
-    **************************************/
-    
-    func itemCount(id: Int64) -> Int
-    
-    func nearest(coordinate: CLLocationCoordinate2D, sortBy: LocationSortBy) -> [Location]
-    
-    func cleanup()
+    var svc: StandardModelServiceImpl<Location> {
+        get {
+            return _svc
+        }
+    }
     
 }
 
