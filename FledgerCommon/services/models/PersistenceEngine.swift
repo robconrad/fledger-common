@@ -1,12 +1,11 @@
 //
-//  LocationService.swift
-//  fledger-ios
+//  PersistenceEngine.swift
+//  FledgerCommon
 //
-//  Created by Robert Conrad on 5/3/15.
-//  Copyright (c) 2015 Robert Conrad. All rights reserved.
+//  Created by Robert Conrad on 10/4/15.
+//  Copyright © 2015 Robert Conrad. All rights reserved.
 //
 
-import Foundation
 #if os(iOS)
 import Parse
 #elseif os(OSX)
@@ -14,23 +13,22 @@ import ParseOSX
 #endif
 
 
-public protocol GroupService: ModelService {
+protocol PersistenceEngine: ModelService {
+    
+    typealias M: PFModel, SqlModel
     
     /****************************************************************************
     BEGIN common model-specific functions that cannot be defined in ModelService
     ****************************************************************************/
-    func fromPFObject(pf: PFObject) -> Group
-    func withId(id: Int64) -> Group?
-    func all() -> [Group]
-    func select(filters: Filters?) -> [Group]
-    func insert(e: Group) -> Int64?
-    func update(e: Group) -> Bool
-    func delete(e: Group) -> Bool
+    func fromPFObject(pf: PFObject) -> M
+    func withId(id: Int64) -> M?
+    func all() -> [M]
+    func select(filters: Filters?) -> [M]
+    func insert(e: M) -> Int64?
+    func update(e: M) -> Bool
+    func delete(e: M) -> Bool
     /****************************************************************************
     END common model-specific functions that cannot be defined in ModelService
     ****************************************************************************/
-
-    func withTypeId(id: Int64) -> Group?
-    func withName(name: String) -> Group?
     
 }

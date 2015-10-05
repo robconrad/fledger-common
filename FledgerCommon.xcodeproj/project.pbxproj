@@ -8,6 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		0D8C8DE0980D82B16F67BE4E /* Pods_FledgerCommonMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7384CD6024C33D5B30818ADE /* Pods_FledgerCommonMac.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		3E1B63411BC1909A00405316 /* PersistenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B63401BC1909A00405316 /* PersistenceEngine.swift */; settings = {ASSET_TAGS = (); }; };
+		3E1B63421BC1909A00405316 /* PersistenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B63401BC1909A00405316 /* PersistenceEngine.swift */; settings = {ASSET_TAGS = (); }; };
+		3E1B63431BC1909A00405316 /* PersistenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B63401BC1909A00405316 /* PersistenceEngine.swift */; settings = {ASSET_TAGS = (); }; };
+		3E1B63441BC1909A00405316 /* PersistenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B63401BC1909A00405316 /* PersistenceEngine.swift */; settings = {ASSET_TAGS = (); }; };
+		3E1B63461BC1918700405316 /* StandardPersistenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B63451BC1918700405316 /* StandardPersistenceEngine.swift */; settings = {ASSET_TAGS = (); }; };
+		3E1B63471BC1918700405316 /* StandardPersistenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B63451BC1918700405316 /* StandardPersistenceEngine.swift */; settings = {ASSET_TAGS = (); }; };
+		3E1B63481BC1918700405316 /* StandardPersistenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B63451BC1918700405316 /* StandardPersistenceEngine.swift */; settings = {ASSET_TAGS = (); }; };
+		3E1B63491BC1918700405316 /* StandardPersistenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B63451BC1918700405316 /* StandardPersistenceEngine.swift */; settings = {ASSET_TAGS = (); }; };
+		3E1B634B1BC1927600405316 /* MemoryPersistenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B634A1BC1927600405316 /* MemoryPersistenceEngine.swift */; settings = {ASSET_TAGS = (); }; };
+		3E1B634C1BC1927600405316 /* MemoryPersistenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B634A1BC1927600405316 /* MemoryPersistenceEngine.swift */; settings = {ASSET_TAGS = (); }; };
+		3E1B634D1BC1927600405316 /* MemoryPersistenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B634A1BC1927600405316 /* MemoryPersistenceEngine.swift */; settings = {ASSET_TAGS = (); }; };
+		3E1B634E1BC1927600405316 /* MemoryPersistenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B634A1BC1927600405316 /* MemoryPersistenceEngine.swift */; settings = {ASSET_TAGS = (); }; };
+		3E1B63501BC1A9CE00405316 /* ShieldedPersistenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B634F1BC1A9CE00405316 /* ShieldedPersistenceEngine.swift */; settings = {ASSET_TAGS = (); }; };
+		3E1B63511BC1A9CE00405316 /* ShieldedPersistenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B634F1BC1A9CE00405316 /* ShieldedPersistenceEngine.swift */; settings = {ASSET_TAGS = (); }; };
+		3E1B63521BC1A9CE00405316 /* ShieldedPersistenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B634F1BC1A9CE00405316 /* ShieldedPersistenceEngine.swift */; settings = {ASSET_TAGS = (); }; };
+		3E1B63531BC1A9CE00405316 /* ShieldedPersistenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B634F1BC1A9CE00405316 /* ShieldedPersistenceEngine.swift */; settings = {ASSET_TAGS = (); }; };
+		3E1B63551BC1AA1100405316 /* HasShieldedPersistenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B63541BC1AA1100405316 /* HasShieldedPersistenceEngine.swift */; settings = {ASSET_TAGS = (); }; };
+		3E1B63561BC1AA1100405316 /* HasShieldedPersistenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B63541BC1AA1100405316 /* HasShieldedPersistenceEngine.swift */; settings = {ASSET_TAGS = (); }; };
+		3E1B63571BC1AA1100405316 /* HasShieldedPersistenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B63541BC1AA1100405316 /* HasShieldedPersistenceEngine.swift */; settings = {ASSET_TAGS = (); }; };
+		3E1B63581BC1AA1100405316 /* HasShieldedPersistenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B63541BC1AA1100405316 /* HasShieldedPersistenceEngine.swift */; settings = {ASSET_TAGS = (); }; };
+		3E1B635A1BC1AF9500405316 /* ModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B63591BC1AF9500405316 /* ModelService.swift */; settings = {ASSET_TAGS = (); }; };
+		3E1B635B1BC1AF9500405316 /* ModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B63591BC1AF9500405316 /* ModelService.swift */; settings = {ASSET_TAGS = (); }; };
+		3E1B635C1BC1AF9500405316 /* ModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B63591BC1AF9500405316 /* ModelService.swift */; settings = {ASSET_TAGS = (); }; };
+		3E1B635D1BC1AF9500405316 /* ModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B63591BC1AF9500405316 /* ModelService.swift */; settings = {ASSET_TAGS = (); }; };
 		3E39170A1B77F5C200F72EC5 /* FledgerCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E3917091B77F5C200F72EC5 /* FledgerCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3E3917101B77F5C200F72EC5 /* FledgerCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3917041B77F5C200F72EC5 /* FledgerCommon.framework */; };
 		3E39172A1B77F60D00F72EC5 /* FledgerCommonMac.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E3917291B77F60D00F72EC5 /* FledgerCommonMac.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -101,18 +125,10 @@
 		3E3918131B77FF6B00F72EC5 /* LocationServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917AB1B77FF6B00F72EC5 /* LocationServiceImpl.swift */; };
 		3E3918141B77FF6B00F72EC5 /* LocationServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917AB1B77FF6B00F72EC5 /* LocationServiceImpl.swift */; };
 		3E3918151B77FF6B00F72EC5 /* LocationServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917AB1B77FF6B00F72EC5 /* LocationServiceImpl.swift */; };
-		3E3918161B77FF6B00F72EC5 /* MemoryModelServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917AC1B77FF6B00F72EC5 /* MemoryModelServiceImpl.swift */; };
-		3E3918171B77FF6B00F72EC5 /* MemoryModelServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917AC1B77FF6B00F72EC5 /* MemoryModelServiceImpl.swift */; };
-		3E3918181B77FF6B00F72EC5 /* MemoryModelServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917AC1B77FF6B00F72EC5 /* MemoryModelServiceImpl.swift */; };
-		3E3918191B77FF6B00F72EC5 /* MemoryModelServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917AC1B77FF6B00F72EC5 /* MemoryModelServiceImpl.swift */; };
 		3E39181A1B77FF6B00F72EC5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917AD1B77FF6B00F72EC5 /* Model.swift */; };
 		3E39181B1B77FF6B00F72EC5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917AD1B77FF6B00F72EC5 /* Model.swift */; };
 		3E39181C1B77FF6B00F72EC5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917AD1B77FF6B00F72EC5 /* Model.swift */; };
 		3E39181D1B77FF6B00F72EC5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917AD1B77FF6B00F72EC5 /* Model.swift */; };
-		3E39181E1B77FF6B00F72EC5 /* ModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917AE1B77FF6B00F72EC5 /* ModelService.swift */; };
-		3E39181F1B77FF6B00F72EC5 /* ModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917AE1B77FF6B00F72EC5 /* ModelService.swift */; };
-		3E3918201B77FF6B00F72EC5 /* ModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917AE1B77FF6B00F72EC5 /* ModelService.swift */; };
-		3E3918211B77FF6B00F72EC5 /* ModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917AE1B77FF6B00F72EC5 /* ModelService.swift */; };
 		3E3918221B77FF6B00F72EC5 /* ModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917AF1B77FF6B00F72EC5 /* ModelType.swift */; };
 		3E3918231B77FF6B00F72EC5 /* ModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917AF1B77FF6B00F72EC5 /* ModelType.swift */; };
 		3E3918241B77FF6B00F72EC5 /* ModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917AF1B77FF6B00F72EC5 /* ModelType.swift */; };
@@ -137,10 +153,6 @@
 		3E3918371B77FF6B00F72EC5 /* PFObjectConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917B51B77FF6B00F72EC5 /* PFObjectConvertible.swift */; };
 		3E3918381B77FF6B00F72EC5 /* PFObjectConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917B51B77FF6B00F72EC5 /* PFObjectConvertible.swift */; };
 		3E3918391B77FF6B00F72EC5 /* PFObjectConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917B51B77FF6B00F72EC5 /* PFObjectConvertible.swift */; };
-		3E39183A1B77FF6B00F72EC5 /* StandardModelServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917B61B77FF6B00F72EC5 /* StandardModelServiceImpl.swift */; };
-		3E39183B1B77FF6B00F72EC5 /* StandardModelServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917B61B77FF6B00F72EC5 /* StandardModelServiceImpl.swift */; };
-		3E39183C1B77FF6B00F72EC5 /* StandardModelServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917B61B77FF6B00F72EC5 /* StandardModelServiceImpl.swift */; };
-		3E39183D1B77FF6B00F72EC5 /* StandardModelServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917B61B77FF6B00F72EC5 /* StandardModelServiceImpl.swift */; };
 		3E39183E1B77FF6B00F72EC5 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917B81B77FF6B00F72EC5 /* Type.swift */; };
 		3E39183F1B77FF6B00F72EC5 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917B81B77FF6B00F72EC5 /* Type.swift */; };
 		3E3918401B77FF6B00F72EC5 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3917B81B77FF6B00F72EC5 /* Type.swift */; };
@@ -233,6 +245,12 @@
 
 /* Begin PBXFileReference section */
 		202B0DBA3E8C876B2BF52924 /* Pods_FledgerCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FledgerCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E1B63401BC1909A00405316 /* PersistenceEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceEngine.swift; sourceTree = "<group>"; };
+		3E1B63451BC1918700405316 /* StandardPersistenceEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardPersistenceEngine.swift; sourceTree = "<group>"; };
+		3E1B634A1BC1927600405316 /* MemoryPersistenceEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryPersistenceEngine.swift; sourceTree = "<group>"; };
+		3E1B634F1BC1A9CE00405316 /* ShieldedPersistenceEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShieldedPersistenceEngine.swift; sourceTree = "<group>"; };
+		3E1B63541BC1AA1100405316 /* HasShieldedPersistenceEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasShieldedPersistenceEngine.swift; sourceTree = "<group>"; };
+		3E1B63591BC1AF9500405316 /* ModelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelService.swift; sourceTree = "<group>"; };
 		3E3917041B77F5C200F72EC5 /* FledgerCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FledgerCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E3917081B77F5C200F72EC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E3917091B77F5C200F72EC5 /* FledgerCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FledgerCommon.h; sourceTree = "<group>"; };
@@ -266,16 +284,13 @@
 		3E3917A91B77FF6B00F72EC5 /* LocationAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAnnotation.swift; sourceTree = "<group>"; };
 		3E3917AA1B77FF6B00F72EC5 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		3E3917AB1B77FF6B00F72EC5 /* LocationServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServiceImpl.swift; sourceTree = "<group>"; };
-		3E3917AC1B77FF6B00F72EC5 /* MemoryModelServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryModelServiceImpl.swift; sourceTree = "<group>"; };
 		3E3917AD1B77FF6B00F72EC5 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		3E3917AE1B77FF6B00F72EC5 /* ModelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelService.swift; sourceTree = "<group>"; };
 		3E3917AF1B77FF6B00F72EC5 /* ModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelType.swift; sourceTree = "<group>"; };
 		3E3917B11B77FF6B00F72EC5 /* ParseFilters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseFilters.swift; sourceTree = "<group>"; };
 		3E3917B21B77FF6B00F72EC5 /* ParseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseModel.swift; sourceTree = "<group>"; };
 		3E3917B31B77FF6B00F72EC5 /* ParseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseService.swift; sourceTree = "<group>"; };
 		3E3917B41B77FF6B00F72EC5 /* ParseServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseServiceImpl.swift; sourceTree = "<group>"; };
 		3E3917B51B77FF6B00F72EC5 /* PFObjectConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PFObjectConvertible.swift; sourceTree = "<group>"; };
-		3E3917B61B77FF6B00F72EC5 /* StandardModelServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardModelServiceImpl.swift; sourceTree = "<group>"; };
 		3E3917B81B77FF6B00F72EC5 /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		3E3917B91B77FF6B00F72EC5 /* TypeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeService.swift; sourceTree = "<group>"; };
 		3E3917BA1B77FF6B00F72EC5 /* TypeServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeServiceImpl.swift; sourceTree = "<group>"; };
@@ -341,6 +356,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E1B633F1BC1903600405316 /* persistence */ = {
+			isa = PBXGroup;
+			children = (
+				3E1B63401BC1909A00405316 /* PersistenceEngine.swift */,
+				3E1B634F1BC1A9CE00405316 /* ShieldedPersistenceEngine.swift */,
+				3E1B63541BC1AA1100405316 /* HasShieldedPersistenceEngine.swift */,
+				3E1B63451BC1918700405316 /* StandardPersistenceEngine.swift */,
+				3E1B634A1BC1927600405316 /* MemoryPersistenceEngine.swift */,
+			);
+			name = persistence;
+			sourceTree = "<group>";
+		};
 		3E3916FA1B77F5C200F72EC5 = {
 			isa = PBXGroup;
 			children = (
@@ -454,6 +481,7 @@
 		3E3917921B77FF6B00F72EC5 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				3E1B633F1BC1903600405316 /* persistence */,
 				3EBA5BB11BACB65400BB5C5A /* user */,
 				3E3917931B77FF6B00F72EC5 /* account */,
 				3E3917971B77FF6B00F72EC5 /* aggregate */,
@@ -468,9 +496,7 @@
 				3E39179D1B77FF6B00F72EC5 /* Filters.swift */,
 				3E3917AD1B77FF6B00F72EC5 /* Model.swift */,
 				3E3917AF1B77FF6B00F72EC5 /* ModelType.swift */,
-				3E3917AE1B77FF6B00F72EC5 /* ModelService.swift */,
-				3E3917B61B77FF6B00F72EC5 /* StandardModelServiceImpl.swift */,
-				3E3917AC1B77FF6B00F72EC5 /* MemoryModelServiceImpl.swift */,
+				3E1B63591BC1AF9500405316 /* ModelService.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -938,19 +964,19 @@
 				3E3917BE1B77FF6B00F72EC5 /* DatabaseService.swift in Sources */,
 				3E3917D61B77FF6B00F72EC5 /* AggregateService.swift in Sources */,
 				3E3917EA1B77FF6B00F72EC5 /* Group.swift in Sources */,
+				3E1B635A1BC1AF9500405316 /* ModelService.swift in Sources */,
 				3E39181A1B77FF6B00F72EC5 /* Model.swift in Sources */,
 				3E3918021B77FF6B00F72EC5 /* ItemServiceImpl.swift in Sources */,
+				3E1B63411BC1909A00405316 /* PersistenceEngine.swift in Sources */,
+				3E1B63551BC1AA1100405316 /* HasShieldedPersistenceEngine.swift in Sources */,
 				3E3917F21B77FF6B00F72EC5 /* GroupServiceImpl.swift in Sources */,
 				3E3917E21B77FF6B00F72EC5 /* Fields.swift in Sources */,
 				3E3918651B780DDA00F72EC5 /* ArrayExtension.swift in Sources */,
-				3E39183A1B77FF6B00F72EC5 /* StandardModelServiceImpl.swift in Sources */,
 				3E3917D21B77FF6B00F72EC5 /* Aggregate.swift in Sources */,
 				3E3918361B77FF6B00F72EC5 /* PFObjectConvertible.swift in Sources */,
 				3E39184A1B77FF6B00F72EC5 /* Service.swift in Sources */,
 				3E3917E61B77FF6B00F72EC5 /* Filters.swift in Sources */,
-				3E39181E1B77FF6B00F72EC5 /* ModelService.swift in Sources */,
 				3E3918321B77FF6B00F72EC5 /* ParseServiceImpl.swift in Sources */,
-				3E3918161B77FF6B00F72EC5 /* MemoryModelServiceImpl.swift in Sources */,
 				3E3917C21B77FF6B00F72EC5 /* DatabaseServiceImpl.swift in Sources */,
 				3E3918061B77FF6B00F72EC5 /* Location.swift in Sources */,
 				3E3917CE1B77FF6B00F72EC5 /* AccountServiceImpl.swift in Sources */,
@@ -968,11 +994,14 @@
 				3E3917F61B77FF6B00F72EC5 /* Item.swift in Sources */,
 				3E3919601B81466500F72EC5 /* LoginViewHelper.swift in Sources */,
 				3E3918461B77FF6B00F72EC5 /* TypeServiceImpl.swift in Sources */,
+				3E1B63501BC1A9CE00405316 /* ShieldedPersistenceEngine.swift in Sources */,
 				3E3917EE1B77FF6B00F72EC5 /* GroupService.swift in Sources */,
 				3EBA5BB71BACB8D900BB5C5A /* UserServiceImpl.swift in Sources */,
 				3E3917C61B77FF6B00F72EC5 /* Account.swift in Sources */,
 				3E3917DA1B77FF6B00F72EC5 /* AggregateServiceImpl.swift in Sources */,
+				3E1B634B1BC1927600405316 /* MemoryPersistenceEngine.swift in Sources */,
 				3EBA5BB31BACB66500BB5C5A /* UserService.swift in Sources */,
+				3E1B63461BC1918700405316 /* StandardPersistenceEngine.swift in Sources */,
 				3E39180A1B77FF6B00F72EC5 /* LocationAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -988,18 +1017,20 @@
 				3E3918371B77FF6B00F72EC5 /* PFObjectConvertible.swift in Sources */,
 				3E3917E31B77FF6B00F72EC5 /* Fields.swift in Sources */,
 				3E3918531B77FF6B00F72EC5 /* Services.swift in Sources */,
+				3E1B635B1BC1AF9500405316 /* ModelService.swift in Sources */,
 				3E3918431B77FF6B00F72EC5 /* TypeService.swift in Sources */,
 				3E39182F1B77FF6B00F72EC5 /* ParseService.swift in Sources */,
+				3E1B63421BC1909A00405316 /* PersistenceEngine.swift in Sources */,
 				3E3917EF1B77FF6B00F72EC5 /* GroupService.swift in Sources */,
 				3E3917EB1B77FF6B00F72EC5 /* Group.swift in Sources */,
 				3E3917E71B77FF6B00F72EC5 /* Filters.swift in Sources */,
 				3E3917CB1B77FF6B00F72EC5 /* AccountService.swift in Sources */,
 				3E3917FF1B77FF6B00F72EC5 /* ItemService.swift in Sources */,
 				3E3917CF1B77FF6B00F72EC5 /* AccountServiceImpl.swift in Sources */,
-				3E3918171B77FF6B00F72EC5 /* MemoryModelServiceImpl.swift in Sources */,
 				3E39182B1B77FF6B00F72EC5 /* ParseModel.swift in Sources */,
 				3E39189E1B783C3100F72EC5 /* AppTestSuite.swift in Sources */,
 				3E3918971B783B8600F72EC5 /* AccountServiceMock.swift in Sources */,
+				3E1B63471BC1918700405316 /* StandardPersistenceEngine.swift in Sources */,
 				3E3917C31B77FF6B00F72EC5 /* DatabaseServiceImpl.swift in Sources */,
 				3E3917BF1B77FF6B00F72EC5 /* DatabaseService.swift in Sources */,
 				3E3918981B783B8600F72EC5 /* ItemServiceMock.swift in Sources */,
@@ -1014,21 +1045,22 @@
 				3E3918961B783B8600F72EC5 /* DatabaseServiceMock.swift in Sources */,
 				3E3917C71B77FF6B00F72EC5 /* Account.swift in Sources */,
 				3EBA5BBF1BACBCCD00BB5C5A /* UserType.swift in Sources */,
-				3E39181F1B77FF6B00F72EC5 /* ModelService.swift in Sources */,
 				3E3918031B77FF6B00F72EC5 /* ItemServiceImpl.swift in Sources */,
 				3E3918E71B812E2300F72EC5 /* ArrayExtension.swift in Sources */,
+				3E1B634C1BC1927600405316 /* MemoryPersistenceEngine.swift in Sources */,
 				3E39184B1B77FF6B00F72EC5 /* Service.swift in Sources */,
 				3E39184F1B77FF6B00F72EC5 /* ServiceBootstrap.swift in Sources */,
 				3E3918331B77FF6B00F72EC5 /* ParseServiceImpl.swift in Sources */,
 				3E39180B1B77FF6B00F72EC5 /* LocationAnnotation.swift in Sources */,
+				3E1B63511BC1A9CE00405316 /* ShieldedPersistenceEngine.swift in Sources */,
 				3E3918131B77FF6B00F72EC5 /* LocationServiceImpl.swift in Sources */,
 				3E3918991B783B8600F72EC5 /* LocationServiceImplSuite.swift in Sources */,
+				3E1B63561BC1AA1100405316 /* HasShieldedPersistenceEngine.swift in Sources */,
 				3E3917D31B77FF6B00F72EC5 /* Aggregate.swift in Sources */,
 				3E3917DF1B77FF6B00F72EC5 /* DeletedModel.swift in Sources */,
 				3E39180F1B77FF6B00F72EC5 /* LocationService.swift in Sources */,
 				3E39183F1B77FF6B00F72EC5 /* Type.swift in Sources */,
 				3E3918231B77FF6B00F72EC5 /* ModelType.swift in Sources */,
-				3E39183B1B77FF6B00F72EC5 /* StandardModelServiceImpl.swift in Sources */,
 				3E39181B1B77FF6B00F72EC5 /* Model.swift in Sources */,
 				3E3919611B81466500F72EC5 /* LoginViewHelper.swift in Sources */,
 				3E3917FB1B77FF6B00F72EC5 /* ItemFilters.swift in Sources */,
@@ -1048,21 +1080,21 @@
 				3E3917C01B77FF6B00F72EC5 /* DatabaseService.swift in Sources */,
 				3E3917D81B77FF6B00F72EC5 /* AggregateService.swift in Sources */,
 				3E3917EC1B77FF6B00F72EC5 /* Group.swift in Sources */,
+				3E1B635C1BC1AF9500405316 /* ModelService.swift in Sources */,
 				3E39181C1B77FF6B00F72EC5 /* Model.swift in Sources */,
 				3E3918041B77FF6B00F72EC5 /* ItemServiceImpl.swift in Sources */,
+				3E1B63431BC1909A00405316 /* PersistenceEngine.swift in Sources */,
+				3E1B63571BC1AA1100405316 /* HasShieldedPersistenceEngine.swift in Sources */,
 				3E3917F41B77FF6B00F72EC5 /* GroupServiceImpl.swift in Sources */,
 				3E3917E41B77FF6B00F72EC5 /* Fields.swift in Sources */,
 				3E3918E61B812E2200F72EC5 /* ArrayExtension.swift in Sources */,
-				3E39183C1B77FF6B00F72EC5 /* StandardModelServiceImpl.swift in Sources */,
 				3E3917D41B77FF6B00F72EC5 /* Aggregate.swift in Sources */,
 				3E3918381B77FF6B00F72EC5 /* PFObjectConvertible.swift in Sources */,
 				3E39184C1B77FF6B00F72EC5 /* Service.swift in Sources */,
 				3EBA5BBA1BACB8E100BB5C5A /* UserService.swift in Sources */,
 				3E3917E81B77FF6B00F72EC5 /* Filters.swift in Sources */,
 				3EBA5BB81BACB8D900BB5C5A /* UserServiceImpl.swift in Sources */,
-				3E3918201B77FF6B00F72EC5 /* ModelService.swift in Sources */,
 				3E3918341B77FF6B00F72EC5 /* ParseServiceImpl.swift in Sources */,
-				3E3918181B77FF6B00F72EC5 /* MemoryModelServiceImpl.swift in Sources */,
 				3E3917C41B77FF6B00F72EC5 /* DatabaseServiceImpl.swift in Sources */,
 				3EBA5BC91BACC40B00BB5C5A /* SqlModel.swift in Sources */,
 				3E3918081B77FF6B00F72EC5 /* Location.swift in Sources */,
@@ -1078,11 +1110,14 @@
 				3E3918501B77FF6B00F72EC5 /* ServiceBootstrap.swift in Sources */,
 				3E3917CC1B77FF6B00F72EC5 /* AccountService.swift in Sources */,
 				3E3917F81B77FF6B00F72EC5 /* Item.swift in Sources */,
+				3E1B63521BC1A9CE00405316 /* ShieldedPersistenceEngine.swift in Sources */,
 				3E3919621B81466500F72EC5 /* LoginViewHelper.swift in Sources */,
 				3E3918481B77FF6B00F72EC5 /* TypeServiceImpl.swift in Sources */,
 				3E3917F01B77FF6B00F72EC5 /* GroupService.swift in Sources */,
 				3E3917C81B77FF6B00F72EC5 /* Account.swift in Sources */,
+				3E1B634D1BC1927600405316 /* MemoryPersistenceEngine.swift in Sources */,
 				3E3917DC1B77FF6B00F72EC5 /* AggregateServiceImpl.swift in Sources */,
+				3E1B63481BC1918700405316 /* StandardPersistenceEngine.swift in Sources */,
 				3E39180C1B77FF6B00F72EC5 /* LocationAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1094,6 +1129,7 @@
 				3E3917F91B77FF6B00F72EC5 /* Item.swift in Sources */,
 				3E3918291B77FF6B00F72EC5 /* ParseFilters.swift in Sources */,
 				3E3918391B77FF6B00F72EC5 /* PFObjectConvertible.swift in Sources */,
+				3E1B63531BC1A9CE00405316 /* ShieldedPersistenceEngine.swift in Sources */,
 				3E3917E51B77FF6B00F72EC5 /* Fields.swift in Sources */,
 				3E3918551B77FF6B00F72EC5 /* Services.swift in Sources */,
 				3E3918451B77FF6B00F72EC5 /* TypeService.swift in Sources */,
@@ -1104,7 +1140,7 @@
 				3E3917CD1B77FF6B00F72EC5 /* AccountService.swift in Sources */,
 				3E3918011B77FF6B00F72EC5 /* ItemService.swift in Sources */,
 				3E3917D11B77FF6B00F72EC5 /* AccountServiceImpl.swift in Sources */,
-				3E3918191B77FF6B00F72EC5 /* MemoryModelServiceImpl.swift in Sources */,
+				3E1B634E1BC1927600405316 /* MemoryPersistenceEngine.swift in Sources */,
 				3EBA5BBB1BACBCC500BB5C5A /* UserService.swift in Sources */,
 				3E39182D1B77FF6B00F72EC5 /* ParseModel.swift in Sources */,
 				3E3917C51B77FF6B00F72EC5 /* DatabaseServiceImpl.swift in Sources */,
@@ -1116,11 +1152,12 @@
 				3E3917DD1B77FF6B00F72EC5 /* AggregateServiceImpl.swift in Sources */,
 				3E3917F51B77FF6B00F72EC5 /* GroupServiceImpl.swift in Sources */,
 				3E3917C91B77FF6B00F72EC5 /* Account.swift in Sources */,
-				3E3918211B77FF6B00F72EC5 /* ModelService.swift in Sources */,
 				3E3918051B77FF6B00F72EC5 /* ItemServiceImpl.swift in Sources */,
 				3E39184D1B77FF6B00F72EC5 /* Service.swift in Sources */,
 				3E3918511B77FF6B00F72EC5 /* ServiceBootstrap.swift in Sources */,
 				3EBA5BCB1BACC40E00BB5C5A /* SqlModel.swift in Sources */,
+				3E1B635D1BC1AF9500405316 /* ModelService.swift in Sources */,
+				3E1B63441BC1909A00405316 /* PersistenceEngine.swift in Sources */,
 				3E3918351B77FF6B00F72EC5 /* ParseServiceImpl.swift in Sources */,
 				3E39180D1B77FF6B00F72EC5 /* LocationAnnotation.swift in Sources */,
 				3E3918151B77FF6B00F72EC5 /* LocationServiceImpl.swift in Sources */,
@@ -1128,12 +1165,13 @@
 				3E3919631B81466500F72EC5 /* LoginViewHelper.swift in Sources */,
 				3EBA5BC01BACBCCE00BB5C5A /* UserType.swift in Sources */,
 				3E3917E11B77FF6B00F72EC5 /* DeletedModel.swift in Sources */,
+				3E1B63491BC1918700405316 /* StandardPersistenceEngine.swift in Sources */,
 				3E3918111B77FF6B00F72EC5 /* LocationService.swift in Sources */,
 				3E3918411B77FF6B00F72EC5 /* Type.swift in Sources */,
 				3E3918E81B812E2400F72EC5 /* ArrayExtension.swift in Sources */,
+				3E1B63581BC1AA1100405316 /* HasShieldedPersistenceEngine.swift in Sources */,
 				3EBA5BBE1BACBCCB00BB5C5A /* UserServiceImpl.swift in Sources */,
 				3E3918251B77FF6B00F72EC5 /* ModelType.swift in Sources */,
-				3E39183D1B77FF6B00F72EC5 /* StandardModelServiceImpl.swift in Sources */,
 				3E39181D1B77FF6B00F72EC5 /* Model.swift in Sources */,
 				3EBA5BC51BACC23D00BB5C5A /* PFModel.swift in Sources */,
 				3E3917FD1B77FF6B00F72EC5 /* ItemFilters.swift in Sources */,

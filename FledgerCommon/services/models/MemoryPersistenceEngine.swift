@@ -1,19 +1,38 @@
 //
-//  Manager.swift
-//  fledger-ios
+//  StandardPersistenceEngine.swift
+//  FledgerCommon
 //
-//  Created by Robert Conrad on 4/11/15.
-//  Copyright (c) 2015 TwoSpec Inc. All rights reserved.
+//  Created by Robert Conrad on 10/4/15.
+//  Copyright © 2015 Robert Conrad. All rights reserved.
 //
 
-class MemoryModelServiceImpl<M where M: PFModel, M: SqlModel>: StandardModelServiceImpl<M> {
+import SQLite
+#if os(iOS)
+import Parse
+#elseif os(OSX)
+import ParseOSX
+#endif
+
+
+class MemoryPersistenceEngine<M where M: PFModel, M: SqlModel>: StandardPersistenceEngine<M> {
     
     // return all managed models of the type
     internal var _allArray: [M]?
     internal var _allDict: [Int64: M]?
     
-    required override init() {
-        super.init()
+    required init(
+        modelType: ModelType,
+        fromPFObject: PFObject -> M,
+        fromRow: Row -> M,
+        table: SchemaType,
+        defaultOrder: (SchemaType) -> SchemaType = { q in q.order(Fields.id.desc) }
+    ) {
+        super.init(
+            modelType: modelType,
+            fromPFObject: fromPFObject,
+            fromRow: fromRow,
+            table: table,
+            defaultOrder: defaultOrder)
     }
     
     override func withId(id: Int64) -> M? {
@@ -43,7 +62,7 @@ class MemoryModelServiceImpl<M where M: PFModel, M: SqlModel>: StandardModelServ
     
     override func insert(e: M) -> Int64? {
         let id = super.insert(e)
-            
+        
         if id != nil {
             invalidate()
         }
@@ -77,3 +96,4 @@ class MemoryModelServiceImpl<M where M: PFModel, M: SqlModel>: StandardModelServ
     }
     
 }
+

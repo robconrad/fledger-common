@@ -16,33 +16,15 @@ import ParseOSX
 #endif
 
 
-class LocationServiceImpl<T: Location>: MemoryModelServiceImpl<Location>, LocationService {
+class LocationServiceImpl: LocationService, HasShieldedPersistenceEngine {
     
-    required init() {
-        super.init()
-    }
-    
-    override func modelType() -> ModelType {
-        return ModelType.Location
-    }
-    
-    override internal func table() -> SchemaType {
-        return DatabaseSvc().locations
-    }
-    
-    override func defaultOrder(query: SchemaType) -> SchemaType {
-        return query.order(Fields.name)
-    }
-    
-    override func select(filters: Filters?) -> [Location] {
-        var elements: [Location] = []
-        
-        for row in DatabaseSvc().db.prepare(baseQuery(filters)) {
-            elements.append(Location(row: row))
-        }
-        
-        return elements
-    }
+    let engine = ShieldedPersistenceEngine(engine: StandardPersistenceEngine<Location>(
+        modelType: ModelType.Location,
+        fromPFObject: { pf in Location(pf: pf) },
+        fromRow: { row in Location(row: row) },
+        table: DatabaseSvc().locations,
+        defaultOrder: { q in q.order(Fields.name) }
+    ))
     
     func itemCount(id: Int64) -> Int {
         return DatabaseSvc().db.scalar(DatabaseSvc().items.filter(Fields.locationId == id).count)

@@ -8,38 +8,25 @@
 
 import Foundation
 import SQLite
+#if os(iOS)
+import Parse
+#elseif os(OSX)
+import ParseOSX
+#endif
 
 
-class AccountServiceImpl<T: Account>: MemoryModelServiceImpl<Account>, AccountService {
+class AccountServiceImpl: AccountService, HasShieldedPersistenceEngine {
     
-    required init() {
-        super.init()
-    }
-    
-    override func modelType() -> ModelType {
-        return ModelType.Account
-    }
-    
-    override internal func table() -> SchemaType {
-        return DatabaseSvc().accounts
-    }
-    
-    override func defaultOrder(query: SchemaType) -> SchemaType {
-        return query.order(Fields.priority, Fields.name)
-    }
-    
-    override func select(filters: Filters?) -> [Account] {
-        var elements: [Account] = []
-        
-        for row in DatabaseSvc().db.prepare(baseQuery(filters)) {
-            elements.append(Account(row: row))
-        }
-        
-        return elements
-    }
+    let engine = ShieldedPersistenceEngine(engine: MemoryPersistenceEngine<Account>(
+        modelType: ModelType.Account,
+        fromPFObject: { pf in Account(pf: pf) },
+        fromRow: { row in Account(row: row) },
+        table: DatabaseSvc().accounts,
+        defaultOrder: { q in q.order(Fields.priority, Fields.name) }
+    ))
     
     func withName(name: String) -> Account? {
-        return all().filter { $0.name == name }.first
+        return engine.all().filter { $0.name == name }.first
     }
     
 }

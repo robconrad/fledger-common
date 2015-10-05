@@ -10,35 +10,17 @@ import Foundation
 import SQLite
 
 
-class TypeServiceImpl<T: Type>: MemoryModelServiceImpl<Type>, TypeService {
+class TypeServiceImpl: TypeService, HasShieldedPersistenceEngine {
     
     let transferId: Int64 = 28
     
-    required init() {
-        super.init()
-    }
-    
-    override func modelType() -> ModelType {
-        return ModelType.Typ
-    }
-    
-    override internal func table() -> SchemaType {
-        return DatabaseSvc().types
-    }
-    
-    override func defaultOrder(query: SchemaType) -> SchemaType {
-        return query.order(Fields.name)
-    }
-    
-    override func select(filters: Filters?) -> [Type] {
-        var elements: [Type] = []
-        
-        for row in DatabaseSvc().db.prepare(baseQuery(filters)) {
-            elements.append(Type(row: row))
-        }
-        
-        return elements
-    }
+    let engine = ShieldedPersistenceEngine(engine: MemoryPersistenceEngine<Type>(
+        modelType: ModelType.Typ,
+        fromPFObject: { pf in Type(pf: pf) },
+        fromRow: { row in Type(row: row) },
+        table: DatabaseSvc().types,
+        defaultOrder: { q in q.order(Fields.name) }
+    ))
     
     func transferType() -> Type {
         return withId(transferId)!

@@ -1,12 +1,11 @@
 //
-//  Manager.swift
-//  fledger-ios
+//  StandardPersistenceEngine.swift
+//  FledgerCommon
 //
-//  Created by Robert Conrad on 4/11/15.
-//  Copyright (c) 2015 TwoSpec Inc. All rights reserved.
+//  Created by Robert Conrad on 10/4/15.
+//  Copyright © 2015 Robert Conrad. All rights reserved.
 //
 
-import Foundation
 import SQLite
 #if os(iOS)
 import Parse
@@ -15,30 +14,47 @@ import ParseOSX
 #endif
 
 
-class StandardModelServiceImpl<M where M: PFModel, M: SqlModel>: ModelService {
+class StandardPersistenceEngine<M where M: PFModel, M: SqlModel>: PersistenceEngine {
     
-    func modelType() -> ModelType {
-        fatalError(__FUNCTION__ + " must be implemented")
+    private let _modelType: ModelType
+    private let _fromPFObject: PFObject -> M
+    private let _fromRow: Row -> M
+    private let _table: SchemaType
+    private let _defaultOrder: SchemaType -> SchemaType
+    private let _baseFilter: SchemaType -> SchemaType
+    
+    required init(
+        modelType: ModelType,
+        fromPFObject: PFObject -> M,
+        fromRow: Row -> M,
+        table: SchemaType,
+        defaultOrder: SchemaType -> SchemaType = { q in q.order(Fields.id.desc) },
+        baseFilter: SchemaType -> SchemaType = { q in q }
+    ) {
+        self._modelType = modelType
+        self._fromPFObject = fromPFObject
+        self._table = table
+        self._fromRow = fromRow
+        self._defaultOrder = defaultOrder
+        self._baseFilter = baseFilter
     }
     
-    // I hate Swift.
-    // When this is implemented properly in the end ModelService classes it generates EXC_BAD_ACCESS for no goddamn reason.
+    func modelType() -> ModelType {
+        return _modelType
+    }
+    
     func fromPFObject(pf: PFObject) -> M {
-        switch modelType() {
-        case .Location: return Location(pf: pf) as! M
-        case .Group: return Group(pf: pf) as! M
-        case .Typ: return Type(pf: pf) as! M
-        case .Account: return Account(pf: pf) as! M
-        case .Item: return Item(pf: pf) as! M
-        }
+        return _fromPFObject(pf)
     }
     
     internal func table() -> SchemaType {
-        fatalError(__FUNCTION__ + " must be implemented")
+        return _table
     }
     
     func withId(id: Int64) -> M? {
-        fatalError(__FUNCTION__ + " must be implemented")
+        let filters = Filters()
+        filters.ids = [id]
+        return DatabaseSvc().db.pluck(baseQuery(filters)).map(_fromRow)
     }
     
     func all() -> [M] {
@@ -46,11 +62,11 @@ class StandardModelServiceImpl<M where M: PFModel, M: SqlModel>: ModelService {
     }
     
     func defaultOrder(query: SchemaType) -> SchemaType {
-        return query.order(Fields.id.desc)
+        return _defaultOrder(query)
     }
     
     func baseFilter(query: SchemaType) -> SchemaType {
-        return query
+        return _baseFilter(query)
     }
     
     func baseQuery(filters: Filters? = nil, limit: Bool = true) -> SchemaType {
@@ -64,7 +80,13 @@ class StandardModelServiceImpl<M where M: PFModel, M: SqlModel>: ModelService {
     }
     
     func select(filters: Filters?) -> [M] {
-        fatalError(__FUNCTION__ + " must be implemented")
+        var elements: [M] = []
+        
+        for row in DatabaseSvc().db.prepare(baseQuery(filters)) {
+            elements.append(_fromRow(row))
+        }
+        
+        return elements
     }
     
     func count(filters: Filters?) -> Int {
@@ -95,7 +117,7 @@ class StandardModelServiceImpl<M where M: PFModel, M: SqlModel>: ModelService {
                     Fields.synced <- fromRemote,
                     Fields.deleted <- false,
                     Fields.updatedAt <- e.pf?.updatedAt.map { NSDateTime($0) }
-                ]))
+                    ]))
             }
         }
         catch {
@@ -253,3 +275,4 @@ class StandardModelServiceImpl<M where M: PFModel, M: SqlModel>: ModelService {
     }
     
 }
+

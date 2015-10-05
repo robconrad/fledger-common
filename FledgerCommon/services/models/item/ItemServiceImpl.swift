@@ -10,43 +10,31 @@ import Foundation
 import SQLite
 
 
-class ItemServiceImpl<M: Group>: StandardModelServiceImpl<Item>, ItemService {
+class ItemServiceImpl: ItemService, HasShieldedPersistenceEngine {
     
+    let engine: ShieldedPersistenceEngine<Item, StandardPersistenceEngine<Item>>
+    
+    private let table: SchemaType
     private let id: Expression<Int64>
     
-    required override init() {
+    required init() {
         id = DatabaseSvc().items[Fields.id]
-        super.init()
-    }
-    
-    override func modelType() -> ModelType {
-        return ModelType.Item
-    }
-    
-    override internal func table() -> SchemaType {
-        return DatabaseSvc().items.join(DatabaseSvc().types, on: Fields.typeId == DatabaseSvc().types[Fields.id])
-    }
-    
-    override func defaultOrder(query: SchemaType) -> SchemaType {
-        return query.order(Fields.date.desc, table()[Fields.id].desc)
-    }
-    
-    override func baseFilter(query: SchemaType) -> SchemaType {
-        return query.filter(Fields.amount != 0)
-    }
-    
-    override func select(filters: Filters?) -> [Item] {
-        var elements: [Item] = []
         
-        for row in DatabaseSvc().db.prepare(baseQuery(filters)) {
-            elements.append(Item(row: row))
-        }
+        let _table = DatabaseSvc().items.join(DatabaseSvc().types, on: Fields.typeId == DatabaseSvc().types[Fields.id])
+        table = _table
         
-        return elements
+        engine = ShieldedPersistenceEngine(engine: StandardPersistenceEngine<Item>(
+            modelType: ModelType.Item,
+            fromPFObject: { pf in Item(pf: pf) },
+            fromRow: { row in Item(row: row) },
+            table: table,
+            defaultOrder: { q in q.order(Fields.date.desc, _table[Fields.id].desc) },
+            baseFilter: { q in q.filter(Fields.amount != 0) }
+        ))
     }
     
     func getTransferPair(first: Item) -> Item? {
-        return DatabaseSvc().db.pluck(table().filter(
+        return DatabaseSvc().db.pluck(table.filter(
             Fields.date == first.date &&
             Fields.comments == first.comments &&
             Fields.accountId != first.accountId &&
@@ -55,8 +43,7 @@ class ItemServiceImpl<M: Group>: StandardModelServiceImpl<Item>, ItemService {
     }
     
     func getSum(item: Item, filters: Filters) -> Double {
-        return DatabaseSvc().db.scalar(baseQuery(filters, limit: false)
-            .filter(
+        return DatabaseSvc().db.scalar(table.filter(
                 Fields.date < item.date ||
                 (Fields.date == item.date && id <= item.id!))
             .select(Fields.amount.sum)) ?? 0

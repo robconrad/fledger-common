@@ -14,36 +14,21 @@ import ParseOSX
 #endif
 
 
-public protocol TypeService: Service {
+public protocol TypeService: ModelService {
     
-    /***************************************
-     BEGIN COPY PASTA FROM BASE ModelService
-     ***************************************/
-    func modelType() -> ModelType
-    
+    /****************************************************************************
+    BEGIN common model-specific functions that cannot be defined in ModelService
+    ****************************************************************************/
     func fromPFObject(pf: PFObject) -> Type
-    
     func withId(id: Int64) -> Type?
-    
     func all() -> [Type]
     func select(filters: Filters?) -> [Type]
-    
-    func count(filters: Filters?) -> Int
-    
     func insert(e: Type) -> Int64?
-    
     func update(e: Type) -> Bool
-    
     func delete(e: Type) -> Bool
-    func delete(id: Int64) -> Bool
-    
-    func invalidate()
-    
-    func syncToRemote()
-    func syncFromRemote()
-    /*************************************
-     END COPY PASTA FROM BASE ModelService
-    **************************************/
+    /****************************************************************************
+    END common model-specific functions that cannot be defined in ModelService
+    ****************************************************************************/
     
     var transferId: Int64 { get }
     

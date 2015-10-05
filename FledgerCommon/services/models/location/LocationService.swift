@@ -14,36 +14,21 @@ import ParseOSX
 #endif
 
 
-public protocol LocationService: Service {
+public protocol LocationService: ModelService {
     
-    /***************************************
-     BEGIN COPY PASTA FROM BASE ModelService
-     ***************************************/
-    func modelType() -> ModelType
-    
+    /****************************************************************************
+    BEGIN common model-specific functions that cannot be defined in ModelService
+    ****************************************************************************/
     func fromPFObject(pf: PFObject) -> Location
-    
     func withId(id: Int64) -> Location?
-    
     func all() -> [Location]
     func select(filters: Filters?) -> [Location]
-    
-    func count(filters: Filters?) -> Int
-    
     func insert(e: Location) -> Int64?
-    
     func update(e: Location) -> Bool
-    
     func delete(e: Location) -> Bool
-    func delete(id: Int64) -> Bool
-    
-    func invalidate()
-    
-    func syncToRemote()
-    func syncFromRemote()
-    /*************************************
-     END COPY PASTA FROM BASE ModelService
-    **************************************/
+    /****************************************************************************
+    END common model-specific functions that cannot be defined in ModelService
+    ****************************************************************************/
     
     func itemCount(id: Int64) -> Int
     

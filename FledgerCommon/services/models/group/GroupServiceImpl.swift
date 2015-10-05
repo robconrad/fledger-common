@@ -10,43 +10,25 @@ import Foundation
 import SQLite
 
 
-class GroupServiceImpl<T: Group>: MemoryModelServiceImpl<Group>, GroupService {
+class GroupServiceImpl: GroupService, HasShieldedPersistenceEngine {
     
-    required init() {
-        super.init()
-    }
-    
-    override func modelType() -> ModelType {
-        return ModelType.Group
-    }
-    
-    override internal func table() -> SchemaType {
-        return DatabaseSvc().groups
-    }
-    
-    override func defaultOrder(query: SchemaType) -> SchemaType {
-        return query.order(Fields.name)
-    }
-    
-    override func select(filters: Filters?) -> [Group] {
-        var elements: [Group] = []
+    let engine = ShieldedPersistenceEngine(engine: MemoryPersistenceEngine<Group>(
+        modelType: ModelType.Group,
+        fromPFObject: { pf in Group(pf: pf) },
+        fromRow: { row in Group(row: row) },
+        table: DatabaseSvc().groups,
+        defaultOrder: { q in q.order(Fields.name) }
+    ))
         
-        for row in DatabaseSvc().db.prepare(baseQuery(filters)) {
-            elements.append(Group(row: row))
-        }
-        
-        return elements
-    }
-    
     func withTypeId(id: Int64) -> Group? {
         if let type = TypeSvc().withId(id) {
-            return withId(type.groupId)
+            return engine.withId(type.groupId)
         }
         return nil
     }
     
     func withName(name: String) -> Group? {
-        return all().filter { $0.name == name }.first
+        return engine.all().filter { $0.name == name }.first
     }
     
 }
