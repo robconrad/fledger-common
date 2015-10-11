@@ -18,7 +18,12 @@ class AppTestSuite: XCTestCase {
 
         // reinitialize all services on test suite initialization
         ServiceBootstrap.preRegister()
-        PFUser.logInWithUsername("test", password: "test")
+        do {
+            try PFUser.logInWithUsername("test", password: "test")
+        }
+        catch {
+            // sigh
+        }
         ServiceBootstrap.register()
     }
 

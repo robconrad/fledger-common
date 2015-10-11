@@ -1327,6 +1327,7 @@
 					"$(inherited)",
 					"\"$(PODS_ROOT)/Parse\"",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LIBTOOLFLAGS = "$(inherited) $(OTHER_LDFLAGS)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rob-conrad.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

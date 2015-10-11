@@ -63,7 +63,13 @@ class ParseServiceImpl: ParseService {
     func save(convertible: PFObjectConvertible) -> PFObject? {
         if let pf = convertible.toPFObject() {
             pf.ACL = PFACL(user: PFUser.currentUser()!)
-            pf.save()
+            do {
+                try pf.save()
+            }
+            catch {
+                print("Save of PFObject for \(convertible) failed")
+                return nil
+            }
             print("Save of PFObject for \(convertible) returned \(pf.objectId)")
             return pf
         }
@@ -89,35 +95,44 @@ class ParseServiceImpl: ParseService {
             query.whereKey("updatedAt", greaterThanOrEqualTo: updatedAtLeast)
             query.whereKey("objectId", notContainedIn: [lastRow.get(Fields.parseId) ?? ""])
         }
-        let result = query.findObjects() as? [PFObject]
-        print("Remote query for PFObjects of \(modelType) lastSyncedRow (\(lastSyncedRow.flatMap { $0.get(Fields.updatedAt)?.date }), \(lastSyncedRow?.get(Fields.parseId))) returned \(result?.count ?? 0) rows")
-        
-        //for parseId in bufferRows {
+        do {
+            let result = try query.findObjects()
+            print("Remote query for PFObjects of \(modelType) lastSyncedRow (\(lastSyncedRow.flatMap { $0.get(Fields.updatedAt)?.date }), \(lastSyncedRow?.get(Fields.parseId))) returned \(result.count ?? 0) rows")
+            
+            //for parseId in bufferRows {
             //result!.find { $0.parseId == parseId }
-        //}
-        
-        return result
+            //}
+            return result
+        }
+        catch {
+            // oh god why
+        }
+        return []
     }
         
     func isLoggedIn() -> Bool {
         return PFUser.currentUser() != nil
     }
     
-    func login(email: String, _ password: String) -> Bool {
-        return PFUser.logInWithUsername(email, password: password) != nil
+    func login(email: String, _ password: String, _ onComplete: Bool -> Void) {
+        PFUser.logInWithUsernameInBackground(email, password: password) { (user: PFUser?, error: NSError?) -> Void in
+            onComplete(user != nil)
+        }
     }
     
     func logout() {
         PFUser.logOut()
     }
     
-    func signup(email: String, _ password: String) -> Bool {
+    func signup(email: String, _ password: String, _ onComplete: Bool -> Void) {
         let user = PFUser()
         user.username = email
         user.password = password
         user.email = email
         
-        return user.signUp()
+        user.signUpInBackgroundWithBlock({ (succeeded: Bool, error: NSError?) -> Void in
+            onComplete(succeeded)
+        })
     }
     
 }

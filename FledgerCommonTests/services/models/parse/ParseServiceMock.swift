@@ -43,14 +43,10 @@ class ParseServiceMock: ParseService {
         return true
     }
     
-    func login(email: String, _ password: String) -> Bool {
-        return true
-    }
+    func login(email: String, _ password: String, _ onComplete: Bool -> Void) {}
     
     func logout() {}
     
-    func signup(email: String, _ password: String) -> Bool {
-        return true
-    }
+    func signup(email: String, _ password: String, _ onComplete: Bool -> Void) {}
     
 }

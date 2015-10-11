@@ -35,16 +35,16 @@ class UserServiceImpl: UserService {
         return ParseSvc().isLoggedIn()
     }
     
-    func login(email: String, _ password: String) -> Bool {
-        return ParseSvc().login(email, password)
+    func login(email: String, _ password: String, _ onComplete: Bool -> Void) {
+        ParseSvc().login(email, password, onComplete)
     }
     
     func logout() {
         return ParseSvc().logout()
     }
     
-    func signup(email: String, _ password: String) -> Bool {
-        return ParseSvc().signup(email, password)
+    func signup(email: String, _ password: String, _ onComplete: Bool -> Void) {
+        ParseSvc().signup(email, password, onComplete)
     }
     
     func syncAllToRemote() {

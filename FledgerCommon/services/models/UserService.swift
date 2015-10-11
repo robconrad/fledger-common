@@ -14,9 +14,9 @@ public protocol UserService: Service {
     func getType() -> UserType
     
     func isLoggedIn() -> Bool
-    func login(email: String, _ password: String) -> Bool
+    func login(email: String, _ password: String, _ onComplete: Bool -> Void)
     func logout()
-    func signup(email: String, _ password: String) -> Bool
+    func signup(email: String, _ password: String, _ onComplete: Bool -> Void)
     
     func syncAllToRemote()
     func syncAllToRemoteInBackground()

@@ -45,12 +45,14 @@ public class LoginViewHelper {
             return
         }
         
-        if ParseSvc().login(dataSource.getEmail(), dataSource.getPassword()) {
-            handleSuccess()
-        }
-        else {
-            delegate.notifyLoginResult(false)
-        }
+        ParseSvc().login(dataSource.getEmail(), dataSource.getPassword(), { success in
+            if success {
+                self.handleSuccess()
+            }
+            else {
+                self.delegate.notifyLoginResult(false)
+            }
+        })
     }
     
     public func signup() {
@@ -58,12 +60,14 @@ public class LoginViewHelper {
             return
         }
         
-        if ParseSvc().signup(dataSource.getEmail(), dataSource.getPassword()) {
-            handleSuccess()
-        }
-        else {
-            delegate.notifyEmailValidity(false)
-        }
+        ParseSvc().signup(dataSource.getEmail(), dataSource.getPassword(), { success in
+            if success {
+                self.handleSuccess()
+            }
+            else {
+                self.delegate.notifyEmailValidity(false)
+            }
+        })
     }
     
     public func validateFields() -> Bool {
