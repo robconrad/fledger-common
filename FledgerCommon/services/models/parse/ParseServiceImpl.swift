@@ -76,7 +76,7 @@ class ParseServiceImpl: ParseService {
         return nil
     }
     
-    // TODO: ***REMOVED***
+    // TODO: revisit this sync logic, it needs some love
     func remote(modelType: ModelType, updatedOnly: Bool) -> [PFObject]? {
         let lastSyncedRow = DatabaseSvc().db.pluck(DatabaseSvc().parse.filter(Fields.model == modelType.rawValue).order(Fields.updatedAt.desc))
         var bufferRows = [String]()
