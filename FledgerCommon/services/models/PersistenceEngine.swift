@@ -28,7 +28,7 @@ protocol PersistenceEngine: ModelService {
     func update(e: M) -> Bool
     func delete(e: M) -> Bool
     /****************************************************************************
-    END common model-specific functions that cannot be defined in ModelService
+     END common model-specific functions that cannot be defined in ModelService
     ****************************************************************************/
     
 }

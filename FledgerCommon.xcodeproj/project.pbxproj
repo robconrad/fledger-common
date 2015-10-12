@@ -184,14 +184,6 @@
 		3E3918991B783B8600F72EC5 /* LocationServiceImplSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3918931B783B8600F72EC5 /* LocationServiceImplSuite.swift */; };
 		3E39189A1B783B8600F72EC5 /* ParseServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3918951B783B8600F72EC5 /* ParseServiceMock.swift */; };
 		3E39189E1B783C3100F72EC5 /* AppTestSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39189D1B783C3100F72EC5 /* AppTestSuite.swift */; };
-		3E3918C31B7845D200F72EC5 /* data-lite.sql in Resources */ = {isa = PBXBuildFile; fileRef = 3E3918C01B7845D200F72EC5 /* data-lite.sql */; };
-		3E3918C41B7845D200F72EC5 /* data-lite.sql in Resources */ = {isa = PBXBuildFile; fileRef = 3E3918C01B7845D200F72EC5 /* data-lite.sql */; };
-		3E3918C51B7845D200F72EC5 /* data-lite.sql in Resources */ = {isa = PBXBuildFile; fileRef = 3E3918C01B7845D200F72EC5 /* data-lite.sql */; };
-		3E3918C61B7845D200F72EC5 /* data-lite.sql in Resources */ = {isa = PBXBuildFile; fileRef = 3E3918C01B7845D200F72EC5 /* data-lite.sql */; };
-		3E3918C71B7845D200F72EC5 /* data.sql in Resources */ = {isa = PBXBuildFile; fileRef = 3E3918C11B7845D200F72EC5 /* data.sql */; };
-		3E3918C81B7845D200F72EC5 /* data.sql in Resources */ = {isa = PBXBuildFile; fileRef = 3E3918C11B7845D200F72EC5 /* data.sql */; };
-		3E3918C91B7845D200F72EC5 /* data.sql in Resources */ = {isa = PBXBuildFile; fileRef = 3E3918C11B7845D200F72EC5 /* data.sql */; };
-		3E3918CA1B7845D200F72EC5 /* data.sql in Resources */ = {isa = PBXBuildFile; fileRef = 3E3918C11B7845D200F72EC5 /* data.sql */; };
 		3E3918CB1B7845D200F72EC5 /* schema.sql in Resources */ = {isa = PBXBuildFile; fileRef = 3E3918C21B7845D200F72EC5 /* schema.sql */; };
 		3E3918CC1B7845D200F72EC5 /* schema.sql in Resources */ = {isa = PBXBuildFile; fileRef = 3E3918C21B7845D200F72EC5 /* schema.sql */; };
 		3E3918CD1B7845D200F72EC5 /* schema.sql in Resources */ = {isa = PBXBuildFile; fileRef = 3E3918C21B7845D200F72EC5 /* schema.sql */; };
@@ -304,8 +296,6 @@
 		3E3918931B783B8600F72EC5 /* LocationServiceImplSuite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServiceImplSuite.swift; sourceTree = "<group>"; };
 		3E3918951B783B8600F72EC5 /* ParseServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseServiceMock.swift; sourceTree = "<group>"; };
 		3E39189D1B783C3100F72EC5 /* AppTestSuite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTestSuite.swift; sourceTree = "<group>"; };
-		3E3918C01B7845D200F72EC5 /* data-lite.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "data-lite.sql"; path = "sql/data-lite.sql"; sourceTree = "<group>"; };
-		3E3918C11B7845D200F72EC5 /* data.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = data.sql; path = sql/data.sql; sourceTree = "<group>"; };
 		3E3918C21B7845D200F72EC5 /* schema.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = schema.sql; path = sql/schema.sql; sourceTree = "<group>"; };
 		3E39195F1B81466500F72EC5 /* LoginViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewHelper.swift; sourceTree = "<group>"; };
 		3EBA5BB21BACB66500BB5C5A /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -647,8 +637,6 @@
 		3E3918CF1B7846D800F72EC5 /* sql */ = {
 			isa = PBXGroup;
 			children = (
-				3E3918C01B7845D200F72EC5 /* data-lite.sql */,
-				3E3918C11B7845D200F72EC5 /* data.sql */,
 				3E3918C21B7845D200F72EC5 /* schema.sql */,
 			);
 			name = sql;
@@ -850,8 +838,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E3918CB1B7845D200F72EC5 /* schema.sql in Resources */,
-				3E3918C71B7845D200F72EC5 /* data.sql in Resources */,
-				3E3918C31B7845D200F72EC5 /* data-lite.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -860,8 +846,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E3918CC1B7845D200F72EC5 /* schema.sql in Resources */,
-				3E3918C81B7845D200F72EC5 /* data.sql in Resources */,
-				3E3918C41B7845D200F72EC5 /* data-lite.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -870,8 +854,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E3918CD1B7845D200F72EC5 /* schema.sql in Resources */,
-				3E3918C91B7845D200F72EC5 /* data.sql in Resources */,
-				3E3918C51B7845D200F72EC5 /* data-lite.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -880,8 +862,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E3918CE1B7845D200F72EC5 /* schema.sql in Resources */,
-				3E3918CA1B7845D200F72EC5 /* data.sql in Resources */,
-				3E3918C61B7845D200F72EC5 /* data-lite.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
